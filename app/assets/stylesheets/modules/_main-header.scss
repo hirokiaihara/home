@@ -1,0 +1,62 @@
+.main-header {
+  @extend .content-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__search {
+    display: none;
+    position: relative;
+    input {
+      @extend input;
+      background-color: $mainLightGlay;
+      width: 350px;
+      height: 40px;
+    }
+    button {
+      font-size: 24px;
+      background-color: $mainLightGlay;
+      border: none;
+      position: absolute;
+      top: 3px;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+
+  &__hiddenMenu {
+    display: none;
+
+    img {
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  &__link {
+    @extend .btn;
+    background-color: $mainSkyblue;
+    color: #fff;
+  }
+}
+
+@media (min-width: 600px) {
+  .main-header {
+    .mobile-menu__btn {
+      display: none;
+    }
+
+    &__hiddenMenu {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .main-header {
+    &__search {
+      display: block;
+    }
+  }
+}

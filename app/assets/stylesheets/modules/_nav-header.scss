@@ -1,0 +1,40 @@
+.nav-header {
+  @extend .content-width;
+  @extend .pb-sm;
+  padding-top: 151px;
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item {
+    @extend .btn;
+    background-color: $mainOrange;
+    
+    a {
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .nav-header {
+    &__menu {
+      justify-content: center;
+    }
+    &__item {
+      margin: 0 10px;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .nav-header {
+    padding-top: 120px;
+    &__item {
+      margin: 0 20px;
+      a {
+        font-size: 25px;
+      }
+    }
+  }
+}

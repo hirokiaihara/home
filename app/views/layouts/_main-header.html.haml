@@ -1,0 +1,24 @@
+.main-header
+  .main-header__logo
+    .logo
+      = image_tag 'logo.png'
+  .main-header__search
+    %input
+    %button
+      %i.fas.fa-search
+  .main-header__menu
+    = link_to "#", class: "main-header__link" do
+      マイフォルダ
+  .main-header__hiddenMenu
+    = link_to "#", class: "main-header__link" do
+      遊び・投稿
+  .main-header__hiddenMenu
+    = link_to "#", class: "main-header__link" do
+      レシピ投稿
+  .main-header__hiddenMenu
+    = link_to "#" do
+      = image_tag 'avatar.png'
+  .mobile-menu__btn
+    %span
+    %span
+    %span

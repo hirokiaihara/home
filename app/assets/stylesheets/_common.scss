@@ -1,3 +1,128 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: $mainBlack;
+}
+
+a {
+  text-decoration: none;
+  color: $subBlack;
+}
+
+input {
+  border: $subBlack;
+  border-radius: 3px;
+}
+
+.btn {
+  @extend .font-sm;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 7px;
+  border-radius: 5px;
+}
+
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1050px;
+}
+
+
+.font-sm {
+  font-size: 17px;
+}
+.font-md {
+  font-size: 19px;
+}
+.font-lr {
+  font-size: 23px;
+}
+.font-lg {
+  font-size: 25px;
+}
+
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+.pb-md {
+  padding-bottom: 40px !important;
+}
+.pb-lg {
+  padding-bottom: 80px !important;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  img {
+    height: 90px;
+    width: 150px;
+    object-fit: cover;
+  }
+}
+
+// 600px以上のタブレット
+@media (min-width: 600px) {
+
+}
+
+// 960px以上のpc
+@media (min-width: 960px) {
+  .font-sm {
+    font-size: 16px;
+  }
+  .font-md {
+    font-size: 19px;
+  }
+  .font-lr {
+    font-size: 23px;
+  }
+  .font-lg {
+    font-size: 36px;
+  }
+  
+  .mb-lg {
+    margin-bottom: 150px !important;
+  }
+  .pb-md {
+    padding-bottom: 80px !important;
+  }
+  .pd-lg {
+    padding-bottom: 150px !important;
+  }
+
+  .logo {
+    img {
+      height: 110px;
+    }
+  }
+}
+
+//320px以下に適用
+@media (max-width: 320px) {
+  .font-sm {
+    font-size: 13px;
+  }
+  .font-md {
+    font-size: 15px;
+  }
+  .font-lr {
+    font-size: 20px;
+  }
+  .font-lg {
+    font-size: 33px;
+  }
+}

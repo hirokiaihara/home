@@ -1,0 +1,27 @@
+.search-header {
+  @extend .content-width;
+  @extend .pb-sm;
+  position: relative;
+  input {
+    @extend input;
+    background-color: $mainLightGlay;
+    width: 100%;
+    height: 40px;
+  }
+  button {
+    font-size: 24px;
+    position: absolute;
+    top: 3px;
+    right: 0;
+  }
+}
+
+@media (min-width: 600px) {
+
+}
+
+@media (min-width: 960px) {
+  .search-header {
+    display: none;
+  }
+}
