@@ -17,21 +17,6 @@ input {
   border-radius: 3px;
 }
 
-.btn {
-  @extend .font-sm;
-  color: #fff;
-  display: inline-block;
-  padding: 5px 7px;
-  border-radius: 5px;
-}
-
-.content-width {
-  width: 90%;
-  margin: 0 auto;
-  max-width: 1050px;
-}
-
-
 .font-sm {
   font-size: 17px;
 }
@@ -66,12 +51,30 @@ input {
   flex-direction: column;
 }
 
+.btn {
+  @extend .font-sm;
+  color: #fff;
+  display: inline-block;
+  padding: 5px 7px;
+  border-radius: 5px;
+}
+
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1050px;
+}
+
 .logo {
   img {
     height: 90px;
     width: 150px;
     object-fit: cover;
   }
+}
+
+.section-title {
+  @extend .font-lg;
 }
 
 // 600px以上のタブレット

@@ -1,5 +1,6 @@
 @import "reset";
 @import "colors";
+@import "loader.scss";
 @import "common";
 @import "modules/container";
 @import "modules/header";
@@ -7,6 +8,9 @@
 @import "modules/search-header";
 @import "modules/nav-header";
 @import "modules/main-container";
+@import "modules/hero";
+@import "modules/appear";
+@import "modules/animate-title";
 @import "modules/mobile-menu";
 @import "font-awesome-sprockets";
 @import "font-awesome";
