@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("turbolinks:load", function() {
   new MobileMenu();
   new Main();
 });
@@ -51,18 +51,17 @@ class Main {
     }
   }
 
-  _textAnimation = function(el, isIntersecting) {
-    if(isIntersecting) {
-      const ta = new TextAnimation(el);
-      ta.animate();
-    }
-  }
+  // _textAnimation = function(el, inview) {
+  //   if(inview) {
+  //     const ta = new TextAnimation(el);
+  //     ta.animate();
+  //   }
+  // }
 
   _scrollInit() {
     this.observers = new ScrollObserver('.nav-trigger', this._navAnimation.bind(this), {once: false});
     this.observers = new ScrollObserver('.swiper-container', this._toogleSlideAnimation.bind(this), {once: false});
     this.observers = new ScrollObserver('.appear', this._inviewAnimation.bind(this), {once: false});
-    this.observers = new ScrollObserver('.animate-title', this._textAnimation);
-
+    // this.observers = new ScrollObserver('.animate-title', this._textAnimation);
   }
 }
