@@ -1,0 +1,27 @@
+.main-container
+  .user-page
+    .user-page__header
+      .user-page__image
+        - if @user.user_image.present?
+          = image_tag @user.user_image
+        -else
+          = image_tag "avatar.png"
+      .user-page__plofile
+        .user-page__nickname
+          = @user.nickname
+        .user-page__introduction
+          = @user.user_introduction
+        -if user_signed_in? && current_user.id == @user.id
+          = link_to edit_user_registration_path do
+            アカウント編集はこちら
+    .tab-section
+      .tab-section__tab.active
+        =link_to "#" do
+          トップ
+      .tab-section__tab
+        =link_to "#" do
+          遊び
+      .tab-section__tab
+        = link_to "#" do
+          レシピ
+    .user-page__contents

@@ -12,6 +12,15 @@
     label {
       @extend .font-md;
     }
+    img {
+      margin-top: 15px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid $mainSkyblue;
+      cursor: pointer;
+    }
     input {
       @extend input;
       width: 100%;

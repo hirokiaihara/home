@@ -41,6 +41,10 @@ body {
   flex-direction: column;
 }
 
+.hidden {
+  display: none;
+}
+
 .btn {
   @extend .font-sm;
   color: #fff;

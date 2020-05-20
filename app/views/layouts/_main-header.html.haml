@@ -23,8 +23,11 @@
         %i.fas.fa-edit
           レシピ投稿
     .main-header__hiddenMenu
-      = link_to "#" do
-        = image_tag 'avatar.png'
+      = link_to user_path(current_user.id) do
+        - if current_user.user_image.present?
+          = image_tag current_user.user_image
+        - else
+          = image_tag 'avatar.png'
   - else
     .main-header__hiddenMenu
       = link_to new_user_registration_path, class: "main-header__link" do

@@ -1,6 +1,12 @@
 document.addEventListener("turbolinks:load", function() {
+  var url = location.pathname
   new MobileMenu();
-  new Main();
+  if (url == "/") {
+    new Main();
+  }
+  if (url == "/users/edit") {
+    new Preview();
+  }
 });
 
 class Main {
