@@ -1,4 +1,17 @@
 .main-container {
   @extend .content-width;
+  padding: 15px 0;
+}
+
+@media (min-width: 600px) {
+  .main-container {
+    padding: 15px 0 20px;
+  }
+}
+
+@media (min-width: 960px) {
+  .main-container {
+    padding: 15px 0 30px;
+  }
 }
 

@@ -7,16 +7,6 @@ body {
   color: $mainBlack;
 }
 
-a {
-  text-decoration: none;
-  color: $subBlack;
-}
-
-input {
-  border: $subBlack;
-  border-radius: 3px;
-}
-
 .font-sm {
   font-size: 17px;
 }
@@ -40,7 +30,7 @@ input {
   padding-bottom: 16px !important;
 }
 .pb-md {
-  padding-bottom: 40px !important;
+  padding-bottom: 28px !important;
 }
 .pb-lg {
   padding-bottom: 80px !important;
@@ -57,6 +47,18 @@ input {
   display: inline-block;
   padding: 5px 7px;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: $subBlack;
+}
+
+input {
+  border: 1px solid $mainGlay;
+  border-radius: 5px;
+  padding: 5px 5px;
 }
 
 .content-width {
@@ -79,7 +81,9 @@ input {
 
 // 600px以上のタブレット
 @media (min-width: 600px) {
-
+  body {
+    background-color: $backColor;
+  }
 }
 
 // 960px以上のpc
@@ -126,6 +130,6 @@ input {
     font-size: 20px;
   }
   .font-lg {
-    font-size: 33px;
+    font-size: 23px;
   }
 }

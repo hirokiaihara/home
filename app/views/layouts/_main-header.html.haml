@@ -1,26 +1,40 @@
 .main-header
-  .main-header__logo
-    .logo
-      = image_tag 'logo.png'
+  .main-header__logo 
+    = link_to root_path do
+      .logo
+        = image_tag 'logo.png'
   .main-header__search
     %input
     %button
       %i.fas.fa-search
-  .main-header__menu
-    = link_to "#", class: "main-header__link" do
-      %i.far.fa-folder
-        マイフォルダ
-  .main-header__hiddenMenu
-    = link_to "#", class: "main-header__link" do
-      %i.far.fa-edit
-        遊び・投稿
-  .main-header__hiddenMenu
-    = link_to "#", class: "main-header__link" do
-      %i.far.fa-edit
-        レシピ投稿
-  .main-header__hiddenMenu
-    = link_to "#" do
-      = image_tag 'avatar.png'
+  - if user_signed_in?
+    .main-header__icon
+      = link_to "#" do
+        %i.fas.fa-folder.fa-2x
+    .main-header__icon
+      = link_to "#" do
+        %i.fas.fa-bell.fa-2x
+    .main-header__hiddenMenu
+      = link_to "#", class: "main-header__link" do
+        %i.fas.fa-edit
+          遊び・投稿
+    .main-header__hiddenMenu
+      = link_to "#", class: "main-header__link" do
+        %i.fas.fa-edit
+          レシピ投稿
+    .main-header__hiddenMenu
+      = link_to "#" do
+        = image_tag 'avatar.png'
+  - else
+    .main-header__hiddenMenu
+      = link_to new_user_registration_path, class: "main-header__link" do
+        新規登録
+    .main-header__menu
+      = link_to new_user_session_path, class: "main-header__link" do
+        ログイン
+    .main-header__hiddenMenu
+      = link_to "#", class: "main-header__link" do
+        使い方ガイド
   .mobile-menu__btn
     %span
     %span

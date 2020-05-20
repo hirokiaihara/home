@@ -1,0 +1,27 @@
+.main-container
+  .account-page
+    = link_to new_user_registration_path do
+      新規登録はこちらから
+    .account-page__title
+      ログイン
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .account-page__section
+        %p 採用担当者様は入力済みの情報で『ログイン』を押してください。
+      .account-page__section
+        = f.label :email, "メールアドレス"
+        %br/
+        = f.email_field :email, value: "test@test", autocomplete: "email"
+      .account-page__section
+        = f.label :password
+        %br/
+        = f.password_field :password, value: "111111", autocomplete: "current-password"
+      .account-page__section
+        = f.submit "ログイン", class: "account-page__submit-btn"
+      .account-page__section
+        %ul 
+          < 採用担当者様専用アカウント > 
+          %li 
+            email : test@test
+          %li 
+            password : 111111
+    -# = render "devise/shared/links"
