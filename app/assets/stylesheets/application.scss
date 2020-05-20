@@ -2,6 +2,7 @@
 @import "colors";
 @import "loader.scss";
 @import "common";
+@import "modules/notifications";
 @import "modules/container";
 @import "modules/header";
 @import "modules/main-header";
@@ -12,5 +13,7 @@
 @import "modules/appear";
 @import "modules/animate-title";
 @import "modules/mobile-menu";
+@import "modules/account-page";
+@import "modules/main-footer";
 @import "font-awesome-sprockets";
 @import "font-awesome";

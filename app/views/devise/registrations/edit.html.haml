@@ -1,0 +1,53 @@
+.main-container
+  .account-page
+    .account-page__title
+      アカウント編集
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .account-page__section
+        = f.label :user_image, "プロフィール画像"
+        %br/
+        = f.file_field :user_image
+      .account-page__section
+        = f.label :nickname, "ニックネーム(20字以内)"
+        %br/
+        = f.text_field :nickname, autofocus: true, autocomplete: "nickname"
+      .account-page__section
+        = f.label :user_introduction, "紹介文(100字以内)"
+        %br/
+        = f.text_area :user_introduction
+      .account-page__section
+        = f.label :email, "メールアドレス"
+        %br/
+        = f.email_field :email, autocomplete: "email"
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          %div
+            Currently waiting confirmation for: #{resource.unconfirmed_email}
+      .account-page__section
+        = f.label :password
+        %i 変更がなければ入力しないでください
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+        - if @minimum_password_length
+          %br/
+          %em
+            = @minimum_password_length
+            字以上
+      .account-page__section
+        = f.label :password_confirmation
+        %i 変更がなければ入力しないでください
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+      .account-page__section
+        = f.label :current_password
+        %i 更新する為に確認させて下さい
+        %br/
+        = f.password_field :current_password, autocomplete: "current-password"
+      .account-page__section
+        = f.submit "更新", class: "account-page__submit-btn"
+    .account-page__section
+      %i 退会
+      %p
+        #{button_to "アカウント削除", registration_path(resource_name), class: "account-page__destroy-btn",data: { confirm: "アカウントを削除しますか?" }, method: :delete}
+    .account-page__section
+      = link_to "もどる", :back

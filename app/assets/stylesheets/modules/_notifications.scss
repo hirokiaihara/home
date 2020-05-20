@@ -1,0 +1,15 @@
+.notification {
+  position: relative;
+  opacity: .8;
+  z-index: 20;
+  .notice {
+    background-color: $noticeBlue;
+    color: #fff;
+    text-align: center;
+  }
+  .alert {
+    background-color: $alertOrange;
+    color: #fff;
+    text-align: center;
+  }
+}

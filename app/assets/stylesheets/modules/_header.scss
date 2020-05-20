@@ -4,6 +4,7 @@ header {
   left: 0;
   width: 100%;
   z-index: 10;
+  background-color: #fff;
 
   &.triggered {
     background-color: rgba(255, 255, 255, .9);
