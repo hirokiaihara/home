@@ -6,6 +6,6 @@ class User < ApplicationRecord
   
   validates :nickname, presence: true
   validates :nickname, length: {maximum: 20}
-  validates :user_introduction, length: {maximum: 100}
+  validates :user_introduction, length: {maximum: 60}
   mount_uploader :user_image, ImageUploader
 end

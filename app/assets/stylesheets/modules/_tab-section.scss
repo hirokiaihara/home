@@ -1,0 +1,11 @@
+.tab-section {
+  display: flex;
+  border-bottom: solid 1px $mainLightGlay;
+  &__tab {
+    padding: 5px 20px;
+    &.active {
+      border-bottom: 4px solid $mainOrange;
+      font-weight: bold;
+    }
+  }
+}
