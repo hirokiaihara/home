@@ -1,14 +1,8 @@
-class Preview {
-  constructor() {
-    new ChangeImage('.userImg-file', '.userImg-preview');
-  }
-}
-
-class ChangeImage {
-  constructor(file, preview, deleteBtn) {
+//ユーザー編集・play投稿・recipe投稿・プレビュー表示
+class PreviewImage {
+  constructor(file, preview) {
     this.file = file;
     this.preview = preview;
-    this.deleteBtn = deleteBtn;
     this._readImage();
   }
 

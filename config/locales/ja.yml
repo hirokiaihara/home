@@ -1,6 +1,13 @@
 ---
 ja:
   activerecord:
+    models:
+      play: 遊び・工作
+    attributes:
+      play:
+        play_title: タイトル
+        play_image: トップイメージ
+        play_introduction: 紹介文
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -205,4 +212,5 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  
   

@@ -1,3 +1,4 @@
+//テキストアニメーション
 class TextAnimation {
   constructor(el) {
     if(el instanceof HTMLElement) {

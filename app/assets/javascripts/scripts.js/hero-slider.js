@@ -1,3 +1,4 @@
+//トップページフェイドアニメーション
 class HeroSlider {
   constructor(el) {
     this.el = el;

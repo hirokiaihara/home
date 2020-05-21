@@ -1,3 +1,4 @@
+//スクロール検知
 class ScrollObserver {
   constructor(els, cb, options) {
     this.els = document.querySelectorAll(els);
