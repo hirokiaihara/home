@@ -1,14 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
-  var url = location.pathname
-  new MobileMenu();
-  if (url == "/") {
-    new Main();
-  }
-  if (url == "/users/edit") {
-    new Preview();
-  }
-});
-
+//トップページの動き
 class Main {
   constructor() {
     this.header = document.querySelector('header');
@@ -56,7 +46,7 @@ class Main {
       el.classList.remove('inview');
     }
   }
-
+  //テキストアニメーション
   // _textAnimation = function(el, inview) {
   //   if(inview) {
   //     const ta = new TextAnimation(el);

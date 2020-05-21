@@ -1,7 +1,7 @@
 .main-container
   .account-page
     = link_to new_user_registration_path do
-      新規登録はこちらから
+      %h2 新規登録はこちらから
     .account-page__title
       ログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
