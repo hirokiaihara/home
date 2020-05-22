@@ -1,14 +1,20 @@
 document.addEventListener("turbolinks:load", function() {
-  var url = location.pathname
+  //モバイルメニューは共通
   new MobileMenu();
+  //urlで条件分岐
+  var url = location.pathname
+  //トップページでnew
   if (url == "/") {
     new Main();
   }
+  //user編集でnew
   if (url == "/users/edit") {
     new PreviewImage('.userImg-file', '.userImg-preview');
   }
-  
-  if (url == "/plays/new" || url == "/plays") {
+  //play投稿・編集時にnew
+  const play_id = $('.play_id').val();
+  const EditPlayUrl = `/plays/${play_id}/edit`;
+  if (url == "/plays/new" || url == "/plays" || url == EditPlayUrl) {
     new PreviewImage('.playImg-file', '.playImg-preview');
     new AddNewFile('.material-container', '.material-textGroup', '.material-addBtn', '.material-removeBtn', '.material-alert');
     new AddNewFile('.work-container', '.work-fileGroup', '.work-addBtn', '.work-removeBtn', '.work-alert');
