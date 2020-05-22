@@ -45,20 +45,17 @@
           遊び(作り)方(60字以内)
         .play-form__input
           .work-container
-            - if @play.persisted?
-              テスト
-            -else
-              = f.fields_for :works do |w|
-                .work-fileGroup{"data-index": "#{w.index}"}
-                  %label(for="play_works_attributes_#{w.index}_work_image")
-                    .work-fileGroup__preview{class: "preIndex#{w.index+1}"}
-                    .work-fileGroup__img{class: "imgIndex#{w.index+1}"}
-                      %i.fas.fa-camera
-                        クリックして写真を追加
-                  = w.file_field :work_image, class: "work-imageFile fileIndex#{w.index+1} "
-                  = w.text_area :work_text, placeholder: "例)ペットボトルを綺麗に洗って乾かします", class: "work-text"
-                  %i.far.fa-times-circle.work-removeBtn
-                    削除
+            = f.fields_for :works do |w|
+              .work-fileGroup{"data-index": "#{w.index}"}
+                %label(for="play_works_attributes_#{w.index}_work_image")
+                  .work-fileGroup__preview{class: "preIndex#{w.index+1}"}
+                  .work-fileGroup__img{class: "imgIndex#{w.index+1}"}
+                    %i.fas.fa-camera
+                      クリックして写真を追加
+                = w.file_field :work_image, class: "work-imageFile fileIndex#{w.index+1} hidden"
+                = w.text_area :work_text, placeholder: "例)ペットボトルを綺麗に洗って乾かします", class: "work-text"
+                %i.far.fa-times-circle.work-removeBtn
+                  削除
           %i.far.fa-plus-square.work-addBtn
             追加
           .work-alert.hidden

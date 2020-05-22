@@ -18,6 +18,9 @@
     - @plays.each do |play|
       = link_to play_path(play.id) do
         = play.play_title
+    - @recipes.each do |recipe|
+      = link_to recipe_path(recipe.id) do
+        = recipe.recipe_title
     .section-title.appear.up
       .appear-item
         タイトル

@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :users, only: [:show]
   resources :plays
+  resources :recipes
 end

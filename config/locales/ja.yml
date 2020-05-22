@@ -3,7 +3,7 @@ ja:
   activerecord:
     models:
       play: 遊び・工作
-      work: 遊び(作り)方
+      recipe: レシピ
     attributes:
       play:
         play_title: タイトル
@@ -11,6 +11,12 @@ ja:
         play_introduction: 紹介文
       play/works:
         work_text: 遊び(作り方)
+      recipe:
+        recipe_title: タイトル
+        recipe_image: トップページ
+        recipe_introduction: 紹介文
+      recipe/makes:
+        make_text: 作り方
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
