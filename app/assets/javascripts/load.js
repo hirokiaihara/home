@@ -12,6 +12,13 @@ document.addEventListener("turbolinks:load", function() {
     new PreviewImage('.playImg-file', '.playImg-preview');
     new AddNewFile('.material-container', '.material-textGroup', '.material-addBtn', '.material-removeBtn', '.material-alert');
     new AddNewFile('.work-container', '.work-fileGroup', '.work-addBtn', '.work-removeBtn', '.work-alert');
-    new AddPreview('.preIndex1', '.imgIndex1', '.fileIndex1');
+    //works-fileGroupの数をもとにAddPreviewの引数を決める。
+    const files = document.querySelectorAll('.work-fileGroup');
+    for(let i = 1; i <= files.length; i++) {
+      const preIndex = `.preIndex${i}`
+      const imgIndex = `.imgIndex${i}`
+      const fileIndex = `.fileIndex${i}`
+      new AddPreview(preIndex, imgIndex, fileIndex)
+    }
   }
 });
