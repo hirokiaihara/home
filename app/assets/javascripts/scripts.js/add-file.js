@@ -29,6 +29,8 @@ class AddNewFile {
     document.querySelector(add).addEventListener('click', function() {
       //urlで条件分岐
       var url = location.pathname
+      const play_id = $('.play_id').val();
+      const EditPlayUrl = `/plays/${play_id}/edit`;
       //新規投稿の時
       if (url == "/plays/new") {
         $(container).append(buildNewFile(fileIndex[0]));
@@ -43,8 +45,8 @@ class AddNewFile {
           const indexFile = `.fileIndex${fileIndex[0]}`;
           new AddPreview(preIndex, imgIndex, indexFile);
         }
-      //ヴァリデーションにはじかれた時
-      } else if (url == "/plays") {
+      //ヴァリデーションにはじかれた時と投稿編集時
+      } else if (url == "/plays" || url == EditPlayUrl) {
         //materialの操作
         if (container == '.material-container') {
           const files = document.querySelectorAll('.material-textGroup');
@@ -66,6 +68,19 @@ class AddNewFile {
     });
     //削除
     $(container).on('click', remove, function() {
+      //material削除
+      if (container == '.material-container') {
+        const targetIndex = $(this).parent().data('index');
+        const hiddenCheck = $(`input[data-Index="${targetIndex}"].hidden-materialDestroy`);
+        if (hiddenCheck) hiddenCheck.prop('checked', true);
+      //work削除
+      } else if (container == '.work-container'){
+        const targetIndex = $(this).parent().data('index');
+        const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-workDestroy`);
+        if (hiddenCheck) hiddenCheck.prop('checked', true);
+      }
+      
+      //viewを削除と入力欄が0にならないように
       $(this).parent().remove();
       if ($(group).length == 0) $(container).append(buildNewFile(fileIndex[0]));
       if ($(group).length < 10) $(add).show(), $(alert).hide();

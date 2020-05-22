@@ -1,0 +1,77 @@
+.main-container
+  //JavaScriptにurlのidを渡すための記述
+  %input{name: "play_id", type: "hidden", value: @play.id, class: 'play_id' }
+  .play-form
+    .play-form__title
+      %h2 遊び・工作 編集ページ
+    = form_for @play do |f|
+      = render "devise/shared/error_messages", resource: @play
+      .play-form__section
+        .play-form__sectionTitle
+          タイトル(20字以内)
+        .play-form__input
+          = f.text_field :play_title, placeholder: "例)ペットボトル貯金箱作成"
+      .play-form__section
+        .play-form__sectionTitle
+          トップイメージ
+        .play-form__input
+          = f.file_field :play_image, class: "playImg-file hidden"
+          %label(for="play_play_image")
+            -if @play.play_image.present?
+              = image_tag @play.play_image, class: "playImg-preview"
+            -else
+              = image_tag 'camera.png', class: "playImg-preview"
+      .play-form__section
+        .play-form__sectionTitle
+          紹介文(60字以内)
+        .play-form__input
+          = f.text_area :play_introduction, placeholder: "例)オリジナルのオシャレ貯金箱を作ろう！"
+      .play-form__section
+        .play-form__sectionTitle
+          材料・道具
+        .play-form__input
+          .material-container
+            = f.fields_for :materials do |m|
+              .material-textGroup{"data-index": "#{m.index}"}
+                = m.text_field :material_name, class: "material-text", placeholder: "例)ペットボトル"
+                %i.far.fa-times-circle.material-removeBtn
+                  削除
+              = m.check_box :_destroy, data: {index: m.index}, class: "hidden-materialDestroy "
+          %i.far.fa-plus-square.material-addBtn
+            追加
+          .material-alert.hidden
+            %i.fas.fa-exclamation-circle
+              10項目までです
+      .play-form__section
+        .play-form__sectionTitle
+          遊び(作り)方(60字以内)
+        .play-form__input
+          .work-container
+            = f.fields_for :works do |w|
+              .work-fileGroup{"data-index": "#{w.index}"}
+                %label(for="play_works_attributes_#{w.index}_work_image")
+                  .work-fileGroup__preview{class: "preIndex#{w.index+1}"}
+                  .work-fileGroup__img{class: "imgIndex#{w.index+1}"}
+                    - if w.object.work_image.present?
+                      = image_tag w.object.work_image
+                    -else
+                      %i.fas.fa-camera
+                        クリックして写真を追加
+                = w.file_field :work_image, class: "work-imageFile fileIndex#{w.index+1} "
+                = w.text_area :work_text, placeholder: "例)ペットボトルを綺麗に洗って乾かします", class: "work-text"
+                %i.far.fa-times-circle.work-removeBtn
+                  削除
+              = w.check_box :_destroy, data: {index: w.index}, class: "hidden-workDestroy "
+          %i.far.fa-plus-square.work-addBtn
+            追加
+          .work-alert.hidden
+            %i.fas.fa-exclamation-circle
+              10項目までです
+      .play-form__section
+        .play-form__sectionTitle
+          カテゴリ(選択)
+        .play-form__input
+          = f.collection_select :playcategory_id, Playcategory.all, :id, :name, {}, {}
+      .play-form__section
+        .play-form__input
+          = f.submit "更新する", class: "play-form__submitBtn"

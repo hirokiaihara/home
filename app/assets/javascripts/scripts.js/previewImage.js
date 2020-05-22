@@ -1,4 +1,4 @@
-//ユーザー編集・play投稿・recipe投稿・プレビュー表示
+//ユーザー編集・play投稿&編集・recipe投稿&編集のプレビュー表示機能
 class PreviewImage {
   constructor(file, preview) {
     this.file = file;
