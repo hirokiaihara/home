@@ -27,4 +27,20 @@ document.addEventListener("turbolinks:load", function() {
       new AddPreview(preIndex, imgIndex, fileIndex)
     }
   }
+  //recipe投稿・編集時にnew
+  const recipe_id = $('.recipe_id').val();
+  const EditrecipeUrl = `/recipes/${recipe_id}/edit`;
+  if (url == "/recipes/new" || url == "/recipes" || url == EditrecipeUrl) {
+    new PreviewImage('.recipeImg-file', '.recipeImg-preview');
+    new AddNewFile('.food-container', '.food-textGroup', '.food-addBtn', '.food-removeBtn', '.food-alert');
+    new AddNewFile('.make-container', '.make-fileGroup', '.make-addBtn', '.make-removeBtn', '.make-alert');
+    //makes-fileGroupの数をもとにAddPreviewの引数を決める。
+    const files = document.querySelectorAll('.make-fileGroup');
+    for(let i = 1; i <= files.length; i++) {
+      const preIndex = `.preIndex${i}`
+      const imgIndex = `.imgIndex${i}`
+      const fileIndex = `.fileIndex${i}`
+      new AddPreview(preIndex, imgIndex, fileIndex)
+    }
+  }
 });
