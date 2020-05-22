@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200520140111) do
+ActiveRecord::Schema.define(version: 20200522102439) do
+
+  create_table "foods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "food_name"
+    t.string   "quantity"
+    t.integer  "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipe_id"], name: "index_foods_on_recipe_id", using: :btree
+  end
+
+  create_table "makes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "make_image"
+    t.text     "make_text",  limit: 65535
+    t.integer  "recipe_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["recipe_id"], name: "index_makes_on_recipe_id", using: :btree
+  end
 
   create_table "materials", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "material_name"
@@ -29,6 +47,17 @@ ActiveRecord::Schema.define(version: 20200520140111) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.index ["user_id"], name: "index_plays_on_user_id", using: :btree
+  end
+
+  create_table "recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "recipe_title",                      null: false
+    t.string   "recipe_image",                      null: false
+    t.text     "recipe_introduction", limit: 65535, null: false
+    t.integer  "recipecategory_id",                 null: false
+    t.integer  "user_id"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.index ["user_id"], name: "index_recipes_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -55,7 +84,10 @@ ActiveRecord::Schema.define(version: 20200520140111) do
     t.index ["play_id"], name: "index_works_on_play_id", using: :btree
   end
 
+  add_foreign_key "foods", "recipes"
+  add_foreign_key "makes", "recipes"
   add_foreign_key "materials", "plays"
   add_foreign_key "plays", "users"
+  add_foreign_key "recipes", "users"
   add_foreign_key "works", "plays"
 end
