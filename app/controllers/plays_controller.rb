@@ -37,8 +37,12 @@ class PlaysController < ApplicationController
       render :edit
     end
   end
-  
 
+  def destroy
+    @play.destroy
+    redirect_to root_path
+  end
+  
   private
 
   def play_params

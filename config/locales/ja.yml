@@ -3,11 +3,14 @@ ja:
   activerecord:
     models:
       play: 遊び・工作
+      work: 遊び(作り)方
     attributes:
       play:
         play_title: タイトル
         play_image: トップイメージ
         play_introduction: 紹介文
+      play/works:
+        work_text: 遊び(作り方)
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
