@@ -1,2 +1,46 @@
-= link_to '編集', edit_recipe_path(@recipe)
-= link_to '削除', recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"}
+.main-container
+  .show-recipePage
+    .show-recipePage__title
+      = @recipe.recipe_title
+    .show-recipePage__upper
+      .show-recipePage__upperLeft
+        = image_tag @recipe.recipe_image.url
+      .show-recipePage__upperRight
+        .show-recipePage__introduction
+          .show-recipePage__sectionTitle
+            コメント
+          = simple_format @recipe.recipe_introduction
+        .show-recipePage__nickname
+          = link_to user_path(@recipe.user_id) do
+            = @recipe.user.nickname
+          %span さんが作りました
+        .show-recipePage__foods
+          .show-recipePage__sectionTitle
+            食材・分量
+          - @recipe.foods.each do |food|
+            .show-recipePage__food
+              .show-recipePage__foodNme
+                = food.food_name
+              .show-recipePage__quantity
+                = food.quantity
+    .show-recipePage__sectionTitle
+      作り方
+    .show-recipePage__middle
+      - @recipe.makes.each_with_index do |make, i|
+        .show-recipePage__makeContent
+          %span
+            = i + 1
+          - if make.make_image.present?
+            = image_tag make.make_image.url
+          = simple_format make.make_text 
+    .show-recipePage__under
+      .show-recipePage__category
+        %span カテゴリ：
+        = @recipe.recipecategory.name
+      .show-recipePage__created
+        %span 投稿日：
+        = @recipe.created_at.strftime('%Y/%m/%d')
+    .show-recipePage__service
+      - if user_signed_in? && current_user.id == @recipe.user_id
+        = link_to '編集', edit_recipe_path(@recipe), class: "edit-btn"
+        = link_to '削除', recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
