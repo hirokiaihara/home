@@ -36,7 +36,7 @@
                 = m.text_field :material_name, class: "material-text", placeholder: "例)ペットボトル"
                 %i.far.fa-times-circle.material-removeBtn
                   削除
-              = m.check_box :_destroy, data: {index: m.index}, class: "hidden-materialDestroy "
+              = m.check_box :_destroy, data: {index: m.index}, class: "hidden-materialDestroy hidden"
           %i.far.fa-plus-square.material-addBtn
             追加
           .material-alert.hidden
@@ -57,11 +57,11 @@
                     -else
                       %i.fas.fa-camera
                         クリックして写真を追加
-                = w.file_field :work_image, class: "work-imageFile fileIndex#{w.index+1} "
+                = w.file_field :work_image, class: "work-imageFile fileIndex#{w.index+1} hidden"
                 = w.text_area :work_text, placeholder: "例)ペットボトルを綺麗に洗って乾かします", class: "work-text"
                 %i.far.fa-times-circle.work-removeBtn
                   削除
-              = w.check_box :_destroy, data: {index: w.index}, class: "hidden-workDestroy "
+              = w.check_box :_destroy, data: {index: w.index}, class: "hidden-workDestroy hidden"
           %i.far.fa-plus-square.work-addBtn
             追加
           .work-alert.hidden

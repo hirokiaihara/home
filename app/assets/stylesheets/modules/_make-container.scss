@@ -1,4 +1,4 @@
-.work-fileGroup {
+.make-fileGroup {
   @extend .pb-sm;
   span {
     @extend .font-md;
@@ -22,15 +22,18 @@
 }
 
 @media (min-width: 600px) {
-  .work-container {
+  .make-container {
     display: flex;
     flex-wrap: wrap;
   }
-  .work-fileGroup {
+  .make-fileGroup {
     text-align: left;
     margin-left: 30px;
     width: 40%;
-    textarea.work-text {
+    &__img {
+      
+    }
+    textarea.make-text {
       width: 100%;
       height: 120px;
     }
@@ -41,7 +44,7 @@
 }
 
 @media (min-width: 960px) {
-  .work-fileGroup {
+  .make-fileGroup {
     margin-left: 50px;
   }
 }

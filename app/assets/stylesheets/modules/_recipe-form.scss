@@ -1,0 +1,76 @@
+.recipe-form {
+  @extend .pb-md;
+  padding-top: 15px;
+  background-color: #fff;
+  &__title {
+    @extend .font-lg;
+    @extend .pb-md;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+  }
+  &__section {
+    @extend .pb-md;
+  }
+  &__sectionTitle {
+    @extend .font-md;
+    @extend .pb-sm;
+  }
+  &__input {
+    img {
+      width: 100%;
+      cursor: pointer;
+    }
+    input {
+      @extend input;
+      width: 100%;
+    }
+    input.food-text {
+      width: 40%;
+    }
+
+    textarea {
+      @extend input;
+      width: 100%;
+    }
+    select {
+      width: 100%;
+      padding: 3px 3px;
+      border: 1px solid $mainGlay;
+      background-color: $mainLightGlay;
+    }
+  }
+  &__submitBtn {
+    background-color: $mainSkyblue;
+    color: #fff;
+  }
+}
+
+@media (min-width: 600px) {
+  .recipe-form {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid $mainLightGlay;
+    border-radius: 5px;
+    text-align: center;
+    &__section {
+      img {
+        width: 60%;
+      }
+      input {
+        width: 80%;
+      }
+      textarea {
+        width: 80%;
+      }
+      select {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .recipe-form {
+    width: 70%;
+  }
+}

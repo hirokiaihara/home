@@ -1,0 +1,71 @@
+.main-container
+  .recipe-form
+    .recipe-form__title
+      %h2 レシピ 投稿ページ
+    = form_for @recipe do |f|
+      = render "devise/shared/error_messages", resource: @recipe
+      .recipe-form__section
+        .recipe-form__sectionTitle
+          タイトル(20字以内)
+        .recipe-form__input
+          = f.text_field :recipe_title, placeholder: "例)簡単ホットケーキ"
+      .recipe-form__section
+        .recipe-form__sectionTitle
+          トップイメージ
+        .recipe-form__input
+          = f.file_field :recipe_image, class: "recipeImg-file hidden"
+          %label(for="recipe_recipe_image")
+            -if @recipe.recipe_image.present?
+              = image_tag @recipe.recipe_image, class: "recipeImg-preview"
+            -else
+              = image_tag 'camera.png', class: "recipeImg-preview"
+      .recipe-form__section
+        .recipe-form__sectionTitle
+          紹介文(60字以内)
+        .recipe-form__input
+          = f.text_area :recipe_introduction, placeholder: "例)お子様でも簡単！！"
+      .recipe-form__section
+        .recipe-form__sectionTitle
+          食材・分量
+        .recipe-form__input
+          .food-container
+            = f.fields_for :foods do |f|
+              .food-textGroup{"data-index": "#{f.index}"}
+                = f.text_field :food_name, class: "food-text", placeholder: "例)ホットケーキミックス"
+                = f.text_field :quantity, class: "food-text", placeholder: "例)一袋"
+                %i.far.fa-times-circle.food-removeBtn
+                  削除
+          %i.far.fa-plus-square.food-addBtn
+            追加
+          .food-alert.hidden
+            %i.fas.fa-exclamation-circle
+              10項目までです
+      .recipe-form__section
+        .recipe-form__sectionTitle
+          作り方(60字以内)
+        .recipe-form__input
+          .make-container
+            = f.fields_for :makes do |m|
+              .make-fileGroup{"data-index": "#{m.index}"}
+                %label(for="recipe_makes_attributes_#{m.index}_make_image")
+                  .make-fileGroup__preview{class: "preIndex#{m.index+1}"}
+                  .make-fileGroup__img{class: "imgIndex#{m.index+1}"}
+                    %i.fas.fa-camera
+                      クリックして写真を追加
+                = m.file_field :make_image, class: "make-imageFile fileIndex#{m.index+1} hidden"
+                = m.text_area :make_text, placeholder: "例)分量は計っておきましょう", class: "make-text"
+                %i.far.fa-times-circle.make-removeBtn
+                  削除
+          %i.far.fa-plus-square.make-addBtn
+            追加
+          .make-alert.hidden
+            %i.fas.fa-exclamation-circle
+              10項目までです
+      .recipe-form__section
+        .recipe-form__sectionTitle
+          カテゴリ(選択)
+        .recipe-form__input
+          = f.collection_select :recipecategory_id, Recipecategory.all, :id, :name, {}, {}
+      .recipe-form__section
+        .recipe-form__input
+          = f.submit "投稿する", class: "recipe-form__submitBtn"
