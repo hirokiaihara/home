@@ -14,6 +14,8 @@
           = image_tag 'hero_03.png'
           .hero__title
             Let's Share! みんなで話そう
+        .swiper-slide
+          = image_tag 'top-logo.png'
   .main-contents
     - @plays.each do |play|
       = link_to play_path(play.id) do
