@@ -1,2 +1,44 @@
-= link_to '編集', edit_play_path(@play)
-= link_to '削除', play_path(@play), method: :delete, data: {confirm: "削除しますか？"}
+.main-container
+  .show-playPage
+    .show-playPage__title
+      = @play.play_title
+    .show-playPage__upper
+      .show-playPage__upperLeft
+        = image_tag @play.play_image.url
+      .show-playPage__upperRight
+        .show-playPage__introduction
+          .show-playPage__sectionTitle
+            コメント
+          = simple_format @play.play_introduction
+        .show-playPage__nickname
+          = link_to user_path(@play.user_id) do
+            = @play.user.nickname
+          %span さんが投稿しました
+        .show-playPage__materials
+          .show-playPage__sectionTitle
+            材料・道具
+          - @play.materials.each do |material|
+            .show-playPage__material
+              = material.material_name
+    .show-playPage__sectionTitle
+      遊び(作り)方
+    .show-playPage__middle
+      - @play.works.each_with_index do |work, i|
+        .show-playPage__workContent
+          %span
+            = i + 1
+          - if work.work_image.present?
+            = image_tag work.work_image.url
+          = simple_format work.work_text 
+    .show-playPage__under
+      .show-playPage__category
+        %span カテゴリ：
+        = @play.playcategory.name
+      .show-playPage__created
+        %span 投稿日：
+        = @play.created_at.strftime('%Y/%m/%d')
+    .show-playPage__service
+      - if user_signed_in? && current_user.id == @play.user_id
+        = link_to '編集', edit_play_path(@play), class: "edit-btn"
+        = link_to '削除', play_path(@play), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
+
