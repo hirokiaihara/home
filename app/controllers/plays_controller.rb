@@ -2,7 +2,7 @@ class PlaysController < ApplicationController
   before_action :set_play, except: [:index, :new, :create]
   
   def index
-    # @plays = Play.includes(:materials, :works)
+    @plays = Play.includes(:materials, :works).order('plays.created_at desc').page(params[:page]).per(12)
   end
 
   def new

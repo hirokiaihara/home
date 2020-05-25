@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   before_action :set_recipe, except: [:index, :new, :create]
 
   def index
+    @recipes = Recipe.includes(:foods, :makes).order('recipes.created_at desc').page(params[:page]).per(12)
   end
 
   def new
