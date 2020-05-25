@@ -22,6 +22,8 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @recipecomment = Recipecomment.new
+    @recipecomments = @recipe.recipecomments.includes(:user).order('recipecomments.created_at desc').page(params[:page]).per(5)
   end
 
   def edit

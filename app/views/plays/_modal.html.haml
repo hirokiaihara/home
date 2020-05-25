@@ -1,0 +1,16 @@
+.modal-mask.hidden
+  %section.modal.comment-modal
+    .comment-modal__title
+      %h2 感想をコメントしよう！(60字以内)
+    .comment-modal__body
+      .comment-modal__user
+        - if current_user.user_image.present?
+          = image_tag current_user.user_image
+        - else
+          = image_tag "avatar.png"
+      .comment-modal__form
+        = form_for [parent, comment] do |f|
+          = f.text_area :comment, placeholder: "例)子供がとても喜びました！"
+          = f.submit "送信", class: "comment-modal__submitBtn"
+      %i.far.fa-times-circle.modal-closeBtn
+        閉じる

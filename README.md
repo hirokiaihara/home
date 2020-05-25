@@ -12,8 +12,8 @@
 ### Association
 - has_many :plays
 - has_many :recipes
-- has_many :comments
-- has_many :reports
+- has_many :playcomments
+- has_many :recipecomments
 - has_many :posts
 - has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id", dependent: :destroy
 - has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
@@ -29,7 +29,7 @@
 ### Association
 - has_many :materials
 - has_many :works
-- has_many :comments
+- has_many :playcomments
 - belongs_to :user
 - has_many :notifications, dependent: :destroy
 
@@ -50,7 +50,7 @@
 ### Association
 - belongs_to :play
 
-## commentsテーブル
+## playcommentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |comment|text|null: false|
@@ -68,7 +68,7 @@
 ### Association
 - has_many :materials
 - has_many :works
-- has_many :reports
+- has_many :recipecomments
 - belongs_to :user
 - has_many :notifications, dependent: :destroy
 
@@ -90,10 +90,9 @@
 ### Association
 - belongs_to :recipe
 
-## reportsテーブル
+## recipecommentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|report_image|string|null: false|
 |comment|text|null: false|
 |recipe_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
