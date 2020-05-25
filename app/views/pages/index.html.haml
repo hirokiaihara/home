@@ -17,19 +17,27 @@
         .swiper-slide
           = image_tag 'top-logo.png'
   .main-contents
-    - @plays.each do |play|
-      = link_to play_path(play.id) do
-        = play.play_title
-    - @recipes.each do |recipe|
-      = link_to recipe_path(recipe.id) do
-        = recipe.recipe_title
-    .section-title.appear.up
-      .appear-item
-        タイトル
-    .appear.up
-      .appear-item
-        = image_tag 'hero_01.png'
-    .appear.up
-      .appear-item
-        = image_tag 'hero_01.png'
-  
+    .new-items.appear.up
+      .newItems-playContainer.appear-item
+        .newItems-playContainer__title
+          %span.border -----
+          遊び・新着投稿
+          %span.border -----
+        .newItems-playContainer__body
+          - @plays.each do |play|
+            = render partial: "play-item", locals: {play: play}
+        
+        .newItems-playContainer__more
+          = link_to plays_path do
+            もっと見る
+      .newItems-recipeContainer.appear-item
+        .newItems-recipeContainer__title
+          %span.border ----
+          レシピ・新着投稿
+          %span.border ----
+        .newItems-recipeContainer__body
+          - @recipes.each do |recipe|
+            = render partial: "recipe-item", locals: {recipe: recipe}
+        .newItems-recipeContainer__more
+          = link_to recipes_path do
+            もっと見る

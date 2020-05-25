@@ -1,0 +1,41 @@
+.recipe-item {
+  border-radius: 5px;
+  border: 1px solid $mainLightGlay;
+  padding: 5px;
+  @extend .mb-sm;
+  box-shadow: 0 2px 4px rgba(0,0,0,.18);
+  background-color: #fff;
+  &:hover {
+    border: 2px solid $mainSkyblue;
+  }
+  &__inner {
+    display: flex;
+  }
+  &__leftBox {
+    width: 30%;
+    img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+  }
+  &__rightBox {
+    width: 65%;
+    padding: 5px;
+  }
+  &__title {
+    @extend .font-md;
+    padding-bottom: 5px;
+    color: $mainOrange;
+  }
+  &__food,
+  &__user-name {
+    @extend .font-sm;
+  }
+}
+
+@media (min-width: 600px) {
+  .recipe-item {
+    flex-basis: 49%;
+  }
+}

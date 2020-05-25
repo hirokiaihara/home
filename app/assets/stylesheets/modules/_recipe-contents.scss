@@ -1,0 +1,50 @@
+.recipe-contents {
+  background-color: #fff;
+  border-radius: 5px;
+  @extend .pb-md;
+  padding-top: 15px;
+  &__header {
+    @extend .pb-sm;
+  }
+  &__title {
+    text-align: center;
+    @extend .pb-sm;
+    @extend .font-md;
+  }
+  &__description {
+    text-align: center;
+    @extend .font-sm;
+    padding: 5px;
+    border: 1px dotted $mainOrange;
+    border-radius: 5px;
+    @extend .mb-sm;
+  }
+  &__category {
+    display: flex;
+    align-items: center;
+  }
+  &__categoryLink {
+    margin-right: 15px;
+    a {
+      @extend .font-md;
+      color: $mainSkyblue;
+      border-bottom: 1px solid;
+    }
+  }
+  &__sectionTitle {
+    @extend .font-md;
+    @extend .pb-sm;
+    text-align: center;
+  }
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 600px) {
+  .recipe-contents {
+    padding: 20px;
+  }
+}
