@@ -12,7 +12,6 @@ class PlaysController < ApplicationController
   end
 
   def create
-    # binding.pry
     @play = Play.create(play_params)
     if @play.save
       flash[:notice] = "投稿しました"
@@ -24,6 +23,8 @@ class PlaysController < ApplicationController
   end
 
   def show
+    @playcomment = Playcomment.new
+    @playcomments = @play.playcomments.includes(:user).order('playcomments.created_at desc').page(params[:page]).per(5)
   end
 
   def edit

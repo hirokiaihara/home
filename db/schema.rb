@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200522102439) do
+ActiveRecord::Schema.define(version: 20200525020304) do
 
   create_table "foods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "food_name"
@@ -38,6 +38,16 @@ ActiveRecord::Schema.define(version: 20200522102439) do
     t.index ["play_id"], name: "index_materials_on_play_id", using: :btree
   end
 
+  create_table "playcomments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "comment",    limit: 65535, null: false
+    t.integer  "play_id"
+    t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["play_id"], name: "index_playcomments_on_play_id", using: :btree
+    t.index ["user_id"], name: "index_playcomments_on_user_id", using: :btree
+  end
+
   create_table "plays", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "play_title",                      null: false
     t.string   "play_image",                      null: false
@@ -47,6 +57,16 @@ ActiveRecord::Schema.define(version: 20200522102439) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.index ["user_id"], name: "index_plays_on_user_id", using: :btree
+  end
+
+  create_table "recipecomments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "comment",    limit: 65535, null: false
+    t.integer  "recipe_id"
+    t.integer  "user_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["recipe_id"], name: "index_recipecomments_on_recipe_id", using: :btree
+    t.index ["user_id"], name: "index_recipecomments_on_user_id", using: :btree
   end
 
   create_table "recipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -87,7 +107,11 @@ ActiveRecord::Schema.define(version: 20200522102439) do
   add_foreign_key "foods", "recipes"
   add_foreign_key "makes", "recipes"
   add_foreign_key "materials", "plays"
+  add_foreign_key "playcomments", "plays"
+  add_foreign_key "playcomments", "users"
   add_foreign_key "plays", "users"
+  add_foreign_key "recipecomments", "recipes"
+  add_foreign_key "recipecomments", "users"
   add_foreign_key "recipes", "users"
   add_foreign_key "works", "plays"
 end
