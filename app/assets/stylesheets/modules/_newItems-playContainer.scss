@@ -1,0 +1,33 @@
+.newItems-playContainer {
+  background-color: #fff;
+  border-radius: 5px;
+  @extend .pb-sm;
+  @extend .mb-md;
+  &__title {
+    @extend .font-lr;
+    @extend .pb-sm;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    span.border {
+      color: $mainOrange;
+    }
+  }
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__more {
+    text-align: center;
+    a {
+      border-bottom: 1px solid;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .newItems-playContainer {
+    padding: 20px;
+  }
+}

@@ -25,14 +25,11 @@
   .make-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
   .make-fileGroup {
     text-align: left;
-    margin-left: 30px;
-    width: 40%;
-    &__img {
-      
-    }
+    flex-basis: 40%;
     textarea.make-text {
       width: 100%;
       height: 120px;
@@ -40,11 +37,5 @@
     i {
       display: block;
     }
-  }
-}
-
-@media (min-width: 960px) {
-  .make-fileGroup {
-    margin-left: 50px;
   }
 }

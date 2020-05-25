@@ -1,0 +1,50 @@
+.play-item {
+  flex-basis: 48%;
+  border-radius: 5px;
+  border: 1px solid $mainLightGlay;
+  padding: 5px;
+  @extend .mb-sm;
+  box-shadow: 0 2px 4px rgba(0,0,0,.18);
+  background-color: #fff;
+  &:hover {
+    border: 2px solid $mainSkyblue;
+  }
+  &__image {
+    img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+  &__title {
+    @extend .font-md;
+    color: $mainOrange;
+  }
+  &__introduction,
+  &__user {
+    @extend .font-sm;
+  }
+}
+
+@media (min-width: 600px) {
+  .play-item {
+    flex-basis: 24%;
+    padding: 8px;
+    &__image {
+      img {
+        height: 150px;
+      }
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .play-item {
+    &__image {
+      img {
+        height: 140px;
+      }
+    }
+  }
+}

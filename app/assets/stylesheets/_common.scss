@@ -23,6 +23,9 @@ body {
 .mb-sm {
   margin-bottom: 16px !important;
 }
+.mb-md {
+  margin-bottom: 28px !important;
+}
 .mb-lg {
   margin-bottom: 80px !important;
 }
@@ -104,7 +107,9 @@ input {
   .font-lg {
     font-size: 36px;
   }
-  
+  .mb-md {
+    margin-bottom: 80px !important;
+  }
   .mb-lg {
     margin-bottom: 150px !important;
   }

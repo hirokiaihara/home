@@ -1,0 +1,11 @@
+.play-item
+  = link_to play_path(play.id) do
+    .play-item__image
+      = image_tag play.play_image.url
+    .play-item__title
+      = play.play_title
+    .play-item__introduction
+      = play.play_introduction
+    .play-item__user-name
+      %span by
+      = play.user.nickname

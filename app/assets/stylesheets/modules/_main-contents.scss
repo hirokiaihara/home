@@ -1,0 +1,15 @@
+.main-contents {
+  &__title {
+    @extend .font-lr;
+    @extend .pb-sm;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 600px) {
+  .main-contents {
+    &__title {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.recipe-item
+  = link_to recipe_path(recipe.id), class: "recipe-item__inner" do
+    .recipe-item__leftBox
+      = image_tag recipe.recipe_image.url
+    .recipe-item__rightBox
+      .recipe-item__title
+        = recipe.recipe_title
+      .recipe-item__food
+        %span 材料：
+        - recipe.foods.each do |food|
+          = food.food_name
+      .recipe-item__user-name
+        %span by
+        = recipe.user.nickname

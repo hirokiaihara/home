@@ -1,0 +1,25 @@
+.main-container
+  .play-contents
+    .play-contents__header
+      .play-contents__title
+        %h2 遊びを探そう！
+      .play-contents__description
+        %p 知らない遊びがたくさん
+        %p おもちゃは自分で作っちゃおう！
+        %p みんなのアイディアをご紹介♪
+      .play-contents__category
+        %span カテゴリー：
+        .play-contents__categoryLink
+          = link_to "遊び", "#"
+        .play-contents__categoryLink
+          = link_to "工作", "#"
+        .play-contents__categoryLink
+          = link_to "学習", "#"
+    .play-contents__newItems
+      .play-contents__sectionTitle
+        新着投稿
+      .play-contents__body
+        - @plays.each do |play|
+          = render partial: "pages/play-item", locals: {play: play}
+      = paginate(@plays)
+    

@@ -1,0 +1,25 @@
+.main-container
+  .recipe-contents
+    .recipe-contents__header
+      .recipe-contents__title
+        %h2 レシピを探そう！
+      .recipe-contents__description
+        %p 自分で作れば美味しさ倍増！
+        %p 今日のシェフは君だよ
+        %p さあ、家族を喜ばせちゃおう♪
+      .recipe-contents__category
+        %span カテゴリー：
+        .recipe-contents__categoryLink
+          = link_to "お菓子", "#"
+        .recipe-contents__categoryLink
+          = link_to "パン", "#"
+        .recipe-contents__categoryLink
+          = link_to "料理", "#"
+    .recipe-contents__newItems
+      .recipe-contents__sectionTitle
+        新着投稿
+      .recipe-contents__body
+        - @recipes.each do |recipe|
+          = render partial: "pages/recipe-item", locals: {recipe: recipe}
+      = paginate(@recipes)
+    
