@@ -1,0 +1,32 @@
+.show-comment
+  %h2 < コメント一覧 >
+  -if comments.present?
+    %ul.show-comment__commentList
+      - comments.each do |comment|
+        %li.show-comment__comment
+          .show-comment__commentedUser
+            - if comment.user.user_image.present?
+              = image_tag comment.user.user_image
+            - else
+              = image_tag "avatar.png"
+          .show-comment__commentText
+            = simple_format comment.comment
+            %span
+              by
+              = link_to user_path(comment.user_id) do
+                = comment.user.nickname
+            %span 
+              = comment.created_at.strftime('%Y/%m/%d')
+        - if comments == @playcomments
+          - if user_signed_in? && current_user.id == comment.user_id
+            = link_to play_playcomment_path(comment.play_id, comment.id), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn" do
+              %i.far.fa-times-circle
+                削除
+        - elsif comments == @recipecomments
+          - if user_signed_in? && current_user.id == comment.user_id
+            = link_to recipe_recipecomment_path(comment.recipe_id, comment.id), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn" do
+              %i.far.fa-times-circle
+                削除
+    = paginate(comments)
+  -else
+    %p コメントはまだありません

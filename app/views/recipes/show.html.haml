@@ -23,16 +23,17 @@
                 = food.food_name
               .show-recipePage__quantity
                 = food.quantity
-    .show-recipePage__sectionTitle
-      作り方
     .show-recipePage__middle
-      - @recipe.makes.each_with_index do |make, i|
-        .show-recipePage__makeContent
-          %span
-            = i + 1
-          - if make.make_image.present?
-            = image_tag make.make_image.url
-          = simple_format make.make_text 
+      .show-recipePage__sectionTitle
+        作り方
+      .show-recipePage__makeContainer
+        - @recipe.makes.each_with_index do |make, i|
+          .show-recipePage__makeContent
+            %span
+              = i + 1
+            - if make.make_image.present?
+              = image_tag make.make_image.url
+            = simple_format make.make_text 
     .show-recipePage__under
       .show-recipePage__category
         %span カテゴリ：
@@ -40,7 +41,13 @@
       .show-recipePage__created
         %span 投稿日：
         = @recipe.created_at.strftime('%Y/%m/%d')
-    .show-recipePage__service
-      - if user_signed_in? && current_user.id == @recipe.user_id
+    - if user_signed_in?
+      .show-recipePage__commentBtn 
+        %button.modal-openBtn
+          コメントする
+    - if user_signed_in? && current_user.id == @recipe.user_id
+      .show-recipePage__service
         = link_to '編集', edit_recipe_path(@recipe), class: "edit-btn"
         = link_to '削除', recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
+    = render partial: "plays/show-comment", locals: {comments: @recipecomments}
+    = render partial: "plays/modal", locals: {parent: @recipe, comment: @recipecomment}

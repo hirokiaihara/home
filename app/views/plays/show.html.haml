@@ -20,16 +20,17 @@
           - @play.materials.each do |material|
             .show-playPage__material
               = material.material_name
-    .show-playPage__sectionTitle
-      遊び(作り)方
     .show-playPage__middle
-      - @play.works.each_with_index do |work, i|
-        .show-playPage__workContent
-          %span
-            = i + 1
-          - if work.work_image.present?
-            = image_tag work.work_image.url
-          = simple_format work.work_text 
+      .show-playPage__sectionTitle
+        遊び(作り)方
+      .show-playPage__workContainer
+        - @play.works.each_with_index do |work, i|
+          .show-playPage__workContent
+            %span
+              = i + 1
+            - if work.work_image.present?
+              = image_tag work.work_image.url
+            = simple_format work.work_text 
     .show-playPage__under
       .show-playPage__category
         %span カテゴリ：
@@ -37,8 +38,15 @@
       .show-playPage__created
         %span 投稿日：
         = @play.created_at.strftime('%Y/%m/%d')
-    .show-playPage__service
-      - if user_signed_in? && current_user.id == @play.user_id
+    - if user_signed_in?
+      .show-playPage__commentBtn 
+        %button.modal-openBtn
+          コメントする
+    - if user_signed_in? && current_user.id == @play.user_id
+      .show-playPage__service
         = link_to '編集', edit_play_path(@play), class: "edit-btn"
         = link_to '削除', play_path(@play), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
+    = render partial: "show-comment", locals: {comments: @playcomments}
+    = render partial: "modal", locals: {parent: @play, comment: @playcomment}
+    
 

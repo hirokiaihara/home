@@ -55,11 +55,13 @@
     @extend .pb-sm;
   }
   &__middle {
-    display: flex;
-    flex-direction: column;
     @extend .pb-sm;
     @extend .mb-sm;
     border-bottom: 1px dotted;
+  }
+  &__makeContainer {
+    display: flex;
+    flex-direction: column;
   }
   &__makeContent {
     @extend .pb-sm;
@@ -83,9 +85,20 @@
     @extend .pb-sm;
     @extend .font-md;
   }
+  &__commentBtn {
+    text-align: center;
+    @extend .pb-sm;
+    button {
+      @extend .btn;
+      background-color: $mainOrange;
+      width: 95%;
+      @extend .font-md;
+    }
+  }
   &__service {
     display: flex;
     justify-content: space-around;
+    @extend .pb-sm;
     .edit-btn {
       @extend .btn;
       text-align: center;
@@ -103,7 +116,6 @@
       letter-spacing: 0.2em;
     }
   }
-  
 }
 
 @media (min-width: 600px) {
@@ -123,7 +135,7 @@
     &__upperRight {
       flex-basis: 50%;
     }
-    &__middle {
+    &__makeContainer {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
