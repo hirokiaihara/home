@@ -13,10 +13,8 @@ class Play < ApplicationRecord
 
   mount_uploader :play_image, ImageUploader
   
-
   def self.search(search)
-    # return Play.all unless search
-    # Play.joins(:materials).where('play_title LIKE(?) OR materials.material_name LIKE(?)', "%#{search}%", "%#{search}%")
-    Playcategory.where('name LIKE(?)', "%#{search}%")
+    return Play.all unless search
+    Play.joins(:materials).where('play_title LIKE(?) OR category LIKE(?) OR materials.material_name LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
   end
 end
