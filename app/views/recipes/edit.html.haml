@@ -72,7 +72,7 @@
         .recipe-form__sectionTitle
           カテゴリ(選択)
         .recipe-form__input
-          = f.collection_select :recipecategory_id, Recipecategory.all, :id, :name, {}, {}
+          =f.select :category, [["お菓子"], ["パン"],["料理"]], {prompt: "選択してください"}
       .recipe-form__section
         .recipe-form__input
           = f.submit "更新する", class: "recipe-form__submitBtn"

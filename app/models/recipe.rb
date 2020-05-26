@@ -1,6 +1,5 @@
 class Recipe < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  validates :recipe_title, :recipe_image, :recipe_introduction, :recipecategory_id, presence: true
+  validates :recipe_title, :recipe_image, :recipe_introduction, :category, presence: true
   validates :recipe_title, length: {maximum: 20}
   validates :recipe_introduction, length: {maximum: 60}
 
@@ -14,5 +13,4 @@ class Recipe < ApplicationRecord
 
   mount_uploader :recipe_image, ImageUploader
 
-  belongs_to_active_hash :recipecategory
 end

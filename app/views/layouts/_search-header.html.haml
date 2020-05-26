@@ -1,4 +1,8 @@
 .search-header
-  %input
-  %button
-    %i.fas.fa-search
+  = form_tag(search_plays_path, method: "get") do
+    = text_field_tag :keyword, '', class: 'search-form', placeholder: "例) ペットボトル"
+    %label(for="search-btn")
+      %button
+        %i.fas.fa-search
+      = submit_tag "", class: "hidden", id: "search-btn"
+  
