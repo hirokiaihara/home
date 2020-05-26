@@ -22,6 +22,12 @@
       right: 1px;
       cursor: pointer;
     }
+    a {
+      display: inline-block;
+      padding-top: 3px;
+      color: $mainSkyblue;
+      border-bottom: 1px solid;
+    }
   }
 
   &__hiddenMenu {

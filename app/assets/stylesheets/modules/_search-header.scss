@@ -14,6 +14,12 @@
     top: 3px;
     right: 0;
   }
+  a {
+    display: inline-block;
+    padding-top: 3px;
+    color: $mainSkyblue;
+    border-bottom: 1px solid;
+  }
 }
 
 @media (min-width: 600px) {

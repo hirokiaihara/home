@@ -4,9 +4,13 @@
       .logo
         = image_tag 'logo.png'
   .main-header__search
-    %input
-    %button
-      %i.fas.fa-search
+    = form_tag(search_plays_path, method: "get") do
+      = text_field_tag :keyword, '', class: 'search-form', placeholder: "面白いを探してみよう！"
+      %label(for="search-btn")
+        %button
+          %i.fas.fa-search
+        = submit_tag "", class: "hidden", id: "search-btn"
+    = link_to "レシピを探す", recipes_path
   - if user_signed_in?
     .main-header__icon
       = link_to "#" do
