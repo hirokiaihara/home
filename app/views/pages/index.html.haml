@@ -28,8 +28,7 @@
             = render partial: "play-item", locals: {play: play}
         
         .newItems-playContainer__more
-          = link_to plays_path do
-            もっと見る
+          = link_to "もっと見る", plays_path
       .newItems-recipeContainer.appear-item
         .newItems-recipeContainer__title
           %span.border ----
@@ -39,5 +38,4 @@
           - @recipes.each do |recipe|
             = render partial: "recipe-item", locals: {recipe: recipe}
         .newItems-recipeContainer__more
-          = link_to recipes_path do
-            もっと見る
+          = link_to "もっと見る", recipes_path

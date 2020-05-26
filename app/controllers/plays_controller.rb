@@ -45,6 +45,7 @@ class PlaysController < ApplicationController
   end
 
   def search
+    @title = params[:keyword]
     @plays = Play.includes(:materials, :works).search(params[:keyword]).order('plays.created_at desc').page(params[:page]).per(12)
   end
   

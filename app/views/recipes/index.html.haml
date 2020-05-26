@@ -3,6 +3,13 @@
     .recipe-contents__header
       .recipe-contents__title
         %h2 レシピを探そう！
+      .recipe-contents__search
+        = form_tag(search_recipes_path, method: "get") do
+          = text_field_tag :keyword, '', class: 'search-form', placeholder: "美味しいを探してみよう！"
+          %label(for="search-btn")
+            %button
+              %i.fas.fa-search
+            = submit_tag "", class: "hidden", id: "search-btn"
       .recipe-contents__description
         %p 自分で作れば美味しさ倍増！
         %p 今日のシェフは君だよ

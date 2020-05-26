@@ -1,0 +1,38 @@
+.main-container
+  .recipe-contents
+    .recipe-contents__header
+      .recipe-contents__search
+        = form_tag(search_recipes_path, method: "get") do
+          = text_field_tag :keyword, '', class: 'search-form', placeholder: "美味しいを探してみよう！"
+          %label(for="search-btn")
+            %button
+              %i.fas.fa-search
+            = submit_tag "", class: "hidden", id: "search-btn"
+      .recipe-contents__title
+        %h2
+          = @title
+          %span の検索結果
+          %span
+            = @recipes.count
+            件
+      .recipe-contents__description
+        %p 美味しそうなレシピが見つかったかな？
+        %p カテゴリーからも探してみよう！
+      %ul.recipe-contents__category
+        %span カテゴリー：
+        %li.recipe-contents__categoryLink
+          = link_to "お菓子", search_recipes_path(keyword: "お菓子")
+        %li.recipe-contents__categoryLink
+          = link_to "パン", search_recipes_path(keyword: "パン")
+        %li.recipe-contents__categoryLink
+          = link_to "料理", search_recipes_path(keyword: "料理")
+    .recipe-contents__items
+      .recipe-contents__sectionTitle
+        検索結果一覧
+      .recipe-contents__body
+        -if @recipes.present?
+          - @recipes.each do |recipe|
+            = render partial: "pages/recipe-item", locals: {recipe: recipe}
+          = paginate(@recipes)
+        - else
+          %p 一致する結果はありませんでした

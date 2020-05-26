@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   end
   resources :recipes do 
     resources :recipecomments, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
 end

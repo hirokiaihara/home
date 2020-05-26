@@ -13,4 +13,8 @@ class Recipe < ApplicationRecord
 
   mount_uploader :recipe_image, ImageUploader
 
+  def self.search(search)
+    return Recipe.all unless search
+    Recipe.joins(:foods).where('recipe_title LIKE(?) OR category LIKE(?) OR foods.food_name LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
+  end
 end

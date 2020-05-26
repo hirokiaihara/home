@@ -1,5 +1,31 @@
--if @plays.present?
-  - @plays.each do |play|
-    = play.play_title
-- else
-  %p 一致する結果はありませんでした
+.main-container
+  .play-contents
+    .play-contents__header
+      .play-contents__title
+        %h2
+          = @title
+          %span の検索結果
+          %span
+            = @plays.count
+            件
+      .play-contents__description
+        %p 面白そうな物が見つかったかな？
+        %p カテゴリーからも探してみよう！
+      %ul.play-contents__category
+        %span カテゴリー：
+        %li.play-contents__categoryLink
+          = link_to "遊び", search_plays_path(keyword: "遊び")
+        %li.play-contents__categoryLink
+          = link_to "工作", search_plays_path(keyword: "工作")
+        %li.play-contents__categoryLink
+          = link_to "学習", search_plays_path(keyword: "学習")
+    .play-contents__items
+      .play-contents__sectionTitle
+        検索結果一覧
+      .play-contents__body
+        -if @plays.present?
+          - @plays.each do |play|
+            = render partial: "pages/play-item", locals: {play: play}
+          = paginate(@plays)
+        - else
+          %p 一致する結果はありませんでした

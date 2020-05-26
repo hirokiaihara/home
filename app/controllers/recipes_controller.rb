@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-  before_action :set_recipe, except: [:index, :new, :create]
+  before_action :set_recipe, except: [:index, :new, :create, :search]
 
   def index
     @recipes = Recipe.includes(:foods, :makes).order('recipes.created_at desc').page(params[:page]).per(12)
@@ -42,6 +42,11 @@ class RecipesController < ApplicationController
   def destroy
     @recipe.destroy
     redirect_to root_path
+  end
+
+  def search
+    @title = params[:keyword]
+    @recipes = Recipe.includes(:foods, :makes).search(params[:keyword]).order('recipes.created_at desc').page(params[:page]).per(12)
   end
 
   private
