@@ -1,0 +1,56 @@
+.ranked-play 
+  = link_to play_path(ranked_plays[0].id) do
+    .ranked-play__firstItem
+      .ranked-play__firstImage
+        %i.fas.fa-crown.gold
+        %span 1
+        = image_tag ranked_plays[0].play_image.url
+      .ranked-play__firstDescription
+        .ranked-play__firstLike
+          %i.fas.fa-heart
+          = ranked_plays[0].likes.length
+        .ranked-play__firstTitle
+          = ranked_plays[0].play_title
+        .ranked-play__firstIntroduction
+          = ranked_plays[0].play_introduction
+        .ranked-play__firstMaterials
+          - ranked_plays[0].materials.each do |material|
+            %span 材料：
+            = material.material_name
+        .ranked-play__firstUser
+          %span by
+          = ranked_plays[0].user.nickname
+  .ranked-play__flexArea
+    .ranked-play__item
+      = link_to play_path(ranked_plays[1].id) do
+        .ranked-play__image
+          %i.fas.fa-crown.silver
+          %span 2
+          = image_tag ranked_plays[1].play_image.url
+        .ranked-play__like
+          %i.fas.fa-heart
+          = ranked_plays[1].likes.length
+        .ranked-play__title
+          = ranked_plays[1].play_title
+        .ranked-play__introduction
+          = ranked_plays[1].play_introduction
+        .ranked-play__user
+          %span by
+          = ranked_plays[1].user.nickname
+    .ranked-play__item
+      = link_to play_path(ranked_plays[2].id) do
+        .ranked-play__image
+          %i.fas.fa-crown.bronze
+          %span 3
+          = image_tag ranked_plays[2].play_image.url
+        .ranked-play__like
+          %i.fas.fa-heart
+          = ranked_plays[2].likes.length
+        .ranked-play__title
+          = ranked_plays[2].play_title
+        .ranked-play__introduction
+          = ranked_plays[2].play_introduction
+        .ranked-play__user
+          %span by
+          = ranked_plays[2].user.nickname
+    

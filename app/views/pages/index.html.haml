@@ -17,6 +17,27 @@
         .swiper-slide
           = image_tag 'top-logo.png'
   .main-contents
+    .ranked-items.appear.up
+      .rankedItems-playContainer.appear-item
+        .rankedItems-playContainer__title
+          %span.border ---
+          人気の遊び・工作
+          %span.border ---
+        .rankedItems-playContainer__body
+          - if @ranked_plays[0].present? && @ranked_plays[1].present? && @ranked_plays[2].present?
+            = render partial: "ranked-play", locals: {ranked_plays: @ranked_plays}
+          - else
+            %p ランキングはまだありません
+      .rankedItems-recipeContainer.appear-item
+        .rankedItems-recipeContainer__title
+          %span.border ---
+          人気のレシピ
+          %span.border ---
+        .rankedItems-recipeContainer__body
+          - if @ranked_recipes[0].present? && @ranked_recipes[1].present? && @ranked_recipes[2].present?
+            = render partial: "ranked-recipe", locals: {ranked_recipes: @ranked_recipes}
+          - else
+            %p ランキングはまだありません
     .new-items.appear.up
       .newItems-playContainer.appear-item
         .newItems-playContainer__title
@@ -26,7 +47,6 @@
         .newItems-playContainer__body
           - @plays.each do |play|
             = render partial: "play-item", locals: {play: play}
-        
         .newItems-playContainer__more
           = link_to "もっと見る", plays_path
       .newItems-recipeContainer.appear-item

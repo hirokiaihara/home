@@ -1,0 +1,55 @@
+.ranked-recipe
+  = link_to recipe_path(ranked_recipes[0].id) do
+    .ranked-recipe__firstItem
+      .ranked-recipe__firstImage
+        %i.fas.fa-crown.gold
+        %span 1
+        = image_tag ranked_recipes[0].recipe_image.url
+      .ranked-recipe__firstDescription
+        .ranked-recipe__firstLike
+          %i.fas.fa-folder
+          = ranked_recipes[0].myrecipes.length
+        .ranked-recipe__firstTitle
+          = ranked_recipes[0].recipe_title
+        .ranked-recipe__firstIntroduction
+          = ranked_recipes[0].recipe_introduction
+        .ranked-recipe__firstFoods
+          - ranked_recipes[0].foods.each do |food|
+            %span 材料：
+            = food.food_name
+        .ranked-recipe__firstUser
+          %span by
+          = ranked_recipes[0].user.nickname
+  .ranked-recipe__flexArea
+    = link_to recipe_path(ranked_recipes[1].id) do
+      .ranked-recipe__item
+        .ranked-recipe__image
+          %i.fas.fa-crown.silver
+          %span 2
+          = image_tag ranked_recipes[1].recipe_image.url
+        .ranked-recipe__like
+          %i.fas.fa-folder
+          = ranked_recipes[1].myrecipes.length
+        .ranked-recipe__title
+          = ranked_recipes[1].recipe_title
+        .ranked-recipe__introduction
+          = ranked_recipes[1].recipe_introduction
+        .ranked-recipe__user
+          %span by
+          = ranked_recipes[1].user.nickname
+    = link_to recipe_path(ranked_recipes[2].id) do
+      .ranked-recipe__item
+        .ranked-recipe__image
+          %i.fas.fa-crown.bronze
+          %span 3
+          = image_tag ranked_recipes[2].recipe_image.url
+        .ranked-recipe__like
+          %i.fas.fa-folder
+          = ranked_recipes[2].myrecipes.length
+        .ranked-recipe__title
+          = ranked_recipes[2].recipe_title
+        .ranked-recipe__introduction
+          = ranked_recipes[2].recipe_introduction
+        .ranked-recipe__user
+          %span by
+          = ranked_recipes[2].user.nickname
