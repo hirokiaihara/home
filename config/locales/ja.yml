@@ -14,7 +14,7 @@ ja:
         work_text: 遊び(作り方)
       recipe:
         recipe_title: タイトル
-        recipe_image: トップページ
+        recipe_image: トップイメージ
         recipe_introduction: 紹介文
         category: カテゴリー
       recipe/makes:
