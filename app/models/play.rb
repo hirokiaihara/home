@@ -1,6 +1,5 @@
 class Play < ApplicationRecord
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  validates :play_title, :play_image, :play_introduction, :playcategory_id, presence: true
+  validates :play_title, :play_image, :play_introduction, :category, presence: true
   validates :play_title, length: {maximum: 20}
   validates :play_introduction, length: {maximum: 60}
 
@@ -14,5 +13,10 @@ class Play < ApplicationRecord
 
   mount_uploader :play_image, ImageUploader
   
-  belongs_to_active_hash :playcategory
+
+  def self.search(search)
+    # return Play.all unless search
+    # Play.joins(:materials).where('play_title LIKE(?) OR materials.material_name LIKE(?)', "%#{search}%", "%#{search}%")
+    Playcategory.where('name LIKE(?)', "%#{search}%")
+  end
 end

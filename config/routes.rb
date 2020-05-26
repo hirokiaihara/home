@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :plays do
     resources :playcomments, only: [:create, :destroy]
+    collection do
+      get 'search'
+    end
   end
   resources :recipes do 
     resources :recipecomments, only: [:create, :destroy]

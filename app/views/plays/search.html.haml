@@ -1,0 +1,5 @@
+-if @plays.present?
+  - @plays.each do |play|
+    = play.play_title
+- else
+  %p 一致する結果はありませんでした

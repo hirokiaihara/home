@@ -1,4 +1,6 @@
 .main-container
+  //JavaScriptにurlのidを渡すための記述
+  %input{name: "recipe_id", type: "hidden", value: @recipe.id, class: 'recipe_id' }
   .recipe-form
     .recipe-form__title
       %h2 レシピ 投稿ページ
@@ -65,7 +67,7 @@
         .recipe-form__sectionTitle
           カテゴリ(選択)
         .recipe-form__input
-          = f.collection_select :recipecategory_id, Recipecategory.all, :id, :name, {}, {}
+          =f.select :category, [["お菓子"], ["パン"],["料理"]], {prompt: "選択してください"}
       .recipe-form__section
         .recipe-form__input
           = f.submit "投稿する", class: "recipe-form__submitBtn"

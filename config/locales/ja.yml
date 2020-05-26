@@ -9,12 +9,14 @@ ja:
         play_title: タイトル
         play_image: トップイメージ
         play_introduction: 紹介文
+        category: カテゴリー
       play/works:
         work_text: 遊び(作り方)
       recipe:
         recipe_title: タイトル
         recipe_image: トップページ
         recipe_introduction: 紹介文
+        category: カテゴリー
       recipe/makes:
         make_text: 作り方
     errors:

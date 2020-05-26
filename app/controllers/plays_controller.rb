@@ -1,5 +1,5 @@
 class PlaysController < ApplicationController
-  before_action :set_play, except: [:index, :new, :create]
+  before_action :set_play, except: [:index, :new, :create, :search]
   
   def index
     @plays = Play.includes(:materials, :works).order('plays.created_at desc').page(params[:page]).per(12)
@@ -43,11 +43,15 @@ class PlaysController < ApplicationController
     @play.destroy
     redirect_to root_path
   end
+
+  def search
+    @plays = Play.includes(:materials, :works).search(params[:keyword]).order('plays.created_at desc').page(params[:page]).per(12)
+  end
   
   private
 
   def play_params
-    params.require(:play).permit(:play_title, :play_image, :play_introduction, :playcategory_id, materials_attributes: [:material_name, :_destroy, :id], works_attributes: [:work_image, :work_text, :_destroy, :id]).merge(user_id: current_user.id)
+    params.require(:play).permit(:play_title, :play_image, :play_introduction, :category, materials_attributes: [:material_name, :_destroy, :id], works_attributes: [:work_image, :work_text, :_destroy, :id]).merge(user_id: current_user.id)
   end
 
   def set_play
