@@ -7,6 +7,7 @@
     background-image: url('back.png');
     background-size: cover;
     position: relative;
+    text-align: center;
   }
   &__image {
     position: absolute;
@@ -30,16 +31,19 @@
     padding: 0 15px;
     a {
       display: inline-block;
-      @extend .pb-sm;
+      padding-bottom: 6px;
     }
   }
   &__nickname {
     padding: 10px 0;
     @extend .font-md;
+    span {
+      @extend .font-sm;
+    }
   }
   &__introduction {
     @extend .font-sm;
-    @extend .pb-sm;
+    padding-bottom: 6px;
   }
 }
 
@@ -49,7 +53,6 @@
     margin: 0 auto;
     border: 1px solid $mainLightGlay;
     border-radius: 5px;
-    text-align: center;
   }
 }
 

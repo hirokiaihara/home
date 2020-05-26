@@ -29,6 +29,15 @@
       border-bottom: 1px solid;
     }
   }
+  
+  &__icon {
+    &.centering {
+      text-align: center;
+      p {
+        font-size: 13px;
+      }
+    }
+  }
 
   &__hiddenMenu {
     display: none;
@@ -38,6 +47,13 @@
       width: 50px;
       border-radius: 50%;
       object-fit: cover;
+    }
+    
+    &.centering {
+      text-align: center;
+      p {
+        font-size: 13px;
+      }
     }
   }
 

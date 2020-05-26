@@ -12,12 +12,14 @@
         = submit_tag "", class: "hidden", id: "search-btn"
     = link_to "レシピを探す", recipes_path
   - if user_signed_in?
-    .main-header__icon
-      = link_to "#" do
+    .main-header__icon.centering
+      = link_to "/users/#{current_user.id}/myrecipes" do
         %i.fas.fa-folder.fa-2x
-    .main-header__icon
+      %p MyFolder
+    .main-header__icon.centering
       = link_to "#" do
         %i.fas.fa-bell.fa-2x
+      %p Notice
     .main-header__hiddenMenu
       = link_to new_play_path, class: "main-header__link" do
         %i.fas.fa-edit
@@ -26,12 +28,13 @@
       = link_to new_recipe_path, class: "main-header__link" do
         %i.fas.fa-edit
           レシピ投稿
-    .main-header__hiddenMenu
+    .main-header__hiddenMenu.centering
       = link_to user_path(current_user.id) do
         - if current_user.user_image.present?
           = image_tag current_user.user_image
         - else
           = image_tag 'avatar.png'
+      %p MyPage
   - else
     .main-header__hiddenMenu
       = link_to new_user_registration_path, class: "main-header__link" do
