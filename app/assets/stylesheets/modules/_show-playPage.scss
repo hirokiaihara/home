@@ -3,9 +3,21 @@
   background-color: #fff;
   &__title {
     @extend .font-lr;
-    @extend .pb-md;
+    @extend .pb-sm;
     font-weight: bold;
     letter-spacing: 0.1em;
+  }
+  &__like {
+    @extend .pb-sm;
+    span {
+      @extend .font-md;
+    }
+    .create {
+      color: $mainGlay;
+    }
+    .destroy {
+      color: $mainRed;
+    }
   }
   &__upper {
     display: flex;

@@ -2,6 +2,9 @@
   .show-recipePage
     .show-recipePage__title
       = @recipe.recipe_title
+    .show-recipePage__myrecipe
+      %div{id: "myrecipe-#{@recipe.id}"}
+        = render partial: "myrecipe", locals: {recipe: @recipe}
     .show-recipePage__upper
       .show-recipePage__upperLeft
         = image_tag @recipe.recipe_image.url

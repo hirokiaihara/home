@@ -21,9 +21,9 @@
               %i.fas.fa-sign-out-alt
                 ログアウト
     .tab-section
-      .tab-section__tab.active
-        =link_to "トップ", user_path(current_user.id)
       .tab-section__tab
+        =link_to "トップ", user_path(current_user.id)
+      .tab-section__tab.active
         =link_to "遊び", "/users/#{@user.id}/show_plays"
       .tab-section__tab
         = link_to "レシピ", "/users/#{@user.id}/show_recipes"
@@ -39,16 +39,4 @@
             - @plays.each do |play|
               = render partial: "pages/play-item", locals: {play: play}
           .play-contents__more
-            = link_to "もっと見る", "/users/#{@user.id}/show_plays"
-      .recipe-contents
-        .recipe-contents__items
-          .recipe-contents__sectionTitle
-            %span.border -----
-            %i.fas.fa-utensils
-              レシピ・投稿
-            %span.border -----
-          .recipe-contents__body
-            - @recipes.each do |recipe|
-              = render partial: "pages/recipe-item", locals: {recipe: recipe}
-          .recipe-contents__more
-            = link_to "もっと見る", "/users/#{@user.id}/show_recipes"
+            = paginate(@plays)

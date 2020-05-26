@@ -126,7 +126,7 @@
 - belongs_to :user
 - belongs_to :group
 
-## myfavoritesテーブル
+## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|

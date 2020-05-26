@@ -7,6 +7,18 @@
     font-weight: bold;
     letter-spacing: 0.1em;
   }
+  &__myrecipe {
+    @extend .pb-sm;
+    span {
+      @extend .font-md;
+    }
+    .create {
+      color: $mainGlay;
+    }
+    .destroy {
+      color: $mainRed;
+    }
+  }
   &__upper {
     display: flex;
     flex-direction: column;

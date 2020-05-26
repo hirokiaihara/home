@@ -7,6 +7,7 @@ class Play < ApplicationRecord
   has_many :materials, dependent: :destroy
   has_many :works,     dependent: :destroy
   has_many :playcomments,  dependent: :destroy
+  has_many :likes,     dependent: :destroy
 
   accepts_nested_attributes_for :materials, allow_destroy: true
   accepts_nested_attributes_for :works, allow_destroy: true

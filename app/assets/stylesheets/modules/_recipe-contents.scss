@@ -55,11 +55,20 @@
     @extend .font-md;
     @extend .pb-sm;
     text-align: center;
+    span.border {
+      color: $mainOrange;
+    }
   }
   &__body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+  &__more {
+    text-align: center;
+    a {
+      border-bottom: 1px solid;
+    }
   }
 }
 
