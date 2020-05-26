@@ -1,0 +1,133 @@
+.ranked-recipe {
+  &__firstItem {
+    display: flex;
+    border-radius: 5px;
+    border: 1px solid $mainLightGlay;
+    padding: 5px;
+    @extend .mb-sm;
+    box-shadow: 0 2px 4px rgba(0,0,0,.18);
+    background-color: #fff;
+    &:hover {
+      border: 2px solid $mainSkyblue;
+    }
+  }
+  &__firstImage {
+    width: 40%;
+    position: relative;
+    i {
+      position: absolute;
+      top: -3px;
+      left: -5px;
+      font-size: 40px;
+      background-color: #ffffff;
+      padding: 4px;
+      border-radius: 5px;
+      &.gold {color: gold}
+      &.silver {color: silver}
+      &.bronze {color: goldenrod}
+    }
+    span {
+      position: absolute;
+      top: 9px;
+      left: 19px;
+      color: #ffffff;
+      font-size: 17px;
+    }
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+  }
+  &__firstDescription {
+    width: 60%;
+    padding: 8px;
+  }
+  &__firstLike {
+    i {
+      @extend .font-sm;
+      color: $mainRed;
+      padding-bottom: 5px;
+    }
+  }
+  &__firstTitle {
+    @extend .font-md;
+    padding-bottom: 5px;
+  }
+  &__firstIntroduction {
+    @extend .font-sm;
+    padding-bottom: 3px;
+  }
+  &__firstFoods {
+    @extend .font-sm;
+    padding-bottom: 3px;
+  }
+  &__firstUser {
+    @extend .font-sm;
+  }
+
+  &__flexArea {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    border-radius: 5px;
+    border: 1px solid $mainLightGlay;
+    padding: 8px;
+    @extend .mb-sm;
+    box-shadow: 0 2px 4px rgba(0,0,0,.18);
+    background-color: #fff;
+    flex-basis: 48%;
+    &:hover {
+      border: 2px solid $mainSkyblue;
+    }
+  }
+  &__image {
+    position: relative;
+    i {
+      position: absolute;
+      top: -7px;
+      left: -7px;
+      font-size: 33px;
+      background-color: #ffffff;
+      padding: 3px;
+      border-radius: 5px;
+      &.gold {color: gold}
+      &.silver {color: silver}
+      &.bronze {color: goldenrod}
+    }
+    span {
+      position: absolute;
+      top: 4px;
+      left: 13px;
+      color: #ffffff;
+      font-size: 13px;
+    }
+    img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+  }
+  &__like {
+    i {
+      @extend .font-sm;
+      color: $mainRed;
+      padding-bottom: 5px;
+    }
+  }
+  &__title {
+    @extend .font-md;
+    padding-bottom: 5px;
+  }
+  &__introduction {
+    @extend .font-sm;
+    padding-bottom: 3px;
+  }
+  &__user {
+    @extend .font-sm;
+  }
+}

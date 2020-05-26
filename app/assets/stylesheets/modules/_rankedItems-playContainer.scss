@@ -1,0 +1,28 @@
+.rankedItems-playContainer {
+  background-color: #fff;
+  border-radius: 5px;
+  @extend .pb-sm;
+  @extend .mb-md;
+  &__title {
+    @extend .font-lr;
+    @extend .pb-sm;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    span.border {
+      color: $mainOrange;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .rankedItems-playContainer {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 960px) {
+  .rankedItems-playContainer {
+    flex-basis: 48%;
+  }
+}
