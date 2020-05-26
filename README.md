@@ -24,7 +24,7 @@
 |play_title|string|null: false|
 |play_image|string|null: false|
 |play_introduction|text|null: false|
-|playcategory_id|integer|null: false|
+|category|string|null: false|
 |user_id|references|foreign_key: true|
 ### Association
 - has_many :materials
@@ -63,7 +63,7 @@
 |recipe_title|string|null: false|
 |recipe_image|string|null: false|
 |recipe_introduction|text|null: false|
-|recipecategory_id|integer|null: false|
+|category|string|null: false|
 |user_id|references|foreign_key: true|
 ### Association
 - has_many :materials
