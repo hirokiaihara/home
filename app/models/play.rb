@@ -18,4 +18,8 @@ class Play < ApplicationRecord
     return Play.all unless search
     Play.joins(:materials).where('play_title LIKE(?) OR category LIKE(?) OR materials.material_name LIKE(?)', "%#{search}%", "%#{search}%", "%#{search}%")
   end
+
+  def self.create_ranks
+    Play.find(Like.group(:play_id).order('count(play_id) desc').limit(3).pluck(:play_id))
+  end
 end
