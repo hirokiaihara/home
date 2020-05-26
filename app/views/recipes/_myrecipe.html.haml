@@ -1,0 +1,10 @@
+= recipe.myrecipes.length
+%span folder
+- if Myrecipe.find_by(user_id: current_user.id, recipe_id: recipe.id)
+  = link_to "/recipes/#{recipe.id}/myrecipes", method: :delete, remote: true do
+    %i.fas.fas.fa-folder-minus.destroy
+      マイレシピから削除
+- else
+  = link_to "/recipes/#{recipe.id}/myrecipes", method: :post, remote: true do
+    %i.fas.fa-folder-plus.create
+      マイレシピに保存

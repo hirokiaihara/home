@@ -2,6 +2,9 @@
   .show-playPage
     .show-playPage__title
       = @play.play_title
+    .show-playPage__like
+      %div{id: "like-#{@play.id}"}
+        = render partial: "like", locals: {play: @play}
     .show-playPage__upper
       .show-playPage__upperLeft
         = image_tag @play.play_image.url
