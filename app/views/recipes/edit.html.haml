@@ -1,4 +1,6 @@
-.main-container
+%header
+  = render 'layouts/main-header'
+.form-container
   //JavaScriptにurlのidを渡すための記述
   %input{name: "recipe_id", type: "hidden", value: @recipe.id, class: 'recipe_id' }
   .recipe-form
@@ -76,3 +78,5 @@
       .recipe-form__section
         .recipe-form__input
           = f.submit "更新する", class: "recipe-form__submitBtn"
+%footer
+  = render 'layouts/main-footer'

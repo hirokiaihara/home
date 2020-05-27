@@ -1,3 +1,7 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
 .main-container
   .recipe-contents
     .recipe-contents__header
@@ -29,4 +33,5 @@
         - @recipes.each do |recipe|
           = render partial: "pages/recipe-item", locals: {recipe: recipe}
       = paginate(@recipes)
-    
+%footer
+  = render 'layouts/main-footer'

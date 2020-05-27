@@ -1,4 +1,6 @@
-.main-container
+%header
+  = render 'layouts/main-header'
+.form-container
   //JavaScriptにurlのidを渡すための記述
   %input{name: "play_id", type: "hidden", value: @play.id, class: 'play_id' }
   .play-form
@@ -75,3 +77,5 @@
       .play-form__section
         .play-form__input
           = f.submit "更新する", class: "play-form__submitBtn"
+%footer
+  = render 'layouts/main-footer'

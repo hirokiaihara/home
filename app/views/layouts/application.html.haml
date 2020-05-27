@@ -17,11 +17,5 @@
     .container
       .mobile-menu__cover
       .nav-trigger
-      %header
-        = render 'layouts/main-header'
-        = render 'layouts/search-header'
-      = render 'layouts/nav-header'
       = yield
-      %footer
-        = render 'layouts/main-footer'
     = render 'layouts/mobile-menu'

@@ -1,3 +1,7 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
 .main-container
   .user-page
     .user-page__header
@@ -40,3 +44,5 @@
               = render partial: "pages/play-item", locals: {play: play}
           .play-contents__more
             = paginate(@plays)
+%footer
+  = render 'layouts/main-footer'

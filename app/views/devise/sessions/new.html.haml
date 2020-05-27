@@ -1,4 +1,6 @@
-.main-container
+%header
+  = render 'layouts/main-header'
+.form-container
   .account-page
     = link_to new_user_registration_path do
       %h2 新規登録はこちらから
@@ -25,3 +27,5 @@
           %li 
             password : 111111
     -# = render "devise/shared/links"
+%footer
+  = render 'layouts/main-footer'

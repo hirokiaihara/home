@@ -1,3 +1,7 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
 .main-container
   .recipe-contents
     .recipe-contents__header
@@ -36,3 +40,5 @@
           = paginate(@recipes)
         - else
           %p 一致する結果はありませんでした
+%footer
+  = render 'layouts/main-footer'
