@@ -20,7 +20,6 @@
   top: 5%;
   left: 0;
   right: 0;
-  bottom: 5%;
   margin: 0 auto;
   z-index: 12;
   box-shadow: 10px 5px 25px -10px rgba(0, 0, 0, .5);
@@ -33,6 +32,7 @@
     @extend .pb-sm;
   }
   &__user {
+    display: none;
     img {
       height: 80px;
       width: 80px;
@@ -62,28 +62,9 @@
 @media (min-width: 600px) {
   .comment-modal {
     width: 60%;
-    bottom: 47%;
-  }
-}
-
-@media (min-width: 960px) {
-  .comment-modal {
-    bottom: 40%;
-  }
-}
-
-@media (max-width: 320px) {
-  .comment-modal {
-    &__form {
-      textarea {
-        height: 100px;
-      }
-    }
+    top: 18%;
     &__user {
-      img {
-        width: 60px;
-        height: 60px;
-      }
+      display: block;
     }
   }
 }
