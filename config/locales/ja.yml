@@ -19,6 +19,8 @@ ja:
         category: カテゴリー
       recipe/makes:
         make_text: 作り方
+      group:
+        group_name: グループ名
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

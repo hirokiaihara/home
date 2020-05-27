@@ -110,16 +110,17 @@
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false|
+|created_user_id|integer|null: false|
 ### Association
 - has_many :posts
 - has_many :groups_users
 - has_many :users,  through:  :groups_users
 
-## postsテーブル
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|message|text||
-|post_image|string||
+|message_text|text||
+|message_image|string||
 |group_id|references|foreign_key: true|
 |user_id|references|foreign_key: true|
 ### Association

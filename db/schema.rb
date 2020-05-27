@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200526051338) do
+ActiveRecord::Schema.define(version: 20200527023651) do
 
   create_table "foods", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "food_name"
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(version: 20200526051338) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipe_id"], name: "index_foods_on_recipe_id", using: :btree
+  end
+
+  create_table "group_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_group_users_on_group_id", using: :btree
+    t.index ["user_id"], name: "index_group_users_on_user_id", using: :btree
+  end
+
+  create_table "groups", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "group_name",      null: false
+    t.integer  "created_user_id", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -45,6 +61,17 @@ ActiveRecord::Schema.define(version: 20200526051338) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["play_id"], name: "index_materials_on_play_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "message_text",  limit: 65535
+    t.string   "message_image"
+    t.integer  "group_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["group_id"], name: "index_messages_on_group_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "myrecipes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -123,10 +150,14 @@ ActiveRecord::Schema.define(version: 20200526051338) do
   end
 
   add_foreign_key "foods", "recipes"
+  add_foreign_key "group_users", "groups"
+  add_foreign_key "group_users", "users"
   add_foreign_key "likes", "plays"
   add_foreign_key "likes", "users"
   add_foreign_key "makes", "recipes"
   add_foreign_key "materials", "plays"
+  add_foreign_key "messages", "groups"
+  add_foreign_key "messages", "users"
   add_foreign_key "myrecipes", "recipes"
   add_foreign_key "myrecipes", "users"
   add_foreign_key "playcomments", "plays"
