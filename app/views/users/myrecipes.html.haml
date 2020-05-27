@@ -1,3 +1,7 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
 .main-container
   .play-contents
     .play-contents__items
@@ -23,3 +27,5 @@
           - recipe = Recipe.find_by(id: myrecipe.recipe_id)
           = render partial: "pages/recipe-item", locals: {recipe: recipe}
       = paginate(@myrecipes)
+%footer
+  = render 'layouts/main-footer'

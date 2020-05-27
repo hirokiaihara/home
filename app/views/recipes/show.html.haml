@@ -1,3 +1,7 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
 .main-container
   .show-recipePage
     .show-recipePage__title
@@ -54,3 +58,5 @@
         = link_to '削除', recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
     = render partial: "plays/show-comment", locals: {comments: @recipecomments}
     = render partial: "plays/modal", locals: {parent: @recipe, comment: @recipecomment}
+%footer
+  = render 'layouts/main-footer'

@@ -1,3 +1,7 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
 .main-container
   .show-playPage
     .show-playPage__title
@@ -51,5 +55,6 @@
         = link_to '削除', play_path(@play), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
     = render partial: "show-comment", locals: {comments: @playcomments}
     = render partial: "modal", locals: {parent: @play, comment: @playcomment}
-    
+%footer
+  = render 'layouts/main-footer'
 

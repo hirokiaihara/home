@@ -1,3 +1,7 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
 .main-container
   .play-contents
     .play-contents__header
@@ -22,3 +26,5 @@
         - @plays.each do |play|
           = render partial: "pages/play-item", locals: {play: play}
       = paginate(@plays)
+%footer
+  = render 'layouts/main-footer'

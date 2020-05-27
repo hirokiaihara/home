@@ -1,3 +1,7 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
 .main-container
   .user-page
     .user-page__header
@@ -52,3 +56,5 @@
               = render partial: "pages/recipe-item", locals: {recipe: recipe}
           .recipe-contents__more
             = link_to "もっと見る", "/users/#{@user.id}/show_recipes"
+%footer
+  = render 'layouts/main-footer'

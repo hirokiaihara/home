@@ -1,0 +1,16 @@
+.form-container {
+  @extend .content-width;
+  padding: 100px 0;
+}
+
+@media (min-width: 600px) {
+  .form-container {
+    padding: 130px 0 20px;
+  }
+}
+
+@media (min-width: 960px) {
+  .form-container {
+    padding: 140px 0 30px;
+  }
+}

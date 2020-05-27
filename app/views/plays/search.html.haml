@@ -1,3 +1,7 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
 .main-container
   .play-contents
     .play-contents__header
@@ -29,3 +33,5 @@
           = paginate(@plays)
         - else
           %p 一致する結果はありませんでした
+%footer
+  = render 'layouts/main-footer'

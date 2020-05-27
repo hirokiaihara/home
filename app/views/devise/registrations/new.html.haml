@@ -1,4 +1,6 @@
-.main-container
+%header
+  = render 'layouts/main-header'
+.form-container
   .account-page
     .account-page__title
       %h2 新規登録
@@ -26,3 +28,5 @@
       .account-page__section
         = f.submit "アカウント登録", class: "account-page__submit-btn"
     = render "devise/shared/links"
+%footer
+  = render 'layouts/main-footer'
