@@ -1,16 +1,9 @@
 %header
   = render 'layouts/main-header'
 = render 'layouts/nav-header'
-.form-container
+.main-container
   .recipe-contents
     .recipe-contents__header
-      .recipe-contents__search
-        = form_tag(search_recipes_path, method: "get") do
-          = text_field_tag :keyword, '', class: 'search-form', placeholder: "美味しいを探してみよう！"
-          %label(for="search-btn")
-            %button
-              %i.fas.fa-search
-            = submit_tag "", class: "hidden", id: "search-btn"
       .recipe-contents__title
         %h2
           = @title
@@ -18,6 +11,13 @@
           %span
             = @recipes.count
             件
+      .recipe-contents__search
+        = form_tag(search_recipes_path, method: "get") do
+          = text_field_tag :keyword, '', class: 'search-form', placeholder: "美味しいを探してみよう！"
+          %label(for="search-btn")
+            %button
+              %i.fas.fa-search
+            = submit_tag "", class: "hidden", id: "search-btn"
       .recipe-contents__description
         %p 美味しそうなレシピが見つかったかな？
         %p カテゴリーからも探してみよう！
