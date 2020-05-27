@@ -1,0 +1,5 @@
+%header
+  = render 'layouts/main-header'
+.chat-container
+  %h2 グループ編集
+  = render partial: 'form', locals: { group: @group }

@@ -1,0 +1,10 @@
+%header
+  = render 'layouts/main-header'
+.chat-container
+  = link_to new_group_path do
+    新規グループ作成
+  - @groups.each do |group|
+    = link_to "#" do
+      = group.group_name
+      = link_to edit_group_path(group.id) do
+        編集
