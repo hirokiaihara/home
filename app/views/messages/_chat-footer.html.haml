@@ -1,0 +1,10 @@
+.chat-footer
+  .chat-footer-container
+    = link_to edit_group_path(group.id) do
+      = group.group_name
+      (
+      = group.user_ids.length
+      )
+    = link_to "Menu", groups_path
+    %button.modal-openBtn
+      %i.far.fa-edit

@@ -1,0 +1,10 @@
+.message
+  - if message.message_image.present?
+    = image_tag message.message_image.url
+  = message.message_text
+  = message.user.nickname
+  = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  - if user_signed_in? && current_user.id == message.user_id
+    = link_to group_message_path(message.group_id, message.id), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn" do
+      %i.far.fa-times-circle
+        削除
