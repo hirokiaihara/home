@@ -4,7 +4,13 @@
   = link_to new_group_path do
     新規グループ作成
   - @groups.each do |group|
-    = link_to "#" do
+    = link_to group_messages_path(group.id) do
       = group.group_name
+      = group.show_last_member
       = link_to edit_group_path(group.id) do
-        編集
+        %i.fas.fa-cog
+          編集
+      - if user_signed_in? && current_user.id == group.created_user_id
+        = link_to group_path(group.id), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn" do
+          %i.fas.fa-times-circle
+            削除
