@@ -9,7 +9,9 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path(@group), notice: "メッセージを送信しました"
+      respond_to do |format|
+        format.json
+      end
     else
       @messages = @group.messages.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください'
@@ -19,7 +21,7 @@ class MessagesController < ApplicationController
 
   def destroy
     message = Message.find(params[:id])
-    if message.destroy?
+    if message.destroy
       redirect_to group_messages_path(@group), notice: "メッセージを削除しました"
     else
       @messages = @group.messages.includes(:user)
