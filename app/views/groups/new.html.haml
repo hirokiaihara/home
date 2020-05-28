@@ -1,5 +1,7 @@
 %header
   = render 'layouts/main-header'
-.chat-container
+.group-container
   %h2 新規グループ作成
   = render partial: 'form', locals: { group: @group }
+%footer
+  = render 'layouts/main-footer'

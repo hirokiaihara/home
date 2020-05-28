@@ -1,0 +1,10 @@
+.group-footer
+  .group-footer-container
+    = form_for [@group, @message] do |f|
+      %label(for="message_message_image")
+        %i.far.fa-image.fa-2x
+      = f.file_field :message_image, class: "group-footer-container__file"
+      = f.text_field :message_text, class: "group-footer-container__text"
+      = f.submit 'SEND', class: "group-footer-container__submit"
+        
+        

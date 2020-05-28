@@ -9,3 +9,4 @@
   = f.label :user_ids, "グループメンバー"
   = f.collection_check_boxes :user_ids, User.all, :id, :nickname
   = f.submit "作成"
+  = link_to "もどる", :back

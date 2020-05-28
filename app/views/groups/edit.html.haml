@@ -1,6 +1,7 @@
 %header
   = render 'layouts/main-header'
-.chat-container
+.group-container
   %h2 グループ編集
   = render partial: 'form', locals: { group: @group }
-  = link_to "もどる", :back
+%footer
+  = render 'layouts/main-footer'
