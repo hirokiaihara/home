@@ -1,0 +1,10 @@
+.group-header-container {
+  @extend .content-width;
+  padding: 7px;
+  display: flex;
+  justify-content: space-between;
+  a {
+    color: #fff;
+    @extend .font-sm;
+  }
+}
