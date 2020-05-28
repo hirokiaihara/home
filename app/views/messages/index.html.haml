@@ -3,6 +3,7 @@
 = render partial: 'group-header', locals: { group: @group}
   
 .group-container
+  %input{name: "current_user_id", type: "hidden", value: current_user.id, class: 'current_user_id' }/
   .messages
     = render partial: 'message', collection: @messages
 = render partial: 'group-footer', locals: { group: @group }

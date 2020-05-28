@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :show_plays, :show_recipes]
+  def index
+    return nil if params[:keyword] == ""
+    @users = User.where(['nickname LIKE ?', "%#{params[:keyword]}%"]).where.not(id: current_user.id).limit(10)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
 
   def show
     @plays = @user.plays.order('created_at DESC').limit(4)
