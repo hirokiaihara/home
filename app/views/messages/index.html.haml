@@ -1,10 +1,8 @@
 %header
   = render 'layouts/main-header'
-.chat-container
+= render partial: 'group-header', locals: { group: @group}
+  
+.group-container
   .messages
     = render partial: 'message', collection: @messages
-  = form_for [@group, @message] do |f|
-    = f.text_area :message_text
-    = f.file_field :message_image
-    = f.submit '送信'
-= render partial: 'chat-footer', locals: { group: @group }
+= render partial: 'group-footer', locals: { group: @group }
