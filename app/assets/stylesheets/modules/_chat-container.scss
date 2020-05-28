@@ -1,11 +1,18 @@
 .group-container {
   @extend .content-width;
   padding: 122px 0 105px;
+  h2 {
+    @extend .font-lg;
+    @extend .pb-md;
+  }
 }
 
 @media (min-width: 600px) {
   .group-container {
     padding: 130px 0 120px;
+    h2 {
+      text-align: center;
+    }
   }
 }
 

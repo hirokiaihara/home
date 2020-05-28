@@ -1,0 +1,31 @@
+.group-form
+  = form_for group do |f|
+    - if group.errors.any?
+      %p= "#{group.errors.full_messages.count}件のエラーが発生しました。"
+      %ul
+        - group.errors.full_messages.each do |message|
+          %li= message
+    = f.label :group_name
+    = f.text_field :group_name, placeholder: "グループ名を入力してください"
+    %label(for="グループメンバーを追加") グループメンバーを追加
+    %input#user-search-field{placeholder: "追加したいユーザー名を入力", type: "text"}/
+    #user-search-result
+    %i.fas.fa-user
+      グループメンバー
+    #group-users.js-add-user
+      .js-group-member.group-form__user
+        %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
+        %p.group-form__user-nickname
+          =current_user.nickname
+          
+      - group.users.each do |user|
+        - if current_user.nickname != user.nickname
+          .js-group-member
+            %input{name: "group[user_ids][]", type: "hidden", value: user.id}
+            .group-form__user
+              %p.group-form__user-nickname
+                = user.nickname
+              %a.user-search-remove.group-form__btn.group-form__btn--remove.js-remove-btn
+                削除
+    = f.submit "作成", class: "group-form__submit"
+    = link_to "もどる", :back, class: "group-form__back"
