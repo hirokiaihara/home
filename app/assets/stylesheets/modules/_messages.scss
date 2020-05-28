@@ -1,0 +1,16 @@
+.messages {
+  height: calc(100vh - 240px);
+  overflow: scroll;
+  background-color: #fff;
+}
+
+@media (min-width: 600px) {
+  .messages {
+    padding: 20px;
+  }
+}
+@media (min-width: 960px) {
+  .messages {
+    height: calc(100vh - 270px);
+  }
+}

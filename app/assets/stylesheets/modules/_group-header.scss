@@ -1,0 +1,14 @@
+.group-header {
+  position: fixed;
+  top: 82px;
+  left: 0;
+  width: 100%;
+  background-color: $mainSkyblue;
+  z-index: 1;
+}
+
+@media (min-width: 960px) {
+  .group-header {
+    top: 116px;
+  }
+}

@@ -1,16 +1,35 @@
 %header
   = render 'layouts/main-header'
-.chat-container
-  = link_to new_group_path do
-    新規グループ作成
-  - @groups.each do |group|
-    = link_to group_messages_path(group.id) do
-      = group.group_name
-      = group.show_last_member
-      = link_to edit_group_path(group.id) do
-        %i.fas.fa-cog
-          編集
-      - if user_signed_in? && current_user.id == group.created_user_id
-        = link_to group_path(group.id), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn" do
-          %i.fas.fa-times-circle
-            削除
+.group-container
+  .group-menu
+    .group-menu__title
+      %h1 みんなで話そう！
+    .group-menu__description
+      .group-menu__description-border
+        %p 家族の出来事をここで共有しよう
+        %p 話す事って大事
+    .group-menu__link
+      = link_to new_group_path do
+        %i.fas.fa-edit
+          新規グループ作成はこちら
+    %ul.group-menu__groups
+      %i.fas.fa-users
+        参加しているグループ
+      - @groups.each do |group|
+        %li.group-menu__group-link
+          = link_to group_messages_path(group.id), class: "group-menu__group-name" do
+            = group.group_name
+            (
+            = group.user_ids.length
+            )
+          .group-menu__show-last-member
+            = group.show_last_member
+          = link_to edit_group_path(group.id), class: "group-menu__edit" do
+            %i.fas.fa-cog
+              編集
+          - if user_signed_in? && current_user.id == group.created_user_id
+            = link_to group_path(group.id), class: "group-menu__delete", method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn" do
+              %i.fas.fa-times-circle
+                削除
+%footer
+  = render 'layouts/main-footer'

@@ -1,0 +1,71 @@
+.group-menu {
+  background-color: #fff;
+  &__title {
+    @extend .font-lr;
+    @extend .pb-sm;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+  &__description {
+    text-align: center;
+    border: 2px dotted $mainOrange;
+    width: 85%;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 auto;
+    @extend .mb-sm;
+    p {
+      @extend .font-sm;
+    }
+  }
+  &__link {
+    @extend .pb-sm;
+    a {
+      @extend .font-md;
+      border-bottom: 1px solid;
+    }
+  }
+  &__groups {
+    i.fas.fa-users {
+      background-color: $mainSkyblue;
+      color: #fff;
+      padding: 3px 5px;
+      border-radius: 5px;
+      @extend .mb-sm;
+    }
+  }
+  &__group-link {
+    @extend .pb-sm;
+    border-bottom: 1px solid $mainLightGlay;
+    @extend .mb-sm;
+  }
+  &__group-name {
+    @extend .font-md;
+    padding-bottom: 3px;
+  }
+  &__show-last-member {
+    @extend .font-sm;
+    padding-bottom: 3px;
+  }
+  &__edit,
+  &__delete {
+    padding-right: 10px;
+  }
+}
+
+@media (min-width: 600px) {
+  .group-menu {
+    width: 95%;
+    margin: 0 auto;
+    border: 1px solid $mainLightGlay;
+    border-radius: 5px;
+    padding: 40px;
+  }
+}
+
+@media (min-width: 960px) {
+  .group-menu {
+    width: 90%;
+  }
+}

@@ -1,0 +1,10 @@
+.group-header
+  .group-header-container
+    = link_to edit_group_path(group.id) do
+      = group.group_name
+      (
+      = group.user_ids.length
+      )
+    = link_to groups_path do
+      %i.fas.fa-users
+        他のグループ

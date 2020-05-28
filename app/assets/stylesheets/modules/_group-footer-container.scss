@@ -1,0 +1,32 @@
+.group-footer-container {
+  @extend .content-width;
+  margin: 0 auto;
+  padding: 10px 0 10px;
+  &__file {
+   margin-bottom: 5px;
+   width: 250px;
+  }
+  &__text {
+    width: 78%;
+    input {
+      padding: 5px;
+    }
+  }
+  &__submit {
+    display: inline-block;
+    background-color: $mainSkyblue;
+    color: #fff;
+    border: none;
+    @extend .font-sm;
+    @extend .btn;
+  }
+}
+
+@media (min-width: 600px) {
+  .group-footer-container {
+    padding: 10px 0 20px;
+    &__file {
+      width: 300px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
   def index
-    @groups = Group.joins(:group_users).where(group_users: {user_id: current_user.id})
+    @groups = Group.joins(:group_users).where(group_users: {user_id: current_user.id}).order('groups.created_at desc')
   end
 
   def new

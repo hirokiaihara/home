@@ -1,0 +1,157 @@
+.right-message {
+  width: 100%;
+  display: flex;
+  &__created-at {
+    font-size: 13px;
+  }
+  &__user {
+    padding-left: 40px;
+  }
+  &__user-image {
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  &__user-nickname {
+    width: 60px;
+    text-align: center;
+    font-size: 12px;
+  }
+  &__body {
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+    padding: 8px;
+    background-color: $mainLightGlay;
+    width: 80%;
+    @extend .font-md;
+    @extend .mb-sm;
+    img {
+      width: 95%;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      transform: rotate(45deg);
+      top: 20px;
+      right: -30px;
+      border-bottom: 20px solid $mainLightGlay;
+      border-right: 20px solid $mainLightGlay;
+      border-top: 20px solid transparent;
+      border-left: 20px solid transparent;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      transform: rotate(45deg);
+      top: 15px;
+      right: -40px;
+      border-bottom: 20px solid #fff;
+      border-right: 20px solid #fff;
+      border-top: 20px solid transparent;
+      border-left: 20px solid transparent;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .right-message {
+    &__body {
+      width: 50%;
+      margin-left: 30%;
+      img {
+        width: 60%;
+      }
+    }
+  }
+}
+
+.left-message {
+  width: 100%;
+  display: flex;
+  &__created-at {
+    font-size: 13px;
+  }
+  &__user {
+    padding-right: 40px;
+  }
+  &__user-image {
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  &__user-nickname {
+    width: 60px;
+    text-align: center;
+    font-size: 12px;
+  }
+  &__body {
+    border-radius: 10px;
+    text-align: left;
+    position: relative;
+    padding: 8px;
+    background-color: $mainLightGlay;
+    width: 80%;
+    @extend .font-md;
+    @extend .mb-sm;
+    img {
+      width: 95%;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      transform: rotate(45deg);
+      top: 20px;
+      left: -18px;
+      border-bottom: 20px solid $mainLightGlay;
+      border-left: 20px solid $mainLightGlay;
+      border-top: 20px solid transparent;
+      border-right: 20px solid transparent;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      transform: rotate(45deg);
+      top: 10px;
+      left: -20px;
+      border-bottom: 20px solid #fff;
+      border-left: 20px solid #fff;
+      border-top: 20px solid transparent;
+      border-right: 20px solid transparent;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .left-message {
+    &__body {
+      width: 50%;
+      img {
+        width: 60%;
+      }
+
+    }
+  }
+}

@@ -1,16 +1,16 @@
-.chat-container {
+.group-container {
   @extend .content-width;
-  padding: 100px 0;
+  padding: 122px 0 105px;
 }
 
 @media (min-width: 600px) {
-  .chat-container {
-    padding: 130px 0 20px;
+  .group-container {
+    padding: 130px 0 120px;
   }
 }
 
 @media (min-width: 960px) {
-  .chat-container {
-    padding: 140px 0 30px;
+  .group-container {
+    padding: 160px 0 120px;
   }
 }
