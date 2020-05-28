@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:edit, :update]
+  before_action :set_group, only: [:edit, :update, :destroy]
   def index
     @groups = Group.joins(:group_users).where(group_users: {user_id: current_user.id}).order('groups.created_at desc')
   end
@@ -28,7 +28,15 @@ class GroupsController < ApplicationController
       render :edit
     end
   end
-  
+
+  def destroy
+    if @group.destroy
+      redirect_to groups_path, notice: "グループを削除しました"
+    else
+      redirect_to groups_path, alert: "削除できません"
+    end
+  end
+
   private
   
   def group_params
