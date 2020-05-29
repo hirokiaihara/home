@@ -1,4 +1,6 @@
+//ユーザーインクリメンタルサーチ
 $(function() {
+  //検索結果を描画
   function addUser(user) {
     if (user.user_image) {
       let html = `<div class="group-form__user">
@@ -15,14 +17,14 @@ $(function() {
       $("#user-search-result").append(html);
     }
   }
-
+  //一致がない場合
   function addNoUser() {
     let html = `<div class="group-form__user">
                   <p class="group-form__user-nickname">ユーザーが見つかりません</p>
                 </div>`;
     $("#user-search-result").append(html);
   }
-
+  //選択したユーザーをリストに追加
   function addDeleteUser(nickname, id) {
     let html = `<div class="group-form__user" id="${id}">
                   <p class="group-form__user-nickname">
@@ -31,12 +33,12 @@ $(function() {
                 </div>`
     $(".js-add-user").append(html);
   }
-
+  //サーバーサイドにidを渡す
   function addMember(userId) {
     let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}"/>`;
     $(`#${userId}`).append(html);
   }
-
+  //検索フォーム入力
   $('#user-search-field').on("keyup", function() {
     let input = $('#user-search-field').val();
     $.ajax({
@@ -61,7 +63,7 @@ $(function() {
       alert('通信エラー・ユーザーが表示できません');
     });
   });
-  
+  //追加ボタンクリック
   $(document).on("click", ".group-form__btn--add", function() {
     const userNickname = $(this).attr("data-user-nickname");
     const userId = $(this).attr("data-user-id");
@@ -69,7 +71,7 @@ $(function() {
     addDeleteUser(userNickname, userId);
     addMember(userId);
   });
-
+  //削除ボタンクリック
   $(document).on("click", ".group-form__btn--remove", function() {
     $(this).parent().remove();
   });

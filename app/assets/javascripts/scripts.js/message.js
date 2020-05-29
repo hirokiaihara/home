@@ -1,8 +1,11 @@
 $(function() {
   function buildHTML(message){
     var current_user_id = $('.current_user_id').val();
+    //自身のメッセージを描画
     if (message.user_id == current_user_id) {
+      //プロフィール画像がある場合
       if (message.user_image) {
+        //かつメッセージの画像がある場合
         if (message.message_image) {
           var html = `<div class="message" data-message-id=${message.id}>
                         <div class = "right-message">
@@ -30,6 +33,7 @@ $(function() {
                       </div>`
           return html;
         } else {
+          //メッセージ画像がない
           var html = `<div class="message" data-message-id=${message.id}>
                         <div class = "right-message">
                           <div class = "right-message__body">
@@ -53,6 +57,7 @@ $(function() {
                       </div>`
           return html;
         };
+        //プロフィール画像がない
       } else {
         if (message.message_image) {
           var html = `<div class="message" data-message-id=${message.id}>
@@ -100,6 +105,7 @@ $(function() {
         };
       }
     } else {
+      //自分以外のユーザーのメッセージを描画
       if (message.user_image) {
         if (message.message_image) {
           var html = `<div class="message" data-message-id=${message.id}>
@@ -195,7 +201,7 @@ $(function() {
       }
     }
   }
-
+  //メッセージの非同期通信
   $('#new_message').on('submit', function(e) {
     e.preventDefault()
     var formData = new FormData(this);
@@ -220,7 +226,7 @@ $(function() {
       $(".group-footer-container__submit").removeAttr("disabled");
     })
   });
-
+  //メッセージの自動更新
   var reloadMessages = function() {
     var last_message_id = $('.message:last').data("message-id");
     $.ajax({
@@ -243,6 +249,7 @@ $(function() {
       alert('error');
     });
   };
+  //4.5秒おきに更新、ページ遷移時に最下部にスクロール
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 4500);
     $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
