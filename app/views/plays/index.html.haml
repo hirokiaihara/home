@@ -14,11 +14,11 @@
       .play-contents__category
         %span カテゴリー：
         .play-contents__categoryLink
-          = link_to "遊び", "#"
+          = link_to "遊び", search_plays_path(keyword: "遊び")
         .play-contents__categoryLink
-          = link_to "工作", "#"
+          = link_to "工作", search_plays_path(keyword: "工作")
         .play-contents__categoryLink
-          = link_to "学習", "#"
+          = link_to "学習", search_plays_path(keyword: "学習")
     .play-contents__items
       .play-contents__sectionTitle
         新着投稿

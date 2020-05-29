@@ -20,11 +20,11 @@
       .recipe-contents__category
         %span カテゴリー：
         .recipe-contents__categoryLink
-          = link_to "お菓子", "#"
+          = link_to "お菓子", search_recipes_path(keyword: "お菓子")
         .recipe-contents__categoryLink
-          = link_to "パン", "#"
+          = link_to "パン", search_recipes_path(keyword: "パン")
         .recipe-contents__categoryLink
-          = link_to "料理", "#"
+          = link_to "料理", search_recipes_path(keyword: "料理")
     .recipe-contents__items
       .recipe-contents__sectionTitle
         新着投稿
