@@ -1,3 +1,4 @@
+//コメントモーダル
 $(document).on('DOMContentLoaded', function() {
   $('.modal-openBtn').on('click', function() {
     $('.modal').show();
