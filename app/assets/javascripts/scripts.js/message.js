@@ -121,7 +121,6 @@ $(function() {
                             </div>
                             <div class = "left-message__created-at">
                               ${message.created_at}
-                              <a href = "/groups/${message.group_id}/messages/${message.id}" data-method="delete" >削除</a>
                             </div>
                           </div>
                         </div>
@@ -144,7 +143,6 @@ $(function() {
                             </div>
                             <div class = "left-message__created-at">
                               ${message.created_at}
-                              <a href = "/groups/${message.group_id}/messages/${message.id}" data-method="delete" >削除</a>
                             </div>
                           </div>
                         </div>
@@ -169,7 +167,6 @@ $(function() {
                             </div>
                             <div class = "left-message__created-at">
                               ${message.created_at}
-                              <a href = "/groups/${message.group_id}/messages/${message.id}" data-method="delete" >削除</a>
                             </div>
                           </div>
                         </div>
@@ -189,7 +186,6 @@ $(function() {
                             </div>
                             <div class = "left-message__created-at">
                               ${message.created_at}
-                              <a href = "/groups/${message.group_id}/messages/${message.id}" data-method="delete" >削除</a>
                             </div>
                           </div>
                         </div>
