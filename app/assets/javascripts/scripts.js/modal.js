@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(document).on('DOMContentLoaded', function() {
   $('.modal-openBtn').on('click', function() {
     $('.modal').show();
     $('.modal-mask').show();

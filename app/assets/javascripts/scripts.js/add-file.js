@@ -60,8 +60,8 @@ class AddNewFile {
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
         // 10個出た時のアラート
         if ($(group).length == 10) $(add).hide(), $(alert).show();
-        //makeの操作時はAddPreviewインスタンスをnew
-        if (container == '.work-container' || container == '.recipe-container') {
+        //work,makeの操作時はAddPreviewインスタンスをnew
+        if (container == '.work-container' || container == '.make-container') {
           const preIndex = `.preIndex${fileIndex[0]}`;
           const imgIndex = `.imgIndex${fileIndex[0]}`;
           const indexFile = `.fileIndex${fileIndex[0]}`;

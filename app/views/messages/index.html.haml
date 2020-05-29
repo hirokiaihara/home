@@ -4,6 +4,7 @@
   
 .group-container
   %input{name: "current_user_id", type: "hidden", value: current_user.id, class: 'current_user_id' }/
+  %input{name: "group_id", type: "hidden", value: @group.id, class: 'group_id' }/
   .messages
     = render partial: 'message', collection: @messages
 = render partial: 'group-footer', locals: { group: @group }

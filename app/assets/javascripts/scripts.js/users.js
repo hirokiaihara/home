@@ -37,32 +37,29 @@ $(function() {
     $(`#${userId}`).append(html);
   }
 
-  $(document).on('turbolinks:load', function() {
-    $('#user-search-field').on("keyup", function() {
-      let input = $('#user-search-field').val();
-      $.ajax({
-        type: "GET",
-        url: "/users",
-        data: { keyword: input },
-        dataType: "json"
-      })
-      .done(function(users) {
-        $("#user-search-result").empty();
-        if (users.length !== 0) {
-          users.forEach(function(user) {
-            addUser(user);
-          });
-        } else if (input.length == 0) {
-          return false;
-        } else {
-          addNoUser();
-        }
-      })
-      .fail(function() {
-        alert('通信エラー・ユーザーが表示できません');
-      });
+  $('#user-search-field').on("keyup", function() {
+    let input = $('#user-search-field').val();
+    $.ajax({
+      type: "GET",
+      url: "/users",
+      data: { keyword: input },
+      dataType: "json"
+    })
+    .done(function(users) {
+      $("#user-search-result").empty();
+      if (users.length !== 0) {
+        users.forEach(function(user) {
+          addUser(user);
+        });
+      } else if (input.length == 0) {
+        return false;
+      } else {
+        addNoUser();
+      }
+    })
+    .fail(function() {
+      alert('通信エラー・ユーザーが表示できません');
     });
-  
   });
   
   $(document).on("click", ".group-form__btn--add", function() {
@@ -74,6 +71,6 @@ $(function() {
   });
 
   $(document).on("click", ".group-form__btn--remove", function() {
-    $(this).parent().parent().remove();
+    $(this).parent().remove();
   });
 });

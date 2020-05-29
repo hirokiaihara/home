@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener('DOMContentLoaded', function() {
   //モバイルメニューは共通
   new MobileMenu();
   //urlで条件分岐
@@ -15,7 +15,7 @@ document.addEventListener("turbolinks:load", function() {
   const play_id = $('.play_id').val();
   const EditPlayUrl = `/plays/${play_id}/edit`;
   const InvalidEditPlayUrl = `/plays/${play_id}`;
-  if ( url == "/plays/new" || ( url == "/plays" && play_id != null ) || url == EditPlayUrl　|| url == InvalidEditPlayUrl ) {
+  if ( url == "/plays/new" || ( url == "/plays" && play_id != null ) || url == EditPlayUrl || url == InvalidEditPlayUrl ) {
     new PreviewImage('.playImg-file', '.playImg-preview');
     new AddNewFile('.material-container', '.material-textGroup', '.material-addBtn', '.material-removeBtn', '.material-alert');
     new AddNewFile('.work-container', '.work-fileGroup', '.work-addBtn', '.work-removeBtn', '.work-alert');
