@@ -56,7 +56,6 @@ $(document).on('turbolinks:load', function() {
           };
         } else {
           if (message.message_image) {
-            
             var html = `<div class="message" data-message-id=${message.id}>
                           <div class = "right-message">
                             <div class = "right-message__body">
@@ -106,6 +105,14 @@ $(document).on('turbolinks:load', function() {
           if (message.message_image) {
             var html = `<div class="message" data-message-id=${message.id}>
                           <div class = "left-message">
+                            <div class = "left-message__user">
+                              <div class = "left-message__user-image">
+                                <img src=${message.user_image}>
+                              </div>
+                              <div class="left-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </div>
                             <div class = "left-message__body">
                               <div class = "left-message__image">
                                 <img src=${message.message_image}>
@@ -118,6 +125,12 @@ $(document).on('turbolinks:load', function() {
                                 <a href = "/groups/${message.group_id}/messages/${message.id}" data-method="delete" >削除</a>
                               </div>
                             </div>
+                          </div>
+                        </div>`
+            return html;
+          } else {
+            var html = `<div class="message" data-message-id=${message.id}>
+                          <div class = "left-message">
                             <div class = "left-message__user">
                               <div class = "left-message__user-image">
                                 <img src=${message.user_image}>
@@ -126,12 +139,6 @@ $(document).on('turbolinks:load', function() {
                                 ${message.user_nickname}
                               </div>
                             </div>
-                          </div>
-                        </div>`
-            return html;
-          } else {
-            var html = `<div class="message" data-message-id=${message.id}>
-                          <div class = "left-message">
                             <div class = "left-message__body">
                               <div class = "left-message__text">
                                 ${message.message_text}
@@ -139,14 +146,6 @@ $(document).on('turbolinks:load', function() {
                               <div class = "left-message__created-at">
                                 ${message.created_at}
                                 <a href = "/groups/${message.group_id}/messages/${message.id}" data-method="delete" >削除</a>
-                              </div>
-                            </div>
-                            <div class = "left-message__user">
-                              <div class = "left-message__user-image">
-                                <img src=${message.user_image}>
-                              </div>
-                              <div class="left-message__user-nickname">
-                                ${message.user_nickname}
                               </div>
                             </div>
                           </div>
@@ -158,6 +157,11 @@ $(document).on('turbolinks:load', function() {
             
             var html = `<div class="message" data-message-id=${message.id}>
                           <div class = "left-message">
+                            <div class = "left-message__user">
+                              <div class="left-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </div>
                             <div class = "left-message__body">
                               <div class = "left-message__image">
                                 <img src=${message.message_image}>
@@ -170,17 +174,17 @@ $(document).on('turbolinks:load', function() {
                                 <a href = "/groups/${message.group_id}/messages/${message.id}" data-method="delete" >削除</a>
                               </div>
                             </div>
-                            <div class = "left-message__user">
-                              <div class="left-message__user-nickname">
-                                ${message.user_nickname}
-                              </div>
-                            </div>
                           </div>
                         </div>`
             return html;
           } else {
             var html = `<div class="message" data-message-id=${message.id}>
                           <div class = "left-message">
+                            <div class = "left-message__user">
+                              <div class="left-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </div>
                             <div class = "left-message__body">
                               <div class = "left-message__text">
                                 ${message.message_text}
@@ -188,11 +192,6 @@ $(document).on('turbolinks:load', function() {
                               <div class = "left-message__created-at">
                                 ${message.created_at}
                                 <a href = "/groups/${message.group_id}/messages/${message.id}" data-method="delete" >削除</a>
-                              </div>
-                            </div>
-                            <div class = "left-message__user">
-                              <div class="left-message__user-nickname">
-                                ${message.user_nickname}
                               </div>
                             </div>
                           </div>
