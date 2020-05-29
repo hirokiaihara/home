@@ -1,0 +1,28 @@
+.user-header
+  .user-header__image
+    - if @user.user_image.present?
+      = image_tag @user.user_image
+    -else
+      = image_tag "avatar.png"
+  = render partial: 'relationships/follow_button', locals: {user: @user}
+  .user-header__plofile
+    .user-header__nickname
+      = @user.nickname
+      %span さんのページ
+    .user-header__introduction
+      = @user.user_introduction
+    .user-header__follow
+      = link_to "/users/#{@user.id}/show_follows" do
+        = @user.followings.length
+        %span フォロー
+      = link_to "/users/#{@user.id}/show_followers" do
+        = @user.followers.length
+        %span フォロワー
+    -if user_signed_in? && current_user.id == @user.id
+      .user-header__editBtn
+        = link_to edit_user_registration_path do
+          アカウント編集はこちら
+      .user-header__logoutBtn
+        = link_to destroy_user_session_path, method: :delete do
+          %i.fas.fa-sign-out-alt
+            ログアウト
