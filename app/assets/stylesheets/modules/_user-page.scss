@@ -45,6 +45,12 @@
     @extend .font-sm;
     padding-bottom: 6px;
   }
+  &__follow {
+    @extend .pb-sm;
+    span {
+      padding-right: 5px;
+    }
+  }
 }
 
 @media (min-width: 600px) {
