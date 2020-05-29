@@ -1,0 +1,37 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
+.main-container
+  .user-page
+    = render partial: 'user-header', locals: {user: @user}
+    .tab-section
+      .tab-section__tab
+        =link_to "トップ", user_path(@user.id)
+      .tab-section__tab
+        =link_to "遊び", "/users/#{@user.id}/show_plays"
+      .tab-section__tab
+        = link_to "レシピ", "/users/#{@user.id}/show_recipes"
+    .user-page__contents
+      .follow-page
+        .follow-page__title
+          %span.border -----
+          = @title
+          %span.border -----
+        .follow-page__users-list
+          - @users.each do |user|
+            = link_to user_path(user.id) do
+              .follow-page__user
+                .follow-page__user-image
+                  -if user.user_image.present?
+                    = image_tag user.user_image.url
+                  - else
+                    = image_tag 'avatar.png'
+                .follow-page__description
+                  .follow-page__nickname
+                    = user.nickname
+                  .follow-page__introduction
+                    = user.user_introduction
+
+%footer
+  = render 'layouts/main-footer'

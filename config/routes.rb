@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "users/:id/myrecipes" => "users#myrecipes"
   get "users/:id/show_plays" => "users#show_plays"
   get "users/:id/show_recipes" => "users#show_recipes"
+  get "users/:id/show_follows" => "users#show_follows"
+  get "users/:id/show_followers" => "users#show_followers"
   resources :relationships, only: [:create, :destroy]
   resources :plays do
     resources :playcomments, only: [:create, :destroy]

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :show_plays, :show_recipes]
+  before_action :set_user, only: [:show, :show_plays, :show_recipes, :show_follows, :show_followers]
   def index
     return nil if params[:keyword] == ""
     @users = User.where(['nickname LIKE ?', "%#{params[:keyword]}%"]).where.not(id: current_user.id).limit(10)
@@ -26,6 +26,20 @@ class UsersController < ApplicationController
     @likes = Like.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).per(8)
     @myrecipes = Myrecipe.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).per(8)
   end
+
+  def show_follows
+    @title = "Follows"
+    @users = @user.followings.order('created_at DESC')
+    render 'show_follow'
+  end
+
+  def show_followers
+    @title = "Followers"
+    @users = @user.followers.order('created_at DESC')
+    render 'show_follow'
+  end
+
+
 
   private
 
