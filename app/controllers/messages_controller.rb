@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(message_params)
     if @message.save
+      @message.create_notification_message!(current_user, @message.id, @group.id)
       respond_to do |format|
         format.json
       end

@@ -1,7 +1,9 @@
 class PlaycommentsController < ApplicationController
   def create
     @playcomment = Playcomment.create(playcomment_params)
+    @commented_play = @playcomment.play
     if @playcomment.save
+      @commented_play.save_notification_playcomment!(current_user, @playcomment.id, @commented_play.user_id)
       redirect_to play_path(@playcomment.play_id), notice: "送信しました"
     else
       redirect_to play_path(@playcomment.play_id), alert: "送信できません"

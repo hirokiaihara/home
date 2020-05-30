@@ -1,5 +1,5 @@
 class PlaysController < ApplicationController
-  before_action :set_play, except: [:index, :new, :create, :search]
+  before_action :set_play, only: [:show, :edit, :update, :destroy]
   
   def index
     @plays = Play.includes(:materials, :works).order('plays.created_at desc').page(params[:page]).per(12)
