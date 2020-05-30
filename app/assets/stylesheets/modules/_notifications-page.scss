@@ -1,0 +1,56 @@
+.notifications-page {
+  padding-top: 15px;
+  background-color: #fff;
+  &__title {
+    @extend .font-md;
+    @extend .pb-sm;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-align: center;
+    span.border {
+      color: $mainOrange;
+    }
+  }
+  &__delete-all {
+    @extend .font-sm;
+    @extend .pb-sm;
+  }
+  &__none {
+    @extend .font-sm;
+    @extend .pb-sm;
+  }
+  &__user {
+    display: flex;
+    padding: 20px 20px 5px;
+    align-items: center;
+    border-bottom: 1px solid $mainLightGlay;
+    cursor: pointer;
+  }
+  &__user-image {
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    padding-left: 30px;
+    @extend .font-md;
+  }
+}
+
+@media (min-width: 600px) {
+  .notifications-page {
+    padding: 20px 0 40px;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid $mainLightGlay;
+    border-radius: 5px;
+    text-align: center;
+    &__user {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
+}
