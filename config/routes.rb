@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'pages#index'
   resources :users, only: [:index, :show]
+  resources :notifications, only: [:index]
+  delete "notifications/destroy_all" => "notifications#destroy_all"
   get "users/:id/myrecipes" => "users#myrecipes"
   get "users/:id/show_plays" => "users#show_plays"
   get "users/:id/show_recipes" => "users#show_recipes"
