@@ -1,0 +1,20 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
+.main-container
+  .notifications-page
+    .notifications-page__title
+      %span.border ----
+      通知一覧
+      %span.border ----
+    .notifications-page__body 
+      - if @notifications.exists?
+        = link_to notifications_destroy_all_path, method: :delete, class: ".notifications-page__delete-all" do
+          %i.fas.fa-trash
+            全削除
+        = render @notifications
+      -else 
+        %p.notifications-page__none 通知はありません
+%footer
+  = render 'layouts/main-footer'

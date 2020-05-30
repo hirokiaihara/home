@@ -2,6 +2,7 @@ class LikesController < ApplicationController
   before_action :set_play
 
   def create
+    @play.create_notification_by(current_user)
     @like = Like.create(user_id: current_user.id, play_id: @play.id)
   end
 

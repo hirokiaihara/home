@@ -1,0 +1,16 @@
+- visiter = notification.visiter
+-if visiter != current_user
+  .notifications-page__user
+    .notifications-page__user-image
+      - if visiter.user_image.present?
+        = image_tag visiter.user_image.url
+      - else 
+        = image_tag "avatar.png"
+    .notifications-page__content
+      = notification_form(notification)
+      - if !@playcomment.nil?
+        %p=@playcomment.comment
+      - if !@recipecomment.nil?
+        %p=@recipecomment.comment
+      - if !@message.nil?
+        %p=@message.message_text

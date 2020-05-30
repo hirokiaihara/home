@@ -1,7 +1,9 @@
 class RecipecommentsController < ApplicationController
   def create
     @recipecomment = Recipecomment.create(recipecomment_params)
+    @commented_recipe = @recipecomment.recipe
     if @recipecomment.save
+      @commented_recipe.save_notification_recipecomment!(current_user, @recipecomment.id, @commented_recipe.user_id)
       redirect_to recipe_path(@recipecomment.recipe_id), notice: "送信しました"
     else
       redirect_to recipe_path(@recipecomment.recipe_id), alert: "送信できません"

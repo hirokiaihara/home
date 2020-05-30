@@ -33,12 +33,23 @@
   }
   
   &__icon {
+    position: relative;
     &.centering {
       text-align: center;
       p {
         font-size: 13px;
       }
     }
+  }
+  &__notifications {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    background-color: gold;
+    color: #fff;
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
   }
 
   &__hiddenMenu {

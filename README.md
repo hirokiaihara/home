@@ -14,7 +14,15 @@
 - has_many :recipes
 - has_many :playcomments
 - has_many :recipecomments
-- has_many :posts
+- has_many :likes,      dependent: :destroy
+- has_many :myrecipes,      dependent: :destroy
+- has_many :group_users
+- has_many :groups, through: :group_users
+- has_many :messages,    dependent: :destroy
+- has_many :relationships
+- has_many :followings, through: :relationships, source: :follow
+- has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
+- has_many :followers, through: :reverse_of_relationships, source: :user
 - has_many :active_notifications, class_name: "Notification", foreign_key: "visiter_id", dependent: :destroy
 - has_many :passive_notifications, class_name: "Notification", foreign_key: "visited_id", dependent: :destroy
 
@@ -27,9 +35,10 @@
 |category|string|null: false|
 |user_id|references|foreign_key: true|
 ### Association
-- has_many :materials
-- has_many :works
-- has_many :playcomments
+- has_many :materials, dependent: :destroy
+- has_many :works, dependent: :destroy
+- has_many :playcomments, dependent: :destroy
+- has_many :likes, dependent: :destroy
 - belongs_to :user
 - has_many :notifications, dependent: :destroy
 
@@ -66,9 +75,10 @@
 |category|string|null: false|
 |user_id|references|foreign_key: true|
 ### Association
-- has_many :materials
-- has_many :works
-- has_many :recipecomments
+- has_many :foods, dependent: :destroy
+- has_many :makes, dependent: :destroy
+- has_many :recipecomments, dependent: :destroy
+- has_many :myrecipes, dependent: :destroy
 - belongs_to :user
 - has_many :notifications, dependent: :destroy
 
@@ -157,11 +167,13 @@
 ## notificationsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|play_id|references|foreign_key: true|
+|play_id|integer||
 |visiter_id|integer||
 |visited_id|integer||
-|comment_id|integer||
-|report_id|integer||
+|playcomment_id|integer||
+|recipecomment_id|integer||
+|message_id|integer||
+|group_id|integer||
 |action|string||
 |checked|boolean|default: false, null: false|
 
