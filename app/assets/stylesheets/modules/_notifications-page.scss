@@ -36,7 +36,10 @@
   }
   &__content {
     padding-left: 30px;
-    @extend .font-md;
+    @extend .font-sm;
+    a {
+      color: $mainSkyblue;
+    }
   }
 }
 
