@@ -4,10 +4,10 @@
 = render 'layouts/nav-header'
 .main-container
   .user-page
-    = render partial: 'relationships/follow_button', locals: {user: @user}
+    = render partial: 'user-header', locals: {user: @user}
     .tab-section
       .tab-section__tab
-        =link_to "トップ", user_path(current_user.id)
+        =link_to "トップ", user_path(@user.id)
       .tab-section__tab
         =link_to "遊び", "/users/#{@user.id}/show_plays"
       .tab-section__tab.active

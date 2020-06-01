@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :move_to_root, only: [:edit]
   before_action :set_group, only: [:edit, :update, :destroy]
   def index
     @groups = Group.joins(:group_users).where(group_users: {user_id: current_user.id}).order('groups.created_at desc')
@@ -45,6 +47,14 @@ class GroupsController < ApplicationController
   
   def set_group
     @group = Group.find(params[:id])
+  end
+
+  def move_to_root
+    @group = Group.find(params[:id])
+    joining_group = GroupUser.find_by(user_id: current_user.id, group_id: @group.id)
+    if joining_group.nil?
+      redirect_to root_path
+    end
   end
 
 end

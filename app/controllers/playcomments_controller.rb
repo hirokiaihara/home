@@ -1,4 +1,6 @@
 class PlaycommentsController < ApplicationController
+  before_action :authenticate_user!
+
   def create
     @playcomment = Playcomment.create(playcomment_params)
     @commented_play = @playcomment.play
@@ -6,7 +8,7 @@ class PlaycommentsController < ApplicationController
       @commented_play.save_notification_playcomment!(current_user, @playcomment.id, @commented_play.user_id)
       redirect_to play_path(@playcomment.play_id), notice: "送信しました"
     else
-      redirect_to play_path(@playcomment.play_id), alert: "送信できません"
+      redirect_to play_path(@playcomment.play_id), alert: "コメントを入力してください"
     end
   end
 

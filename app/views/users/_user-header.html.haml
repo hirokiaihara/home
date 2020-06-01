@@ -4,7 +4,8 @@
       = image_tag @user.user_image
     -else
       = image_tag "avatar.png"
-  = render partial: 'relationships/follow_button', locals: {user: @user}
+  - if user_signed_in?
+    = render partial: 'relationships/follow_button', locals: {user: @user}
   .user-header__plofile
     .user-header__nickname
       = @user.nickname
