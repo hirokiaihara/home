@@ -3,8 +3,8 @@
     - if current_user.following?(user)
       = form_for(current_user.relationships.find_by(follow_id: user.id), html: {method: :delete}) do |f|
         = f.hidden_field :follow_id, value: user.id
-        = f.submit 'フォロー中', class: 'follow-btn__following'
+        = f.submit 'フォロー中', class: 'follow-btn__following transform-btn'
     - else
       = form_for(current_user.relationships.build) do |f|
         = f.hidden_field :follow_id, value: user.id
-        = f.submit 'フォロー', class: 'follow-btn__follows'
+        = f.submit 'フォロー', class: 'follow-btn__follows transform-btn'

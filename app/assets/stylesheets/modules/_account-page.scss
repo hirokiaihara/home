@@ -1,6 +1,9 @@
 .account-page {
   padding-top: 15px;
   background-color: #fff;
+  h2 {
+      border-bottom: 1px solid;
+  }
   &__title {
     @extend .font-lr;
     @extend .pb-sm;

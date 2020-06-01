@@ -6,13 +6,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, calc(-50% + 20px));
-    color: #fff;
     @extend .font-lr;
     opacity: 0;
     transition: opacity 0.8s ease 0.8s, transform 0.8s ease 0.8s;
     background-color: $mainSkyblue;
     padding: 10px 8px;
     border-radius: 5px;
+    a {
+      color: #fff;
+    }
   }
 }
 

@@ -5,8 +5,10 @@
   @extend .mb-sm;
   box-shadow: 0 2px 4px rgba(0,0,0,.18);
   background-color: #fff;
+  transition: all 0.2s;
   &:hover {
     border: 2px solid $mainSkyblue;
+    opacity: 0.8;
   }
   &__inner {
     display: flex;

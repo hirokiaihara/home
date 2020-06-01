@@ -20,10 +20,10 @@
             %i.fas.fa-paper-plane
               遊び 投稿
             %span.border -----
+          = paginate(@plays)
           .play-contents__body
             - @plays.each do |play|
               = render partial: "pages/play-item", locals: {play: play}
-          .play-contents__more
-            = paginate(@plays)
+          = paginate(@plays)
 %footer
   = render 'layouts/main-footer'

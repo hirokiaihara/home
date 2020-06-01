@@ -3,9 +3,11 @@
   background-color: #fff;
   &__title {
     @extend .font-lr;
-    @extend .pb-sm;
+    @extend .mb-sm;
     font-weight: bold;
     letter-spacing: 0.1em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid $mainOrange;
   }
   &__like {
     @extend .pb-sm;
@@ -100,6 +102,7 @@
       background-color: $mainOrange;
       width: 95%;
       @extend .font-md;
+      border: none;
     }
   }
   &__service {

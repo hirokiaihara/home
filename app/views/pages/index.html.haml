@@ -9,15 +9,18 @@
         .swiper-slide
           = image_tag 'hero_01.png'
           .hero__title
-            Let's Play! おうちで遊ぼう
+            = link_to plays_path do
+              Let's Play! おうちで遊ぼう
         .swiper-slide
           = image_tag 'hero_02.png'
           .hero__title
-            Let's Cooking! 家族と作ろう
+            = link_to recipes_path do
+              Let's Cooking! 家族と作ろう
         .swiper-slide
           = image_tag 'hero_03.png'
           .hero__title
-            Let's Share! みんなで話そう
+            = link_to groups_path do
+              Let's Share! みんなで話そう
         .swiper-slide
           = image_tag 'top-logo.png'
   .main-contents
@@ -46,6 +49,7 @@
       .newItems-playContainer.appear-item
         .newItems-playContainer__title
           %span.border -----
+          = image_tag '子供達.png', height: "50px", width: "60px"
           遊び・新着投稿
           %span.border -----
         .newItems-playContainer__body
@@ -56,6 +60,7 @@
       .newItems-recipeContainer.appear-item
         .newItems-recipeContainer__title
           %span.border ----
+          = image_tag 'フライパン.png', height: "50px", width: "50px"
           レシピ・新着投稿
           %span.border ----
         .newItems-recipeContainer__body
