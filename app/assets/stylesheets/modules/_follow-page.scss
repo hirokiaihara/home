@@ -17,6 +17,9 @@
     align-items: center;
     border-bottom: 1px solid $mainLightGlay;
     cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
   }
   &__user-image {
     img {

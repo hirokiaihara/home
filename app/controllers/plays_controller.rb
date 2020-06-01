@@ -26,7 +26,7 @@ class PlaysController < ApplicationController
 
   def show
     @playcomment = Playcomment.new
-    @playcomments = @play.playcomments.includes(:user).order('playcomments.created_at desc').page(params[:page]).per(5)
+    @playcomments = @play.playcomments.includes(:user).order('playcomments.created_at desc').page(params[:page]).per(2)
   end
 
   def edit

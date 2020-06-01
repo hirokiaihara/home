@@ -11,6 +11,6 @@
       .comment-modal__form
         = form_for [parent, comment] do |f|
           = f.text_area :comment, placeholder: "例)子供がとても喜びました！"
-          = f.submit "送信", class: "comment-modal__submitBtn"
+          = f.submit "送信", class: "comment-modal__submitBtn transform-btn"
       %i.far.fa-times-circle.modal-closeBtn
         閉じる

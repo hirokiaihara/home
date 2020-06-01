@@ -5,7 +5,8 @@
   %input{name: "recipe_id", type: "hidden", value: @recipe.id, class: 'recipe_id' }
   .recipe-form
     .recipe-form__title
-      %h2 レシピ 投稿ページ
+      = image_tag '親子.png', height: "60px", width: "60px"
+      レシピ 投稿ページ
     = form_for @recipe do |f|
       = render "devise/shared/error_messages", resource: @recipe
       .recipe-form__section
@@ -72,6 +73,6 @@
           =f.select :category, [["お菓子"], ["パン"],["料理"]], {prompt: "選択してください"}
       .recipe-form__section
         .recipe-form__input
-          = f.submit "投稿する", class: "recipe-form__submitBtn"
+          = f.submit "投稿する", class: "recipe-form__submitBtn transform-btn"
 %footer
   = render 'layouts/main-footer'

@@ -27,7 +27,9 @@
           = link_to "料理", search_recipes_path(keyword: "料理")
     .recipe-contents__items
       .recipe-contents__sectionTitle
-        新着投稿
+        = image_tag 'フライパン.png', height: "50px", width: "60px"
+        新着
+      = paginate(@recipes)
       .recipe-contents__body
         - @recipes.each do |recipe|
           = render partial: "pages/recipe-item", locals: {recipe: recipe}

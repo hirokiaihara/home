@@ -20,10 +20,10 @@
             %i.fas.fa-utensils
               レシピ・投稿
             %span.border -----
+          = paginate(@recipes)
           .recipe-contents__body
             - @recipes.each do |recipe|
               = render partial: "pages/recipe-item", locals: {recipe: recipe}
-          .recipe-contents__more
-            = paginate(@recipes)
+          = paginate(@recipes)
 %footer
   = render 'layouts/main-footer'

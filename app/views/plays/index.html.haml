@@ -21,7 +21,9 @@
           = link_to "学習", search_plays_path(keyword: "学習")
     .play-contents__items
       .play-contents__sectionTitle
-        新着投稿
+        = image_tag '子供達.png', height: "50px", width: "60px"
+        新着
+      = paginate(@plays)
       .play-contents__body
         - @plays.each do |play|
           = render partial: "pages/play-item", locals: {play: play}

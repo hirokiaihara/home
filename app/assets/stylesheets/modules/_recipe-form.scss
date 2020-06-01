@@ -4,9 +4,11 @@
   background-color: #fff;
   &__title {
     @extend .font-lg;
-    @extend .pb-md;
-    font-weight: bold;
+    @extend .mb-sm;
     letter-spacing: 0.1em;
+    padding-bottom: 5px;
+    border-bottom: 2px solid $mainOrange;
+    display: inline-block;
   }
   &__section {
     @extend .pb-md;

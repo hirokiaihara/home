@@ -24,15 +24,15 @@
             = @uncheck.length
       %p Notice
     .main-header__hiddenMenu
-      = link_to new_play_path, class: "main-header__link" do
+      = link_to new_play_path, class: "main-header__link transform-btn" do
         %i.fas.fa-edit
           遊び・投稿
     .main-header__hiddenMenu
-      = link_to new_recipe_path, class: "main-header__link" do
+      = link_to new_recipe_path, class: "main-header__link transform-btn" do
         %i.fas.fa-edit
           レシピ投稿
     .main-header__hiddenMenu.centering
-      = link_to user_path(current_user.id) do
+      = link_to user_path(current_user.id), class: "opacity-btn" do
         - if current_user.user_image.present?
           = image_tag current_user.user_image
         - else
@@ -40,13 +40,13 @@
       %p MyPage
   - else
     .main-header__hiddenMenu
-      = link_to new_user_registration_path, class: "main-header__link" do
+      = link_to new_user_registration_path, class: "main-header__link transform-btn" do
         新規登録
     .main-header__menu
-      = link_to new_user_session_path, class: "main-header__link" do
+      = link_to new_user_session_path, class: "main-header__link transform-btn" do
         ログイン
     .main-header__hiddenMenu
-      = link_to "#", class: "main-header__link" do
+      = link_to "#", class: "main-header__link transform-btn" do
         使い方ガイド
   .mobile-menu__btn
     %span

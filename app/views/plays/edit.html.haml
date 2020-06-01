@@ -5,7 +5,8 @@
   %input{name: "play_id", type: "hidden", value: @play.id, class: 'play_id' }
   .play-form
     .play-form__title
-      %h2 遊び・工作 編集ページ
+      = image_tag '遊び.png', height: "60px", width: "60px"
+      遊び・工作 編集ページ
     = form_for @play do |f|
       = render "devise/shared/error_messages", resource: @play
       .play-form__section
@@ -76,6 +77,6 @@
           = f.select :category, [["遊び"], ["工作"],["学習"]], {prompt: "選択してください"}
       .play-form__section
         .play-form__input
-          = f.submit "更新する", class: "play-form__submitBtn"
+          = f.submit "更新する", class: "play-form__submitBtn transform-btn"
 %footer
   = render 'layouts/main-footer'

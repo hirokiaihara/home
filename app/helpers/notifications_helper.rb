@@ -27,7 +27,7 @@ module NotificationsHelper
   end
   # 未確認の通知がある時にヘッダーでお知らせする
   def unchecked_notifications
-    @uncheck = current_user.passive_notifications.where(checked: false)
+    @uncheck = current_user.passive_notifications.where(checked: false).where.not(visiter_id: current_user.id)
   end
 end
 
