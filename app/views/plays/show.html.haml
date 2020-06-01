@@ -49,12 +49,17 @@
       .show-playPage__commentBtn 
         %button.modal-openBtn
           コメントする
+    - else
+      .show-playPage__commentBtn 
+        = link_to new_user_session_path do
+          ログインするとコメント出来ます
     - if user_signed_in? && current_user.id == @play.user_id
       .show-playPage__service
         = link_to '編集', edit_play_path(@play), class: "edit-btn"
         = link_to '削除', play_path(@play), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
     = render partial: "show-comment", locals: {comments: @playcomments}
-    = render partial: "modal", locals: {parent: @play, comment: @playcomment}
+    - if user_signed_in?
+      = render partial: "modal", locals: {parent: @play, comment: @playcomment}
 %footer
   = render 'layouts/main-footer'
 

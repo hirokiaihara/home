@@ -7,7 +7,7 @@
     = render partial: 'user-header', locals: {user: @user}
     .tab-section
       .tab-section__tab.active
-        =link_to "トップ", user_path(current_user.id)
+        =link_to "トップ", user_path(@user.id)
       .tab-section__tab
         =link_to "遊び", "/users/#{@user.id}/show_plays"
       .tab-section__tab

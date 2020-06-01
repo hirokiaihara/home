@@ -6,9 +6,10 @@
   .show-recipePage
     .show-recipePage__title
       = @recipe.recipe_title
-    .show-recipePage__myrecipe
-      %div{id: "myrecipe-#{@recipe.id}"}
-        = render partial: "myrecipe", locals: {recipe: @recipe}
+    - if user_signed_in?
+      .show-recipePage__myrecipe
+        %div{id: "myrecipe-#{@recipe.id}"}
+          = render partial: "myrecipe", locals: {recipe: @recipe}
     .show-recipePage__upper
       .show-recipePage__upperLeft
         = image_tag @recipe.recipe_image.url
@@ -52,11 +53,16 @@
       .show-recipePage__commentBtn 
         %button.modal-openBtn
           コメントする
+    - else
+      .show-playPage__commentBtn 
+        = link_to new_user_session_path do
+          ログインするとコメント出来ます
     - if user_signed_in? && current_user.id == @recipe.user_id
       .show-recipePage__service
         = link_to '編集', edit_recipe_path(@recipe), class: "edit-btn"
         = link_to '削除', recipe_path(@recipe), method: :delete, data: {confirm: "削除しますか？"}, class: "delete-btn"
     = render partial: "plays/show-comment", locals: {comments: @recipecomments}
-    = render partial: "plays/modal", locals: {parent: @recipe, comment: @recipecomment}
+    - if user_signed_in?
+      = render partial: "plays/modal", locals: {parent: @recipe, comment: @recipecomment}
 %footer
   = render 'layouts/main-footer'
