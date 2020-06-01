@@ -8,4 +8,7 @@ class PagesController < ApplicationController
     @ranked_recipes = Recipe.includes(:foods, :makes).create_ranks
   end
 
+  def guide
+  end
+  
 end

@@ -1,0 +1,60 @@
+.guide-page {
+  background-color: #fff;
+  padding-top: 15px;
+  span.border {
+    color: $mainOrange;
+  }
+  &__title {
+    @extend .font-lr;
+    @extend .pb-sm;
+    display: inline-block;
+  }
+  &__section {
+    @extend .pb-sm;
+  }
+  &__section-title {
+    @extend .font-md;
+    @extend .mb-sm;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $mainLightGlay;
+  }
+  &__large-image {
+    width: 90%;
+    border: 1px solid $mainOrange;
+    padding: 10px;
+  }
+  &__small-image {
+    width: 90%;
+    border: 1px solid $mainOrange;
+  }
+  &__description {
+    @extend .font-sm;
+  }
+  i.fas.fa-bell {
+    @extend .pb-sm;
+  }
+}
+
+@media (min-width: 600px) {
+  .guide-page {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid $mainLightGlay;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    &__small-image {
+      width: 44%;
+      height: 240px;
+      object-fit: cover;
+      margin: 5px;
+      padding: 10px;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+  .guide-page {
+    width: 70%;
+  }
+}

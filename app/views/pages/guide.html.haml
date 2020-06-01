@@ -1,0 +1,38 @@
+%header
+  = render 'layouts/main-header'
+  = render 'layouts/search-header'
+= render 'layouts/nav-header'
+.main-container
+  .main-contents
+    .guide-page
+      %span.border ----
+      %h2.guide-page__title 使い方ガイド
+      %span.border ----
+      %section.guide-page__section
+        %h3.guide-page__section-title
+          基本コンテンツ(登録なしでご利用出来ます)
+        = image_tag "img_01.png", class: "guide-page__large-image"
+        .guide-page__description
+          %p ・遊びや工作とレシピの検索(ヘッダー上部)
+          %p ・各投稿の詳細閲覧
+          %p ・ユーザーページの閲覧
+      %section.guide-page__section
+        %h3.guide-page__section-title
+          下記は登録してお楽しみください
+        = image_tag "img_02.png", class: "guide-page__small-image"
+        = image_tag "img_03.png", class: "guide-page__small-image"
+        .guide-page__description
+          %p ・遊び・レシピの投稿機能
+          %p ・投稿へのコメント機能
+          %p ・マイフォルダ機能(お気に入りの投稿をストック出来ます)
+          %p ・フォロー機能(気になるユーザーをフォロー)
+      %section.guide-page__section
+        = image_tag "img_04.png", class: "guide-page__small-image"
+        = image_tag "img_05", class: "guide-page__small-image"
+        .guide-page__description
+          %p ・グループ機能(メンバーを招待しよう！)
+          %p ・写真付きでメッセージを送信
+      %i.fas.fa-bell
+        自身の投稿やグループへのアクションは通知で受け取ることが出来ます
+      %br/
+      = link_to "もどる", :back

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'pages#index'
+  get "pages/guide" => "pages/guide"
   resources :users, only: [:index, :show]
   resources :notifications, only: [:index]
   delete "notifications/destroy_all" => "notifications#destroy_all"
