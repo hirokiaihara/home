@@ -1,4 +1,6 @@
 class PlaysController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :move_to_root, only: [:edit]
   before_action :set_play, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -35,6 +37,7 @@ class PlaysController < ApplicationController
       flash[:notice] = "更新しました"
       redirect_to root_path
     else
+      flash[:alert] = "更新できません"
       render :edit
     end
   end
@@ -57,6 +60,13 @@ class PlaysController < ApplicationController
 
   def set_play
     @play = Play.find(params[:id])
+  end
+
+  def move_to_root
+    @play = Play.find(params[:id])
+    if  @play.user_id != current_user.id
+      redirect_to root_path
+    end
   end
 
 end

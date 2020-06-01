@@ -1,5 +1,7 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_recipe, except: [:index, :new, :create, :search]
+  before_action :move_to_root, only: [:edit]
 
   def index
     @recipes = Recipe.includes(:foods, :makes).order('recipes.created_at desc').page(params[:page]).per(12)
@@ -35,6 +37,7 @@ class RecipesController < ApplicationController
       flash[:notice] = "更新しました"
       redirect_to root_path
     else
+      flash[:alert] = "更新できません"
       render :edit
     end
   end
@@ -57,5 +60,12 @@ class RecipesController < ApplicationController
 
   def set_recipe
     @recipe = Recipe.find(params[:id])
+  end
+
+  def move_to_root
+    @recipe = Recipe.find(params[:id])
+    if  @recipe.user_id != current_user.id
+      redirect_to root_path
+    end
   end
 end
