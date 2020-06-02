@@ -23,6 +23,9 @@ module NotificationsHelper
         your_group = link_to notification.group.group_name, "/groups/#{notification.group_id}/messages"
         @message = Message.find_by(id: notification.message_id)
         visiter + "が" + your_group + "にメッセージを送りました"
+      when "add_group" then
+        your_group = link_to notification.group.group_name, "groups/##{notification.group_id}/messages"
+        visiter + "があなたを" + your_group + "に追加しました"
     end
   end
   # 未確認の通知がある時にヘッダーでお知らせする

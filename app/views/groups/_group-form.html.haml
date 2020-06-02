@@ -24,7 +24,8 @@
             .group-form__user
               %input{name: "group[user_ids][]", type: "hidden", value: user.id}
               %p.group-form__user-nickname
-                = user.nickname
+                = link_to users_path(user.id), class: "group-form__link" do
+                  = user.nickname
               %a.user-search-remove.group-form__btn.group-form__btn--remove.js-remove-btn
                 削除
     = f.submit "作成", class: "group-form__submit transform-btn"
