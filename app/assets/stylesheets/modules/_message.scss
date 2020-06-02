@@ -4,9 +4,11 @@
   &__created-at {
     font-size: 13px;
   }
+
   &__user {
     padding-left: 40px;
   }
+
   &__user-image {
     img {
       width: 50px;
@@ -15,11 +17,13 @@
       object-fit: cover;
     }
   }
+
   &__user-nickname {
     width: 60px;
     text-align: center;
     font-size: 12px;
   }
+
   &__body {
     border-radius: 10px;
     text-align: left;
@@ -29,9 +33,11 @@
     width: 80%;
     @extend .font-md;
     @extend .mb-sm;
+
     img {
       width: 95%;
     }
+
     &::before {
       content: '';
       position: absolute;
@@ -47,6 +53,7 @@
       border-top: 20px solid transparent;
       border-left: 20px solid transparent;
     }
+
     &::after {
       content: '';
       position: absolute;
@@ -70,6 +77,7 @@
     &__body {
       width: 50%;
       margin-left: 30%;
+
       img {
         width: 60%;
       }
@@ -80,12 +88,15 @@
 .left-message {
   width: 100%;
   display: flex;
+
   &__created-at {
     font-size: 13px;
   }
+
   &__user {
     padding-right: 40px;
   }
+
   &__user-image {
     img {
       width: 50px;
@@ -94,11 +105,13 @@
       object-fit: cover;
     }
   }
+
   &__user-nickname {
     width: 60px;
     text-align: center;
     font-size: 12px;
   }
+
   &__body {
     border-radius: 10px;
     text-align: left;
@@ -111,6 +124,7 @@
     img {
       width: 95%;
     }
+
     &::before {
       content: '';
       position: absolute;
@@ -126,6 +140,7 @@
       border-top: 20px solid transparent;
       border-right: 20px solid transparent;
     }
+
     &::after {
       content: '';
       position: absolute;
@@ -148,6 +163,7 @@
   .left-message {
     &__body {
       width: 50%;
+      
       img {
         width: 60%;
       }

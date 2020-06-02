@@ -1,7 +1,7 @@
 .group-container {
   @extend .content-width;
   padding: 122px 0 105px;
-  h2 {
+  &__title {
     @extend .font-lr;
     @extend .pb-sm;
   }
@@ -10,7 +10,7 @@
 @media (min-width: 600px) {
   .group-container {
     padding: 130px 0 120px;
-    h2 {
+    &__title {
       text-align: center;
     }
   }

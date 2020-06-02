@@ -1,37 +1,49 @@
 .guide-page {
   background-color: #fff;
   padding-top: 15px;
-  span.border {
+
+  & > .border {
     color: $mainOrange;
   }
+
   &__title {
     @extend .font-lr;
     @extend .pb-sm;
     display: inline-block;
   }
+
   &__section {
     @extend .pb-sm;
   }
+
   &__section-title {
     @extend .font-md;
     @extend .mb-sm;
     padding-bottom: 5px;
     border-bottom: 1px solid $mainLightGlay;
   }
+
   &__large-image {
     width: 90%;
     border: 1px solid $mainOrange;
     padding: 10px;
   }
+
   &__small-image {
     width: 90%;
     border: 1px solid $mainOrange;
   }
+
   &__description {
     @extend .font-sm;
   }
-  i.fas.fa-bell {
+
+  & > .fa-bell {
     @extend .pb-sm;
+  }
+
+  &__link {
+    border-bottom: solid 1px;
   }
 }
 
@@ -43,6 +55,7 @@
     border-radius: 5px;
     text-align: center;
     padding: 20px;
+
     &__small-image {
       width: 44%;
       height: 240px;

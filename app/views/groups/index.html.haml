@@ -6,13 +6,11 @@
       = image_tag 'ウサギ.png', height: "60px", width: "60px"
       みんなで話そう！
     .group-menu__description
-      .group-menu__description-border
-        %p 家族の出来事をここで共有しよう
-        %p 話す事って大事
-    .group-menu__link
-      = link_to new_group_path do
-        %i.fas.fa-edit
-          新規グループ作成はこちら
+      %p 家族の出来事をここで共有しよう
+      %p 話す事って大事
+    = link_to new_group_path, class: "group-menu__link" do
+      %i.fas.fa-edit
+        新規グループ作成はこちら
     %ul.group-menu__groups
       %i.fas.fa-users
         参加しているグループ

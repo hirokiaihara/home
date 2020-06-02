@@ -2,6 +2,7 @@
   @extend .pb-md;
   padding-top: 15px;
   background-color: #fff;
+
   &__title {
     @extend .font-lg;
     @extend .mb-sm;
@@ -10,30 +11,37 @@
     border-bottom: 2px solid $mainOrange;
     display: inline-block;
   }
+
   &__section {
     @extend .pb-md;
   }
+
   &__sectionTitle {
     @extend .font-md;
     @extend .pb-sm;
   }
+
   &__input {
     img {
       width: 100%;
       object-fit: cover;
       cursor: pointer;
     }
+
     input {
-      @extend input;
+      @extend .input;
       width: 100%;
     }
+
     input.material-text {
       width: 60%;
     }
+
     textarea {
-      @extend input;
+      @extend .input;
       width: 100%;
     }
+
     select {
       width: 100%;
       padding: 3px 3px;
@@ -41,9 +49,10 @@
       background-color: $mainLightGlay;
     }
   }
+
   &__submitBtn {
+    @extend .btn;
     background-color: $mainSkyblue;
-    color: #fff;
   }
 }
 
@@ -55,15 +64,19 @@
     border-radius: 5px;
     text-align: center;
     &__section {
+
       img {
         width: 60%;
       }
+
       input {
         width: 80%;
       }
+
       textarea {
         width: 80%;
       }
+
       select {
         width: 80%;
       }

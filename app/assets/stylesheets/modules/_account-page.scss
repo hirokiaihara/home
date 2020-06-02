@@ -1,48 +1,57 @@
 .account-page {
   padding-top: 15px;
   background-color: #fff;
-  h2 {
-      border-bottom: 1px solid;
+  
+  &__link {
+    border-bottom: 1px solid;
+    @extend .mb-sm;
+    display: inline-block;
   }
   &__title {
     @extend .font-lr;
-    @extend .pb-sm;
+    @extend .mb-sm;
     font-weight: bold;
     letter-spacing: 0.1em;
+    border-bottom: 1px solid $mainLightGlay;
   }
+
   &__section {
     @extend .pb-sm;
-    label {
-      @extend .font-md;
-    }
-    img {
-      margin-top: 15px;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid $mainSkyblue;
-      cursor: pointer;
-    }
-    input {
-      @extend input;
-      width: 100%;
-    }
-    textarea {
-      @extend input;
-      width: 100%;
-    }
   }
+
+  &__label {
+    @extend .font-md;
+  }
+
+  &__image {
+    margin-top: 15px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid $mainSkyblue;
+    cursor: pointer;
+  }
+
+  &__input {
+    @extend .input;
+    width: 100%;
+  }
+
   &__submit-btn {
-    color: #fff;
+    @extend .btn;
     background-color: $mainSkyblue;
-    cursor: pointer;
+    width: 100%;
   }
+
   &__destroy-btn {
+    @extend .btn;
+    color: $mainBlack;
     background-color: $mainLightGlay;
-    cursor: pointer;
+    width: 100%;
   }
-  a {
+
+  &__back {
     display: inline-block;
     @extend .mb-sm;
   }
@@ -55,13 +64,15 @@
     border: 1px solid $mainLightGlay;
     border-radius: 5px;
     text-align: center;
-    &__section {
-      input {
-        width: 80%;
-      }
-      textarea {
-        width: 80%;
-      }
+    padding: 10px;
+
+    &__input {
+      width: 80%;
+    }
+    
+    &__submit-btn,
+    &__destroy-btn {
+      width: 80%;
     }
   }
 }

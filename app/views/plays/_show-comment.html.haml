@@ -1,5 +1,5 @@
 .show-comment
-  %h2 < コメント一覧 >
+  %h2.show-comment__title < コメント一覧 >
   -if comments.present?
     %ul.show-comment__commentList
       - comments.each do |comment|

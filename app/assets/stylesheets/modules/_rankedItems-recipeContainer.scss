@@ -3,13 +3,15 @@
   border-radius: 5px;
   @extend .pb-sm;
   @extend .mb-md;
+
   &__title {
     @extend .font-lr;
     @extend .pb-sm;
     font-weight: bold;
     letter-spacing: 0.1em;
     text-align: center;
-    span.border {
+    
+    .border {
       color: $mainOrange;
     }
   }

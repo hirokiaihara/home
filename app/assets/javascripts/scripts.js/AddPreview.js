@@ -15,7 +15,9 @@ class AddPreview {
       } else {
         $(preview).append(buildImg(targetIndex, blobUrl));
       }
+      
       document.querySelector(imgBox).classList.add('hidden');
+      console.log(imgBox);
     })
   }
 }

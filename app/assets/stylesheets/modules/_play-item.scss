@@ -7,10 +7,12 @@
   box-shadow: 0 2px 4px rgba(0,0,0,.18);
   background-color: #fff;
   transition: all 0.2s;
+
   &:hover {
     border: 2px solid $mainSkyblue;
     opacity: 0.8;
   }
+
   &__image {
     img {
       width: 100%;
@@ -19,10 +21,12 @@
       border-radius: 5px;
     }
   }
+
   &__title {
     @extend .font-md;
     color: $mainOrange;
   }
+
   &__introduction,
   &__user {
     @extend .font-sm;
@@ -33,6 +37,7 @@
   .play-item {
     flex-basis: 24%;
     padding: 8px;
+    
     &__image {
       img {
         height: 150px;

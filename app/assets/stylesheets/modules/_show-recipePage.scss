@@ -1,6 +1,7 @@
 .show-recipePage {
   padding-top: 30px;
   background-color: #fff;
+
   &__title {
     @extend .font-lr;
     @extend .mb-sm;
@@ -9,6 +10,7 @@
     padding-bottom: 5px;
     border-bottom: 2px solid $mainOrange;
   }
+
   &__myrecipe {
     @extend .pb-sm;
     span {
@@ -21,59 +23,71 @@
       color: $mainRed;
     }
   }
+
   &__upper {
     display: flex;
     flex-direction: column;
   }
+
   &__upperLeft {
     img {
       width: 80%;
     }
   }
+
   &__introduction {
     @extend .font-md;
     @extend .pb-sm;
     @extend .mb-sm;
     border-bottom: 1px dotted;
   }
+
   &__nickname {
     @extend .font-md;
     @extend .pb-sm;
     @extend .mb-sm;
     border-bottom: 1px dotted;
+
     a {
       color: $mainOrange;
       @extend .font-md;
       border-bottom: solid 1px;
     }
+
     span {
       @extend .font-sm;
     }
   }
+
   &__foods {
     @extend .font-md;
     @extend .pb-sm;
     @extend .mb-sm;
     border-bottom: 1px dotted;
   }
+
   &__food {
     padding-bottom: 5px;
     display: flex;
     justify-content: space-between;
   }
+
   &__sectionTitle {
     @extend .font-sm;
     @extend .pb-sm;
   }
+
   &__middle {
     @extend .pb-sm;
     @extend .mb-sm;
     border-bottom: 1px dotted;
   }
+
   &__makeContainer {
     display: flex;
     flex-direction: column;
   }
+
   &__makeContent {
     @extend .pb-sm;
     span {
@@ -84,21 +98,26 @@
       width: 200px;
     }
   }
+
   &__under {
     @extend .mb-sm;
     border-bottom: 1px dotted;
   }
+
   &__category {
     @extend .pb-sm;
     @extend .font-md;
   }
+
   &__created {
     @extend .pb-sm;
     @extend .font-md;
   }
+
   &__commentBtn {
     text-align: center;
     @extend .pb-sm;
+
     button {
       @extend .btn;
       background-color: $mainOrange;
@@ -107,10 +126,12 @@
       border: none;
     }
   }
+
   &__service {
     display: flex;
     justify-content: space-around;
     @extend .pb-sm;
+
     .edit-btn {
       @extend .btn;
       text-align: center;
@@ -119,6 +140,7 @@
       background-color: $mainSkyblue;
       letter-spacing: 0.2em;
     }
+
     .delete-btn {
       @extend .btn;
       text-align: center;
@@ -137,24 +159,30 @@
     border: 1px solid $mainLightGlay;
     border-radius: 5px;
     padding: 30px;
+
     &__upper {
       display: flex;
       flex-direction: row;
     }
+
     &__upperLeft {
       flex-basis: 50%;
     }
+
     &__upperRight {
       flex-basis: 50%;
     }
+
     &__makeContainer {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
     }
+
     &__makeContent {
       flex-basis: 45%;
       margin-right: 20px;
+
       img {
         width: 100%;
         height: 200px;
@@ -167,9 +195,11 @@
 @media (min-width: 960px) {
   .show-recipePage {
     width: 70%;
+    
     &__makeContent {
       flex-basis: 30%;
       margin-right: 15px;
+
       img {
         width: 100%;
         height: 200px;

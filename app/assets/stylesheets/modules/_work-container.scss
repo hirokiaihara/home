@@ -1,13 +1,16 @@
 .work-fileGroup {
   @extend .pb-sm;
+
   span {
     @extend .font-md;
   }
+
   img {
     width: 130px;
     height: 130px;
     cursor: pointer;
   }
+
   &__img {
     width: 130px;
     height: 130px;
@@ -15,6 +18,7 @@
     border-radius: 5px;
     background-color: $mainLightGlay;
     cursor: pointer;
+
     i {
       color: $mainGlay;
       padding: 50px 10px;
@@ -31,10 +35,12 @@
   .work-fileGroup {
     text-align: left;
     flex-basis: 40%;
+
     textarea.work-text {
       width: 100%;
       height: 120px;
     }
+    
     i {
       display: block;
     }

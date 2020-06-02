@@ -3,7 +3,8 @@
   padding: 7px;
   display: flex;
   justify-content: space-between;
-  a {
+
+  &__link {
     color: #fff;
     @extend .font-sm;
   }

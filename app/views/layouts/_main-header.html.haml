@@ -5,12 +5,12 @@
         = image_tag 'logo.png'
   .main-header__search
     = form_tag(search_plays_path, method: "get") do
-      = text_field_tag :keyword, '', class: 'search-form', placeholder: "面白いを探してみよう！"
+      = text_field_tag :keyword, '', class: 'main-header__input', placeholder: "面白いを探してみよう！"
       %label(for="search-btn")
-        %button
+        %button.main-header__search-btn
           %i.fas.fa-search
         = submit_tag "", class: "hidden", id: "search-btn"
-    = link_to "レシピを探す", recipes_path
+    = link_to "レシピを探す", recipes_path, class: "main-header__search-link"
   - if user_signed_in?
     .main-header__icon.centering
       = link_to "/users/#{current_user.id}/myrecipes" do
@@ -34,9 +34,9 @@
     .main-header__hiddenMenu.centering
       = link_to user_path(current_user.id), class: "opacity-btn" do
         - if current_user.user_image.present?
-          = image_tag current_user.user_image
+          = image_tag current_user.user_image, class: "main-header__image"
         - else
-          = image_tag 'avatar.png'
+          = image_tag 'avatar.png', class: "main-header__image"
       %p MyPage
   - else
     .main-header__hiddenMenu
@@ -46,8 +46,8 @@
       = link_to new_user_session_path, class: "main-header__link transform-btn" do
         ログイン
     .main-header__hiddenMenu
-      = link_to "#", class: "main-header__link transform-btn" do
-        使い方ガイド
+      = link_to pages_guide_path, class: "main-header__link transform-btn" do
+        What's HOME
   .mobile-menu__btn
     %span
     %span

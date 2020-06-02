@@ -3,18 +3,21 @@
   border-radius: 5px;
   @extend .pb-sm;
   @extend .mb-md;
+
   &__title {
     @extend .font-lr;
     @extend .pb-sm;
     font-weight: bold;
     letter-spacing: 0.1em;
     text-align: center;
-    span.border {
+    .border {
       color: $mainOrange;
     }
   }
+
   &__more {
     text-align: center;
+
     a {
       border-bottom: 1px solid;
     }
@@ -24,6 +27,7 @@
 @media (min-width: 600px) {
   .newItems-recipeContainer {
     padding: 20px;
+    
     &__body {
       display: flex;
       flex-wrap: wrap;

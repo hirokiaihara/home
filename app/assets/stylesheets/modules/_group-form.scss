@@ -1,13 +1,17 @@
 .group-form {
   background-color: #fff;
-  label {
+
+  &__label {
     display: block;
     padding-bottom: 5px;
   }
-  input {
+
+  &__input {
+    @extend .input;
     width: 100%;
     @extend .mb-sm;
   }
+
   &__user {
     display: flex;
     padding: 5px;
@@ -15,17 +19,20 @@
     border-bottom: 1px solid;
     justify-content: space-between;
     align-items: center;
-    img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
   }
+
+  &__image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
   &__user-nickname {
     @extend .font-sm;
   }
-  i.fas.fa-user {
+
+  & > .fa-user {
     margin-top: 20px;
     background-color: $mainSkyblue;
     color: #fff;
@@ -33,20 +40,27 @@
     border-radius: 5px;
     @extend .mb-sm;
   }
+
   &__btn--add {
     @extend .btn;
     background-color: $mainSkyblue;
   }
+
   &__btn--remove {
     @extend .btn;
     background-color: $mainRed;
   }
+
   &__submit {
+    @extend .btn;
     background-color: $mainSkyblue;
-    color: #fff;
     margin-top: 10px;
     @extend .font-sm;
+    @extend .mb-sm;
+    width: 100%;
+
   }
+
   &__back {
     display: block;
     text-align: center;
@@ -61,11 +75,17 @@
     border: 1px solid $mainLightGlay;
     border-radius: 5px;
     text-align: center;
+
     &__user {
       width: 80%;
       margin: 0 auto;
     }
-    input {
+
+    &__input {
+      width: 80%;
+    }
+    
+    &__submit {
       width: 80%;
     }
   }

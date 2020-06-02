@@ -1,7 +1,8 @@
 %header
   = render 'layouts/main-header'
 .group-container
-  %h2 新規グループ作成
+  %h2.group-container__title
+    新規グループ作成
   = render partial: 'group-form', locals: { group: @group }
 %footer
   = render 'layouts/main-footer'

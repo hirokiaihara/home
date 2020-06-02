@@ -2,10 +2,12 @@
   @extend .content-width;
   @extend .pb-sm;
   padding-top: 115px;
+
   &__menu {
     display: flex;
     justify-content: space-between;
   }
+
   &__item {
     @extend .btn;
     background-color: $mainOrange;
@@ -19,9 +21,11 @@
 @media (min-width: 600px) {
   .nav-short-header {
     padding-top: 192px;
+
     &__menu {
       justify-content: center;
     }
+
     &__item {
       margin: 0 10px;
     }
@@ -31,8 +35,10 @@
 @media (min-width: 960px) {
   .nav-short-header {
     padding-top: 142px;
+
     &__item {
       margin: 0 20px;
+      
       a {
         font-size: 25px;
       }

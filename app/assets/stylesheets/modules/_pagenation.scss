@@ -1,18 +1,20 @@
 .pagination {
   text-align: center;
   padding: 10px 0 5px;
-}
-span {
-  font-size: 18px;
-  display: inline-block;
-  text-align: center;
-  margin: 3px;
-  &.current {
-    color: #fff;
-    background-color: $mainSkyblue;
-    height: 30px;
-    width: 30px;
-    padding: 2px;
-    border-radius: 50%;
+
+  & > span {
+    font-size: 18px;
+    display: inline-block;
+    text-align: center;
+    margin: 3px;
+    
+    &.current {
+      color: #fff;
+      background-color: $mainSkyblue;
+      height: 30px;
+      width: 30px;
+      padding: 2px;
+      border-radius: 50%;
+    }
   }
 }

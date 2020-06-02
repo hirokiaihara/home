@@ -46,13 +46,13 @@ class AddNewFile {
       }
     }
     //追加
+    //urlで条件分岐
+    var url = location.pathname
+    const play_id = $('.play_id').val();
+    const EditPlayUrl = `/plays/${play_id}/edit`;
+    const recipe_id = $('.recipe_id').val();
+    const EditRecipeUrl = `/recipes/${recipe_id}/edit`;
     document.querySelector(add).addEventListener('click', function() {
-      //urlで条件分岐
-      var url = location.pathname
-      const play_id = $('.play_id').val();
-      const EditPlayUrl = `/plays/${play_id}/edit`;
-      const recipe_id = $('.recipe_id').val();
-      const EditRecipeUrl = `/recipes/${recipe_id}/edit`;
       //新規投稿の時
       if (url == "/plays/new" || url == "/recipes/new") {
         $(container).append(buildNewFile(fileIndex[0]));
@@ -69,39 +69,21 @@ class AddNewFile {
         }
       //ヴァリデーションにはじかれた時と投稿編集時
       } else if (url == "/plays" || url == EditPlayUrl || url == "/recipes" || url == EditRecipeUrl) {
-        //materialの操作
-        if (container == '.material-container') {
-          const files = document.querySelectorAll('.material-textGroup');
-          $(container).append(buildNewFile(files.length));
-          //10個出た時のアラート
-          if ($(files).length == 10) $(add).hide(), $(alert).show();
-        //workの操作
-        } else if (container == '.work-container') {
-          const files = document.querySelectorAll('.work-fileGroup');
-          $(container).append(buildNewFile(files.length));
-          //10個出た時のアラート
-          if ($(files).length == 10) $(add).hide(), $(alert).show();
-          const preIndex = `.preIndex${files.length+1}`;
-          const imgIndex = `.imgIndex${files.length+1}`;
-          const indexFile = `.fileIndex${files.length+1}`;
-          new AddPreview(preIndex, imgIndex, indexFile);
-        //foodの操作
-        } else if (container == '.food-container') {
-          const files = document.querySelectorAll('.food-textGroup');
-          $(container).append(buildNewFile(files.length));
-          //10個出た時のアラート
-          if ($(files).length == 10) $(add).hide(), $(alert).show();
-        //makeの操作
-        } else if (container == '.make-container') {
-          const files = document.querySelectorAll('.make-fileGroup');
-          $(container).append(buildNewFile(files.length));
-          //10個出た時のアラート
-          if ($(files).length == 10) $(add).hide(), $(alert).show();
-          const preIndex = `.preIndex${files.length+1}`;
-          const imgIndex = `.imgIndex${files.length+1}`;
-          const indexFile = `.fileIndex${files.length+1}`;
+        //material, foodの操作
+        $(container).append(buildNewFile(fileIndex[0]+100));
+        fileIndex.shift();
+        fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+        console.log(fileIndex);
+        //work, makeの操作
+        if (container == '.make-container' || container == '.work-container') {
+          const preIndex = `.preIndex${fileIndex[0]+100}`;
+          const imgIndex = `.imgIndex${fileIndex[0]+100}`;
+          const indexFile = `.fileIndex${fileIndex[0]+100}`;
+          console.log(indexFile);
           new AddPreview(preIndex, imgIndex, indexFile);
         }
+        //10個出た時のアラート
+        if ($(group).length == 10) $(add).hide(), $(alert).show();
       }
     });
     //削除
@@ -127,10 +109,22 @@ class AddNewFile {
         const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-makeDestroy`);
         if (hiddenCheck) hiddenCheck.prop('checked', true);
       }
-      
       //viewを削除と入力欄が0にならないように
       $(this).parent().remove();
-      if ($(group).length == 0) $(container).append(buildNewFile(fileIndex[0]));
+      if ($(group).length == 0) {
+        // ファイルインデックスをリセット
+        let fileIndex = [100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110];
+        $(container).append(buildNewFile(fileIndex[0]));
+        if (container == '.work-container' || container == '.make-container') {
+          const preIndex = `.preIndex${fileIndex[1]}`;
+          const imgIndex = `.imgIndex${fileIndex[1]}`;
+          const indexFile = `.fileIndex${fileIndex[1]}`;
+          new AddPreview(preIndex, imgIndex, indexFile);
+        }
+        fileIndex.shift();
+        fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+      }
+      //10個出た時のアラート
       if ($(group).length < 10) $(add).show(), $(alert).hide();
     })
   }

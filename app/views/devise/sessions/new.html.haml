@@ -2,24 +2,24 @@
   = render 'layouts/main-header'
 .form-container
   .account-page
-    = link_to new_user_registration_path do
-      %h2 新規登録はこちらから
-    .account-page__title
+    = link_to new_user_registration_path, class: "account-page__link" do
+      新規登録はこちらから
+    %h2.account-page__title
       ログイン
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .account-page__section
+      %section.account-page__section
         %p 採用担当者様は入力済みの情報で『ログイン』を押してください。
-      .account-page__section
-        = f.label :email, "メールアドレス"
+      %section.account-page__section
+        = f.label :email, "メールアドレス", class: "account-page__label"
         %br/
-        = f.email_field :email, value: "test@test", autocomplete: "email"
-      .account-page__section
-        = f.label :password
+        = f.email_field :email, value: "test@test", autocomplete: "email", class: "account-page__input"
+      %section.account-page__section
+        = f.label :password, class: "account-page__label"
         %br/
-        = f.password_field :password, value: "111111", autocomplete: "current-password"
-      .account-page__section
+        = f.password_field :password, value: "111111", autocomplete: "current-password", class: "account-page__input"
+      %section.account-page__section
         = f.submit "ログイン", class: "account-page__submit-btn transform-btn"
-      .account-page__section
+      %section.account-page__section
         %ul 
           < 採用担当者様専用アカウント > 
           %li 

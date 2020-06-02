@@ -22,11 +22,10 @@
           - @users.each do |user|
             = link_to user_path(user.id) do
               .follow-page__user
-                .follow-page__user-image
-                  -if user.user_image.present?
-                    = image_tag user.user_image.url
-                  - else
-                    = image_tag 'avatar.png'
+                -if user.user_image.present?
+                  = image_tag user.user_image.url, class: "follow-page__user-image"
+                - else
+                  = image_tag 'avatar.png', class: "follow-page__user-image"
                 .follow-page__description
                   .follow-page__nickname
                     = user.nickname

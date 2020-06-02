@@ -2,6 +2,7 @@
   background-color: #fff;
   @extend .pb-sm;
 }
+
 .user-header {
   width: 100%;
   height: 350px;
@@ -15,6 +16,7 @@
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
+
     img {
       height: 100px;
       width: 100px;
@@ -23,6 +25,7 @@
       border: 2px solid $mainSkyblue;
     }
   }
+
   &__plofile {
     background-color: rgba(255, 255, 255, .7);
     position: absolute;
@@ -30,22 +33,27 @@
     bottom: 0;
     width: 100%;
     padding: 0 15px;
+
     a {
       display: inline-block;
       padding-bottom: 6px;
     }
   }
+
   &__nickname {
     padding: 10px 0;
     @extend .font-md;
+
     span {
       @extend .font-sm;
     }
   }
+
   &__introduction {
     @extend .font-sm;
     padding-bottom: 6px;
   }
+  
   &__follow {
     @extend .pb-sm;
     span {

@@ -2,15 +2,8 @@
   position: absolute;
   top: 53%;
   right: 4%;
-  &__following {
-    cursor: pointer;
-    background-color: $mainSkyblue;
-    color: #fff;
-    border: none;
-    @extend .font-sm;
-    border-radius: 30px;
-    padding: 5px 22px;
-  }
+
+  &__following,
   &__follows {
     cursor: pointer;
     background-color: $mainSkyblue;

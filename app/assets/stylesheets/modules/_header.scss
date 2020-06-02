@@ -6,6 +6,7 @@ header {
   z-index: 10;
   background-color: #fff;
   border-bottom: 0.1em solid $mainLightGlay;
+  
   &.triggered {
     background-color: rgba(255, 255, 255, .9);
     box-shadow: 10px 0 25px -10px rgba(0, 0, 0, .5);

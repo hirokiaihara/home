@@ -7,40 +7,44 @@
   &__search {
     display: none;
     position: relative;
-    input {
-      @extend input;
-      background-color: $mainLightGlay;
-      width: 350px;
-      height: 40px;
-    }
-    button {
-      font-size: 24px;
-      background-color: $mainLightGlay;
-      border: none;
-      position: absolute;
-      top: 4px;
-      right: 1px;
-      cursor: pointer;
-      background-color: transparent;
-      border: none;
-    }
-    a {
-      display: inline-block;
-      padding-top: 3px;
-      color: $mainSkyblue;
-      border-bottom: 1px solid;
-    }
+  }
+
+  &__input {
+    @extend .input;
+    background-color: $mainLightGlay;
+    width: 350px;
+    height: 40px;
+  }
+
+  &__search-btn {
+    font-size: 24px;
+    background-color: $mainLightGlay;
+    border: none;
+    position: absolute;
+    top: 4px;
+    right: 1px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__search-link  {
+    display: inline-block;
+    padding-top: 3px;
+    color: $mainSkyblue;
+    border-bottom: 1px solid;
   }
   
   &__icon {
     position: relative;
     &.centering {
       text-align: center;
-      p {
+      & > p {
         font-size: 13px;
       }
     }
   }
+
   &__notifications {
     position: absolute;
     top: 25%;
@@ -55,16 +59,9 @@
   &__hiddenMenu {
     display: none;
 
-    img {
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    
     &.centering {
       text-align: center;
-      p {
+      & > p {
         font-size: 13px;
       }
     }
@@ -74,6 +71,13 @@
     @extend .btn;
     background-color: $mainSkyblue;
     color: #fff;
+  }
+
+  &__image {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
   }
 }
 

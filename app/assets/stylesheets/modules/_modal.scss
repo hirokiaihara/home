@@ -24,13 +24,16 @@
   z-index: 12;
   box-shadow: 10px 5px 25px -10px rgba(0, 0, 0, .5);
   text-align: center;
+
   &.hidden {
     transform: translate(0, -500px);
   }
+
   &__title {
     @extend .font-md;
     @extend .pb-sm;
   }
+
   &__user {
     display: none;
     img {
@@ -40,21 +43,23 @@
       object-fit: cover;
     }
   }
+
   &__form {
     @extend .pb-sm;
     textarea {
-      @extend input;
+      @extend .input;
       width: 100%;
       height: 120px;
       padding: 5px;
     }
   }
+
   &__submitBtn {
+    @extend .btn;
     text-align: center;
     display: block;
     width: 100%;
     background-color: $mainSkyblue;
-    color: #fff;
     @extend .mb-sm;
   }
 }
@@ -63,6 +68,7 @@
   .comment-modal {
     width: 60%;
     top: 18%;
+    
     &__user {
       display: block;
     }

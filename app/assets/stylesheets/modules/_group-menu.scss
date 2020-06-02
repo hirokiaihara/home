@@ -1,5 +1,6 @@
 .group-menu {
   background-color: #fff;
+
   &__title {
     @extend .font-lr;
     @extend .pb-sm;
@@ -7,6 +8,7 @@
     letter-spacing: 0.1em;
     text-align: center;
   }
+
   &__description {
     text-align: center;
     border: 2px dotted $mainOrange;
@@ -15,19 +17,18 @@
     border-radius: 5px;
     margin: 0 auto;
     @extend .mb-sm;
-    p {
-      @extend .font-sm;
-    }
+    @extend .font-sm;
   }
+
   &__link {
-    @extend .pb-sm;
-    a {
-      @extend .font-md;
-      border-bottom: 1px solid;
-    }
+    @extend .mb-sm;
+    @extend .font-md;
+    border-bottom: 1px solid;
+    display: inline-block;
   }
+
   &__groups {
-    i.fas.fa-users {
+    & > .fa-users {
       background-color: $mainSkyblue;
       color: #fff;
       padding: 3px 5px;
@@ -35,19 +36,23 @@
       @extend .mb-sm;
     }
   }
+
   &__group-link {
     @extend .pb-sm;
     border-bottom: 1px solid $mainLightGlay;
     @extend .mb-sm;
   }
+
   &__group-name {
     @extend .font-md;
     padding-bottom: 3px;
   }
+
   &__show-last-member {
     @extend .font-sm;
     padding-bottom: 3px;
   }
+  
   &__edit,
   &__delete {
     padding-right: 10px;

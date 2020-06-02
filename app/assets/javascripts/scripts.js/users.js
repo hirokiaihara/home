@@ -5,7 +5,7 @@ $(function() {
     if (user.user_image) {
       let html = `<div class="group-form__user">
                     <p class="group-form__user-nickname">${user.nickname}</p>
-                    <img src=${user.user_image}>
+                    <img src=${user.user_image} class="group-form__image">
                     <div class="user-search-add group-form__btn group-form__btn--add" data-user-id="${user.id}" data-user-nickname="${user.nickname}" >追加<div>
                   </div>`;
       $("#user-search-result").append(html);

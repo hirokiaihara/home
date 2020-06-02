@@ -1,7 +1,8 @@
 %header
   = render 'layouts/main-header'
 .group-container
-  %h2 グループ編集
+  %h2.group-container__title
+    グループ編集
   = render partial: 'group-form', locals: { group: @group }
 %footer
   = render 'layouts/main-footer'

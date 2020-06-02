@@ -5,10 +5,10 @@
       %ul
         - group.errors.full_messages.each do |message|
           %li= message
-    = f.label :group_name
-    = f.text_field :group_name, placeholder: "グループ名を入力してください"
-    %label(for="グループメンバーを追加") グループメンバーを追加
-    %input#user-search-field{placeholder: "追加したいユーザー名を入力", type: "text"}/
+    = f.label :group_name, class: "group-form__label"
+    = f.text_field :group_name, placeholder: "グループ名を入力してください", class: "group-form__input"
+    %label.group-form__label(for="グループメンバーを追加") グループメンバーを追加
+    %input#user-search-field{placeholder: "追加したいユーザー名を入力", type: "text", class: "group-form__input"}/
     #user-search-result
     %i.fas.fa-user
       グループメンバー
