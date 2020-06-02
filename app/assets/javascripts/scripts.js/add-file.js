@@ -79,7 +79,6 @@ class AddNewFile {
           const preIndex = `.preIndex${fileIndex[0]+100}`;
           const imgIndex = `.imgIndex${fileIndex[0]+100}`;
           const indexFile = `.fileIndex${fileIndex[0]+100}`;
-          console.log(indexFile);
           new AddPreview(preIndex, imgIndex, indexFile);
         }
         //10個出た時のアラート
