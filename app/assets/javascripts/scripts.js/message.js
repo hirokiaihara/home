@@ -22,12 +22,14 @@ $(function() {
                             </div>
                           </div>
                           <div class = "right-message__user">
-                            <div class = "right-message__user-image">
-                              <img src=${message.user_image}>
-                            </div>
-                            <div class="right-message__user-nickname">
-                              ${message.user_nickname}
-                            </div>
+                            <a href="/users/${message.user_id}">
+                              <div class = "right-message__user-image">
+                                <img src=${message.user_image}>
+                              </div>
+                              <div class="right-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </a>
                           </div>
                         </div>
                       </div>`
@@ -46,12 +48,14 @@ $(function() {
                             </div>
                           </div>
                           <div class = "right-message__user">
-                            <div class = "right-message__user-image">
-                              <img src=${message.user_image}>
-                            </div>
-                            <div class="right-message__user-nickname">
-                              ${message.user_nickname}
-                            </div>
+                            <a href="/users/${message.user_id}">
+                              <div class = "right-message__user-image">
+                                <img src=${message.user_image}>
+                              </div>
+                              <div class="right-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </a>
                           </div>
                         </div>
                       </div>`
@@ -75,9 +79,11 @@ $(function() {
                             </div>
                           </div>
                           <div class = "right-message__user">
-                            <div class="right-message__user-nickname">
-                              ${message.user_nickname}
-                            </div>
+                            <a href="/users/${message.user_id}">
+                              <div class="right-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </a>
                           </div>
                         </div>
                       </div>`
@@ -95,9 +101,11 @@ $(function() {
                             </div>
                           </div>
                           <div class = "right-message__user">
-                            <div class="right-message__user-nickname">
-                              ${message.user_nickname}
-                            </div>
+                            <a href="/users/${message.user_id}">
+                              <div class="right-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </a>
                           </div>
                         </div>
                       </div>`
@@ -111,12 +119,14 @@ $(function() {
           var html = `<div class="message" data-message-id=${message.id}>
                         <div class = "left-message">
                           <div class = "left-message__user">
-                            <div class = "left-message__user-image">
-                              <img src=${message.user_image}>
-                            </div>
-                            <div class="left-message__user-nickname">
-                              ${message.user_nickname}
-                            </div>
+                            <a href="/users/${message.user_id}">
+                              <div class = "left-message__user-image">
+                                <img src=${message.user_image}>
+                              </div>
+                              <div class="left-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </a>
                           </div>
                           <div class = "left-message__body">
                             <div class = "left-message__image">
@@ -136,12 +146,14 @@ $(function() {
           var html = `<div class="message" data-message-id=${message.id}>
                         <div class = "left-message">
                           <div class = "left-message__user">
-                            <div class = "left-message__user-image">
-                              <img src=${message.user_image}>
-                            </div>
-                            <div class="left-message__user-nickname">
-                              ${message.user_nickname}
-                            </div>
+                            <a href="/users/${message.user_id}">
+                              <div class = "left-message__user-image">
+                                <img src=${message.user_image}>
+                              </div>
+                              <div class="left-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </a>
                           </div>
                           <div class = "left-message__body">
                             <div class = "left-message__text">
@@ -160,9 +172,11 @@ $(function() {
           var html = `<div class="message" data-message-id=${message.id}>
                         <div class = "left-message">
                           <div class = "left-message__user">
-                            <div class="left-message__user-nickname">
-                              ${message.user_nickname}
-                            </div>
+                            <a href="/users/${message.user_id}">
+                              <div class="left-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </a>
                           </div>
                           <div class = "left-message__body">
                             <div class = "left-message__image">
@@ -182,9 +196,11 @@ $(function() {
           var html = `<div class="message" data-message-id=${message.id}>
                         <div class = "left-message">
                           <div class = "left-message__user">
-                            <div class="left-message__user-nickname">
-                              ${message.user_nickname}
-                            </div>
+                            <a href="/users/${message.user_id}">
+                              <div class="left-message__user-nickname">
+                                ${message.user_nickname}
+                              </div>
+                            </a>
                           </div>
                           <div class = "left-message__body">
                             <div class = "left-message__text">

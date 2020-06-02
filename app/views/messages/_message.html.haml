@@ -14,25 +14,27 @@
             %i.far.fa-times-circle
               削除
       .right-message__user
-        .right-message__user-image
-          - if message.user.user_image.present?
-            = image_tag message.user.user_image.url
-          - else
-            .right-message__user-image
-              = image_tag 'avatar.png'
-        .right-message__user-nickname
-          = message.user.nickname
+        = link_to user_path(message.user_id) do
+          .right-message__user-image
+            - if message.user.user_image.present?
+              = image_tag message.user.user_image.url
+            - else
+              .right-message__user-image
+                = image_tag 'avatar.png'
+          .right-message__user-nickname
+            = message.user.nickname
   - else
     .left-message
       .left-message__user
-        .left-message__user-image
-          - if message.user.user_image.present?
-            = image_tag message.user.user_image.url
-          - else
-            .right-message__user-image
-              = image_tag 'avatar.png'
-        .left-message__user-nickname
-          = message.user.nickname
+        = link_to user_path(message.user_id) do
+          .left-message__user-image
+            - if message.user.user_image.present?
+              = image_tag message.user.user_image.url
+            - else
+              .right-message__user-image
+                = image_tag 'avatar.png'
+          .left-message__user-nickname
+            = message.user.nickname
       .left-message__body
         - if message.message_image.present?
           .left-message__image
