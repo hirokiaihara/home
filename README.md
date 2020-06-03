@@ -1,7 +1,6 @@
 # アプリ概要 *What's HOME?*
 ## お家時間を楽しみにする遊びとレシピの検索と交流ができるアプリです
-![89663daee4f9b0ebddfcff1fdd8dedc7](https://user-images.githubusercontent.com/61179665/83648504-18ccd580-a5f1-11ea-8ba7-0a033bb35d63.jpg)
-
+![top](https://user-images.githubusercontent.com/61179665/83653605-f473f780-a5f6-11ea-85fc-c5c98fa34837.jpg)
 ## 🌐 address 
 ### **http://www.your-home2020.com.** 
 ログイン専用アカウントが埋め込んであります。
