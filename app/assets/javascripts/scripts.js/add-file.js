@@ -55,6 +55,7 @@ class AddNewFile {
     document.querySelector(add).addEventListener('click', function() {
       //新規投稿の時
       if (url == "/plays/new" || url == "/recipes/new") {
+        //material, foodの操作
         $(container).append(buildNewFile(fileIndex[0]));
         fileIndex.shift();
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
@@ -74,7 +75,7 @@ class AddNewFile {
         fileIndex.shift();
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
         console.log(fileIndex);
-        //work, makeの操作
+        //work, makeの操作時はAddPreviewインスタンスをnew
         if (container == '.make-container' || container == '.work-container') {
           const preIndex = `.preIndex${fileIndex[0]+100}`;
           const imgIndex = `.imgIndex${fileIndex[0]+100}`;
@@ -123,7 +124,7 @@ class AddNewFile {
         fileIndex.shift();
         fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
       }
-      //10個出た時のアラート
+      //9個以下でアラートを消す
       if ($(group).length < 10) $(add).show(), $(alert).hide();
     })
   }

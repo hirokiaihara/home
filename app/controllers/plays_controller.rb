@@ -1,6 +1,6 @@
 class PlaysController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-  before_action :move_to_root, only: [:edit]
+  # before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  # before_action :move_to_root, only: [:edit]
   before_action :set_play, only: [:show, :edit, :update, :destroy]
   
   def index
