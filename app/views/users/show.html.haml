@@ -20,11 +20,15 @@
             %i.fas.fa-paper-plane
               遊び 投稿
             %span.border -----
-          .play-contents__body
-            - @plays.each do |play|
-              = render partial: "pages/play-item", locals: {play: play}
-          .play-contents__more
-            = link_to "もっと見る", "/users/#{@user.id}/show_plays"
+          - if @plays.present?
+            .play-contents__body
+              - @plays.each do |play|
+                = render partial: "pages/play-item", locals: {play: play}
+            .play-contents__more
+              = link_to "もっと見る", "/users/#{@user.id}/show_plays"
+          - else
+            .play-contents__more
+              投稿はまだありません
       .recipe-contents
         .recipe-contents__items
           .recipe-contents__sectionTitle
@@ -32,10 +36,14 @@
             %i.fas.fa-utensils
               レシピ・投稿
             %span.border -----
-          .recipe-contents__body
-            - @recipes.each do |recipe|
-              = render partial: "pages/recipe-item", locals: {recipe: recipe}
-          .recipe-contents__more
-            = link_to "もっと見る", "/users/#{@user.id}/show_recipes"
+          - if @recipes.present?
+            .recipe-contents__body
+              - @recipes.each do |recipe|
+                = render partial: "pages/recipe-item", locals: {recipe: recipe}
+            .recipe-contents__more
+              = link_to "もっと見る", "/users/#{@user.id}/show_recipes"
+          - else
+            .recipe-contents__more
+              投稿はまだありません
 %footer
   = render 'layouts/main-footer'
