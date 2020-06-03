@@ -21,8 +21,8 @@
           %span by
           = ranked_recipes[0].user.nickname
   .ranked-recipe__flexArea
-    = link_to recipe_path(ranked_recipes[1].id) do
-      .ranked-recipe__item
+    .ranked-recipe__item
+      = link_to recipe_path(ranked_recipes[1].id) do
         .ranked-recipe__image
           %i.fas.fa-crown.silver
           %span 2
@@ -37,8 +37,8 @@
         .ranked-recipe__user
           %span by
           = ranked_recipes[1].user.nickname
-    = link_to recipe_path(ranked_recipes[2].id) do
-      .ranked-recipe__item
+    .ranked-recipe__item
+      = link_to recipe_path(ranked_recipes[2].id) do
         .ranked-recipe__image
           %i.fas.fa-crown.bronze
           %span 3
