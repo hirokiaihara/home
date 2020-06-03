@@ -56,10 +56,10 @@
 #### 入力欄は追加と削除が出来ます。
 ## グループ機能
 <img width="500" alt="e1932cdaee3f52461b7c93516311a8aa" src="https://user-images.githubusercontent.com/61179665/83647677-1fa71880-a5f0-11ea-8541-ef6ec7b9ddc8.png">/
-#### 写真付きでメッセージを送信します
+#### 写真付きでメッセージを送信します。
 ## Responsive Web Design
 ![shotsnapp-1591191448 422](https://user-images.githubusercontent.com/61179665/83644221-03a17800-a5ec-11ea-9dbb-40c3e6d14fbf.png)
-#### スマホでの使用が予想されるのでモバイルファーストで実装を進めました
+#### スマホでの使用が予想されるのでモバイルファーストで実装を進めました。
 
 # データベース設計
 
