@@ -51,7 +51,7 @@
 <img width="500" alt="5aca7b44e631b25193494ce75a65a591" src="https://user-images.githubusercontent.com/61179665/83702483-cc60b480-a647-11ea-9886-d45f339547de.png">/
 #### いいね！した記事はマイフォルダから閲覧出来ます。
 ## 遊びとレシピの記事投稿
-<img width="500" alt="cf47d88d6bfeabb2ebf0d76b85ea6fc2" src="https://user-images.githubusercontent.com/61179665/83647087-7829e600-a5ef-11ea-8f27-5557ca56dfe9.png">/
+<img width="500" alt="184e60ef356cf9c0d439330735c3b0c5" src="https://user-images.githubusercontent.com/61179665/83713643-96c9c480-a663-11ea-845a-abf83a516ea5.png">/
 #### トップ画像と作り(遊び)方の画像はプレビュー表示してから投稿出来ます。入力欄は追加と削除が出来ます。
 ## グループ機能
 <img width="500" alt="e1932cdaee3f52461b7c93516311a8aa" src="https://user-images.githubusercontent.com/61179665/83647677-1fa71880-a5f0-11ea-8541-ef6ec7b9ddc8.png">/
