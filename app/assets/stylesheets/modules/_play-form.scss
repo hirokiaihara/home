@@ -55,6 +55,7 @@
   &__submitBtn {
     @extend .btn;
     background-color: $mainSkyblue;
+    width: 100%;
   }
 }
 
