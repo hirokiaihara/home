@@ -48,7 +48,7 @@
 家で過ごす時間が増えたので、その時間を創作や家族との食を育む時間に変えられたらいいなと思ったからです。
 また、こんな時だからこそみんなで話したり共有することが大事と思いグループ機能を加えました。
 ## 遊びとレシピの検索と閲覧
-<img width="500" alt="5aca7b44e631b25193494ce75a65a591" src="https://user-images.githubusercontent.com/61179665/83702483-cc60b480-a647-11ea-9886-d45f339547de.png">
+<img width="500" alt="5aca7b44e631b25193494ce75a65a591" src="https://user-images.githubusercontent.com/61179665/83702483-cc60b480-a647-11ea-9886-d45f339547de.png">/
 #### いいね！した記事はマイフォルダから閲覧出来ます。
 ## 遊びとレシピの記事投稿
 <img width="500" alt="cf47d88d6bfeabb2ebf0d76b85ea6fc2" src="https://user-images.githubusercontent.com/61179665/83647087-7829e600-a5ef-11ea-8f27-5557ca56dfe9.png">/
