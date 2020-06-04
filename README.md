@@ -61,7 +61,7 @@
 #### CSSはモバイルファーストで実装を進めました。
 
 # データベース設計
-<img width="900" alt="ER図" src="https://user-images.githubusercontent.com/61179665/83726959-48c2ba00-a67f-11ea-92c0-2649d1c17257.png">
+<img width="900" alt="ER図" src="https://user-images.githubusercontent.com/61179665/83726959-48c2ba00-a67f-11ea-92c0-2649d1c17257.png">/
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
