@@ -48,17 +48,17 @@
 家で過ごす時間が増えたので、その時間を創作や家族との食を育む時間に変えられたらいいなと思ったからです。
 また、こんな時だからこそみんなで話したり共有することが大事と思いグループ機能を加えました。
 ## 遊びとレシピの検索と閲覧
-<img width="500" alt="25a0975e3b0b55396c6597e07a3ed06b" src="https://user-images.githubusercontent.com/61179665/83646777-18333f80-a5ef-11ea-9dc0-2d828dbedfcf.png">/
+<img width="500" alt="5aca7b44e631b25193494ce75a65a591" src="https://user-images.githubusercontent.com/61179665/83702483-cc60b480-a647-11ea-9886-d45f339547de.png">
+#### いいね！した記事はマイフォルダから閲覧出来ます。
 ## 遊びとレシピの記事投稿
 <img width="500" alt="cf47d88d6bfeabb2ebf0d76b85ea6fc2" src="https://user-images.githubusercontent.com/61179665/83647087-7829e600-a5ef-11ea-8f27-5557ca56dfe9.png">/
-#### トップ画像と作り(遊び)方の画像はプレビュー表示してから投稿出来ます。
-#### 入力欄は追加と削除が出来ます。
+#### トップ画像と作り(遊び)方の画像はプレビュー表示してから投稿出来ます。入力欄は追加と削除が出来ます。
 ## グループ機能
 <img width="500" alt="e1932cdaee3f52461b7c93516311a8aa" src="https://user-images.githubusercontent.com/61179665/83647677-1fa71880-a5f0-11ea-8541-ef6ec7b9ddc8.png">/
-#### 写真付きでメッセージを送信します。（非同期・同時更新）
+#### 写真付きでメッセージを共有します。（非同期・同時更新）
 ## Responsive Web Design
 ![shotsnapp-1591191448 422](https://user-images.githubusercontent.com/61179665/83644221-03a17800-a5ec-11ea-9dbb-40c3e6d14fbf.png)
-#### スマホでの使用が予想されるのでモバイルファーストで実装を進めました。
+#### CSSはモバイルファーストで実装を進めました。
 
 # データベース設計
 
