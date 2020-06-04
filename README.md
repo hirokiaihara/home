@@ -61,7 +61,7 @@
 #### CSSはモバイルファーストで実装を進めました。
 
 # データベース設計
-
+<img width="900" alt="ER図" src="https://user-images.githubusercontent.com/61179665/83726959-48c2ba00-a67f-11ea-92c0-2649d1c17257.png">
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -238,5 +238,15 @@
 |group_id|integer||
 |action|string||
 |checked|boolean|default: false, null: false|
+### Association
+- belongs_to :play, optional: true
+- belongs_to :recipe, optional: true
+- belongs_to :playcomment, optional: true
+- belongs_to :recipecomment, optional: true
+- belongs_to :message, optional: true
+- belongs_to :group, optional: true
+- belongs_to :visiter, class_name: 'User', foreign_key: 'visiter_id', optional: true
+- belongs_to :visited, class_name: 'User', foreign_key: 'visited_id', optional: true
+
 
 
