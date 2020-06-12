@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
-  # before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_recipe, except: [:index, :new, :create, :search]
-  # before_action :move_to_root, only: [:edit]
+  before_action :move_to_root, only: [:edit]
 
   def index
     @recipes = Recipe.includes(:foods, :makes).order('recipes.created_at desc').page(params[:page]).per(12)
