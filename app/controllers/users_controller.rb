@@ -25,8 +25,8 @@ class UsersController < ApplicationController
   end
   # マイフォルダ
   def myrecipes
-    @likes = Like.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).per(8)
-    @myrecipes = Myrecipe.where(user_id: current_user.id).order('created_at DESC').page(params[:page]).per(8)
+    @likes = current_user.likes.order('created_at DESC').page(params[:page]).per(8)
+    @myrecipes = current_user.myrecipes.order('created_at DESC').page(params[:page]).per(8)
   end
   # フォローしている人一覧
   def show_follows

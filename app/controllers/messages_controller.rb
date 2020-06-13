@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
-  # before_action :move_to_root, only: [:index]
+  before_action :move_to_root, only: [:index]
   before_action :set_group
 
   def index
